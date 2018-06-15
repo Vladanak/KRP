@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="xstyle.css"?>
+
+<schedule>
+	<day>
+	<dayname>ПОНЕДЕЛЬНИК</dayname>
+		<lesson id="eng">
+			<name>Англ яз</name>
+			<time>8:00</time>
+		</lesson>
+		<lesson id="math">
+			<name>Матем</name>
+			<time>9:50</time>
+		</lesson>
+		<lesson id="et">
+			<name>Этика</name>
+			<time>11:40</time>
+		</lesson>
+		<lesson id="lunch">
+			<name>Что-то</name>
+			<time>8:00</time>
+		</lesson>
+		<lesson id="CSaN">
+			<name>КСиС</name>
+			<time>13:50</time>
+		</lesson>
+	</day>
+	<day>
+	<dayname>ВТОРНИК</dayname>
+		<lesson id="blank">
+			<name>Что-то</name>
+			<time>8:00</time>
+		</lesson>
+		<lesson id="pl">
+			<name>ЯП</name>
+			<time>9:50</time>
+		</lesson>
+		<lesson id="CSaN">
+			<name>КСиС</name>
+			<time>11:40</time>
+		</lesson>
+		<lesson id="lunch">
+			<name>Что-то</name>
+			<time>8:00</time>
+		</lesson>
+		<lesson id="AaPB">
+			<name>ОАиП</name>
+			<time>13:50</time>
+		</lesson>
+	</day>
+	<day>
+	<dayname>СРЕДА</dayname>
+		<lesson id="PE">
+			<name>Физра</name>
+			<time>8:00</time>
+		</lesson>
+		<lesson id="eng">
+			<name>Англ яз</name>
+			<time>9:50</time>
+		</lesson>
+	</day>
+	<day>
+	<dayname>ЧЕТВЕРГ</dayname>
+		<lesson id="blank">
+			<name>Что-то</name>
+			<time>8:00</time>
+		</lesson>
+		<lesson id="math">
+			<name>Матем</name>
+			<time>9:50</time>
+		</lesson>
+		<lesson id="ML">
+			<name>КЯР</name>
+			<time>11:40</time>
+		</lesson>
+		<lesson id="lunch">
+			<name>Что-то</name>
+			<time>8:00</time>
+		</lesson>
+		<lesson id="ML">
+			<name>КЯР</name>
+			<time>13:50</time>
+		</lesson>
+	</day>
+	<day>
+	<dayname>ПЯТНИЦА</dayname>
+		<lesson id="blank">
+			<name>Что-то</name>
+			<time>8:00</time>
+		</lesson>
+		<lesson id="math">
+			<name>Матем</name>
+			<time>9:50</time>
+		</lesson>
+		<lesson id="AaPB">
+			<name>ОАиП</name>
+			<time>11:40</time>
+		</lesson>
+		<lesson id="lunch">
+			<name>Что-то</name>
+			<time>8:00</time>
+		</lesson>
+		<lesson id="WW">
+			<name>ВОВ</name>
+			<time>13:50</time>
+		</lesson>
+	</day>
+	<day>
+	<dayname>СУББОТА</dayname>
+		<lesson id="PE">
+			<name>Физра</name>
+			<time>8:00</time>
+		</lesson>
+		<lesson id="pl">
+			<name>ЯП</name>
+			<time>9:50</time>
+		</lesson>
+		<lesson id="pl">
+			<name>ЯП</name>
+			<time>11:40</time>
+		</lesson>
+	</day>
+</schedule>

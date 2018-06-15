@@ -1,0 +1,55 @@
+<html>
+<head>
+<style type="text/css">
+div {
+margin:3px;
+padding:10px;
+font-size:1.5em;
+border:1px #000 solid;
+width:230px;
+transition:width 4s;
+-moz-transition:width 4s;
+-webkit-transition:width 4s;
+-o-transition:width 4s;
+}
+div:hover {
+width:600px;
+}
+#el1 {
+transition-timing-function:linear;
+-webkit-transition-timing-function:linear;
+}
+#el2 {
+transition-timing-function:ease;
+-webkit-transition-timing-function:ease;
+}
+#el3 {
+transition-timing-function:ease-in;
+-webkit-transition-timing-function:ease-in;
+}
+#el4 {
+transition-timing-function:ease-out;
+-webkit-transition-timing-function:ease-out;
+}
+#el5 {
+transition-timing-function:ease-in-out;
+-webkit-transition-timing-function:ease-in-out;
+}
+#el6 {
+transition-timing-function:cubic-bezier(0.6,0.2,0.5,0.6);
+-webkit-transition-timing-function:cubic-bezier(0.1,0.2,0.5,0.6);
+}
+</style>
+</head>
+<body>
+<p>1. Наведите курсор на элементы ниже, чтобы увидеть соответствующие функции смягчения в действии.</p>
+<div id="el1">linear</div>
+<div id="el2">ease</div>
+<div id="el3">ease-in</div>
+<div id="el4">ease-out</div>
+<div id="el5">ease-in-out</div>
+<p>2. Поведение функции cubic-bezier зависит от переданных в нее значений (попробуйте ввести 
+несколько своих значений от 0 до 1, чтобы лучше понять ее принцип работы).</p>
+<div id="el6">cubic-bezier(x,x,x,x)</div>
+</body>
+</html>

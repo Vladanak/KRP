@@ -1,0 +1,2396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=cp1251" />
+<title>Заголовок-окна</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="header">
+	<div id="logo">
+		<h1><a href="index.html">Иформационные технологии</a></h1>
+		<h2>.</h2>
+	</div>
+	<div id="menu">
+		<ul>
+			<li><a style="" href="index.html">Знакомство с XML</a></li>
+
+		</ul>
+	</div>
+</div>
+<hr />
+<div id="page">
+	<div id="bg">
+		<div id="content">
+			<div class="post" style="padding-top: 57px;">
+				<h2 class="title">Лекция №5</h2>
+				<div class="entry">
+
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Создание 
+валидных XML-документов<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Валидные XML-документы отвечают 
+более строгому набору критериев, чем обычные корректно сформированные документы, 
+с которыми вы имели дело в предыдущих лекциях. В этой лекции вы прежде всего 
+познакомитесь с основными требованиями для валидных XML-документов и оцените 
+преимущества валидных документов. Затем вы узнаете, как создавать объявление 
+типа документа, которое требуется для всех валидных XML-документов. После этого 
+будут представлены подробные инструкции по определению элементов и атрибутов в 
+валидном документе. В завершение вы выполните упражнение по преобразованию 
+документа, созданного вами в лекции 2, в валидный 
+документ.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Основной 
+критерий для валидного документа<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Каждый XML-документ должен быть 
+корректно сформированным, т.е. отвечать минимальным требованиям по составлению 
+XML-документа. Если документ не является корректно сформированным, он не может 
+считаться XML-документом.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Корректно сформированный 
+XML-документ также может быть валидным. Валидным (valid) называется корректно 
+сформированный (well-formed) документ, отвечающий двум дополнительным 
+требованиям:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l1 level1 lfo1" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">пролог документа должен 
+содержать специальное объявление типа документа, которое содержит определение 
+типа документа (DTD), задающее структуру документа;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l1 level1 lfo1" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">остальной документ должен 
+отвечать структуре, заданной в DTD.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В последующих разделах этой 
+лекции, а также в лекции 6, вы узнаете, как создавать документы, отвечающие этим 
+двум общим требованиям.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Требования 
+корректности формирования и валидности<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Требования корректности 
+формирования представляют собой набор правил, определенных в спецификации XML, 
+которым вы должны следовать – в дополнение к основным синтаксическим требованиям 
+– чтобы создать правильно составленный документ. Поскольку XML-документ должен 
+быть корректно сформированным, любое отклонение от требований корректности 
+формирования считается фатальной ошибкой (fatal error). Если XML-процессор 
+сталкивается с фатальной ошибкой, он должен остановить нормальную обработку 
+документа и не пытаться ее возобновить.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Требования валидности представляют 
+собой дополнительный набор правил в спецификации XML, которым вы должны 
+следовать, чтобы создать валидный документ. Поскольку валидность является не 
+обязательной для XML-документа, отклонение от требований валидности считается 
+лишь ошибкой (error), но не фатальным сбоем. Если XML-процессор встречает 
+ошибку, он может просто выдать сообщение о ней и продолжить выполнение 
+обработки. Требования валидности состоят из специальных правил по созданию 
+соответствующего объявления типа с его DTD, а также созданию документа, 
+отвечающего описанию внутри вашего DTD.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Преимущества 
+использования валидных XML-документов<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Может показаться, что при создании 
+валидного XML-документа выполняется ряд лишних действий: вы должны сначала 
+полностью описать структуру документа в DTD, а затем создать сам документ, 
+отвечающий всем спецификациям, содержащимся в DTD. Может сложиться впечатление, 
+что гораздо проще непосредственно добавлять любые необходимые элементы и 
+атрибуты, как вы это делали в примерах, работая с корректно сформированными 
+документами в предыдущих лекциях.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Однако, если вы хотите быть 
+уверенным, что ваш документ отвечает определенной структуре или набору 
+стандартов, включение DTD, которое описывает эту структуру, дает возможность 
+XML-процессору (например, Microsoft Internet Explorer 5) проверить, 
+соответствует ли документ структуре. Другими словами, DTD обеспечивает 
+стандартный шаблон для процессора, чтобы при проверке валидности он мог 
+следовать требуемой структуре и гарантировать, что ваш документ соответствует 
+установленным стандартам. Если какая-либо часть документа не отвечает 
+DTD-спецификации, процессор может отобразить сообщение об ошибке, чтобы вы могли 
+отредактировать документ и исправить несоответствия.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Использование валидных документов 
+особенно полезно для проверки однородности среди группы схожих документов. 
+Фактически, стандарт XML определяет DTD как «грамматику для определенного класса 
+документов».<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Предположим, компании, 
+занимающейся публикацией в Web, требуется, чтобы все ее редакторы создавали 
+XML-документы, отвечающие единой структуре. Создание одного DTD и включение его 
+во все документы может обеспечить условия соответствия документов требуемой 
+структуре, в то время как редакторы будут избавлены от необходимости добавлять 
+новые элементы, помещать информацию в неправильном порядке, присваивать 
+неправильные типы данных и т.д. Конечно, валидность документа должна быть 
+проверена при его обработке процессором.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Включение DTD и проверка 
+валидности имеют особое значение, если документ будет обрабатываться программой 
+пользователя, ориентированной на определенную структуру документа. Если все 
+пользователи программного обеспечения включат в свои XML-документы 
+соответствующие DTD, и все документы пройдут проверку на валидность, то 
+пользователи могут быть уверены, что их документы будут распознаны 
+программой-обработчиком. Например, если группа математиков создает 
+математические документы, которые будут отображаться специальной программой, все 
+они могут включить в свои документы одинаковые DTD, которые содержат определения 
+требуемой структуры, элементов, атрибутов и других 
+компонентов.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">На деле большинство реальных 
+XML-приложений, список которых приведен в конце лекции 1, например, MathML, 
+состоят из стандартного DTD, которое все пользователи приложения включают в свои 
+XML-документы, чтобы при проверке валидности обеспечивалось соответствие 
+структуре приложения, и документы были распознаны любой программой, 
+разработанной для этого приложения.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Чтобы проверить документ на 
+валидность, вы можете использовать сценарий проверки на валидность, приведенный 
+в лекции 9 в разделе «Проверка валидности XML-документа». Вы можете прочесть 
+приведенные в этом разделе указания сейчас, чтобы иметь возможность осуществлять 
+проверку на валидность создаваемых вами XML-документов.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Форма записи 
+DTD<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Объявление типа документа имеет 
+следующую обобщенную форму записи:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!DOCTYPE Имя 
+DTD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Здесь Имя указывает на имя 
+элемента Документ. Имя действительного элемента Документ должно в точности 
+соответствовать имени, записанному в объявлении. Например, если вы создаете 
+объявление типа документа для документа, рассмотренного в предыдущем разделе, 
+вам следует использовать имя INVENTORY:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!DOCTYPE INVENTORY 
+DTD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">DTD представляет собой определение 
+типа документа, которое содержит объявления, задающие элементы документа, 
+атрибуты и другие компоненты. В следующем разделе вы познакомитесь с формой 
+записи их.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+Подобно всем ключевым словам XML, DOCTYPE должно быть набрано прописными 
+буквами.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Создание 
+DTD<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">DTD состоит из символа левой 
+квадратной скобки ([), после которой следует ряд объявлений разметки, 
+заканчивающихся правой квадратной скобкойг. Объявления разметки описывают 
+логическую структуру документа; т.е. задают элементы документа, атрибуты и 
+другие компоненты. На рисунке 5.1 приведен законченный валидный XML-документ, 
+содержащий DTD с единственным объявлением разметки.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><v:shapetype id=_x0000_t75 
+coordsize="21600,21600" o:spt="75" o:preferrelative="t" 
+path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f"><v:stroke 
+joinstyle="miter"></v:stroke><v:formulas><v:f 
+eqn="if lineDrawn pixelLineWidth 0"></v:f><v:f eqn="sum @0 1 0"></v:f><v:f 
+eqn="sum 0 0 @1"></v:f><v:f eqn="prod @2 1 2"></v:f><v:f 
+eqn="prod @3 21600 pixelWidth"></v:f><v:f 
+eqn="prod @3 21600 pixelHeight"></v:f><v:f eqn="sum @0 0 1"></v:f><v:f 
+eqn="prod @6 1 2"></v:f><v:f eqn="prod @7 21600 pixelWidth"></v:f><v:f 
+eqn="sum @8 21600 0"></v:f><v:f eqn="prod @7 21600 pixelHeight"></v:f><v:f 
+eqn="sum @10 21600 0"></v:f></v:formulas><v:path o:extrusionok="f" 
+gradientshapeok="t" o:connecttype="rect"></v:path><o:lock v:ext="edit" 
+aspectratio="t"></o:lock></v:shapetype><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><IMG border=0 hspace=0 alt="" 
+src="user-images\5.1.jpg" width=519 
+height=232></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt">Рис. 5.1.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">DTD в этом примере документа 
+указывает, что документ может содержать только элементы типа SIMPLE (это 
+единственный заданный тип элемента), и что элемент SIMPLE может иметь любое 
+допустимое для данного типа содержимое (ключевое слово 
+ANY).<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">DTD может содержать следующие типы 
+объявлений разметки:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l3 level1 lfo2" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">Объявления типов элементов. 
+Они определяют типы элементов, которые может содержать документ, а также 
+содержимое и порядок следования элементов. Об объявлениях типов элементов пойдет 
+речь в следующем разделе.<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l3 level1 lfo2" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">Объявления списков атрибутов. 
+Каждое объявление списков атрибутов задает имена атрибутов, которые могут быть 
+использованы с определенным типом элемента, а также типы данных и 
+устанавливаемые по умолчанию значения этих атрибутов. Об этих объявлениях будет 
+рассказано далее в этой лекции.<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l3 level1 lfo2" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">Объявления примитивов. Вы 
+можете использовать примитивы для хранения часто используемых фрагментов текста 
+или для встраивания не относящихся к XML данных в ваш документ. Об объявлениях 
+примитивов будет рассказано в лекции 6.<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l3 level1 lfo2" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">Объявления нотаций. Нотация 
+описывает формат данных или идентифицирует программу, используемую для обработки 
+определенного формата. Об объявлениях нотаций пойдет речь в лекции 
+6.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Инструкции по обработке. Эта тема 
+затрагивалась в разделе «Использование инструкций по обработке» в лекции 
+4.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Комментарии. О них говорилось в 
+разделе «Добавление комментариев» в лекции 4.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Ссылки на параметрические 
+примитивы. Любой из приведенных выше компонентов может содержаться внутри 
+параметрического примитива и добавляться путем ссылки на параметрический 
+примитив. Смысл этого оператора станет вам понятен, когда вы познакомитесь с 
+материалом из лекции 6. Данный пункт приведен здесь для полноты 
+картины.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+Типы DTD, обсуждаемые в этом разделе (и используемые в примерах в последующих 
+разделах) относятся к внутреннему подмножеству DTD, поскольку полностью 
+включаются в объявление типа данного документа. В конце этой лекции вы узнаете, 
+как использовать DTD, размещенные в отдельном файле, и относящиеся к внешнему 
+подмножеству DTD.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Добавление 
+DTD<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Объявление типа документа 
+представляет собой блок XML-разметки, который вы должны добавить в пролог 
+валидного XML-документа. Он может располагаться в любом месте пролога – вне 
+другой разметки – после XML-объявления, как показано на рисунке 5.2. (Напомним, 
+что если вы включаете XML-объявление, оно должно располагаться в начале 
+документа.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm 0pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><IMG border=0 hspace=0 alt="" 
+src="user-images\5.2.jpg" width=515 
+height=376></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt">Рис.5.2.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Объявление типа документа 
+определяет структуру документа. Если вы открываете документ, не содержащий 
+объявления типа, в Internet Explorer 5, процессор Internet Explorer 5 всего лишь 
+осуществляет проверку документа на корректность формы составления. Если же вы 
+открываете документ, содержащий объявление типа документа, процессор Internet 
+Explorer 5 будет проверять документ на валидность вместе с проверкой на 
+корректность формы составления, так что ваш документ должен отвечать всем 
+имеющимся декларациям в объявлении типа документа. Так, вы не сможете включить в 
+документ какие-либо элементы или атрибуты, если вы не объявили их в объявлении 
+типа документа. Каждый элемент и атрибут, который вы включаете, должен 
+соответствовать спецификации (например, допустимости применения данного 
+содержимого элемента или типа атрибута), выраженной в соответствующем 
+объявлении.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Объявление 
+типов элементов<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В валидном XML-документе вы должны 
+полностью объявить тип каждого элемента, который вы используете в документе, в 
+объявлении типа элемента внутри DTD. Объявление типа элемента указывает на имя 
+типа элемента и допустимое содержимое элемента (часто описывающее порядок 
+размещения дочерних элементов). Как единое целое, объявление типа элемента в DTD 
+– подобно построению базы данных – задает полную логическую структуру документа. 
+Таким образом, объявление типа элемента указывает на типы элементов, которые 
+содержит документ, порядок следования элементов, а также описание содержимого 
+элементов.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Форма записи 
+объявления типа элемента<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Объявление типа элемента имеет 
+следующую обобщенную форму:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!ELEMENT Имя 
+опись_содержимого&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Здесь Имя есть имя объявляемого 
+типа элемента. (Свод правил по правильному заданию имен элементов приведен в 
+разделе «Анатомия элемента» в лекции 3.) Опись_содержимого – это описание 
+содержимого, которое определяет, что может содержать элемент. В следующем 
+разделе приведены различные типы описаний содержимого, которые вы можете 
+использовать.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Ниже приведено объявление типа 
+элемента с именем TITLE, для содержимого которого могут использоваться только 
+символьные данные (дочерние элементы не допускаются):<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!ELEMENT TITLE 
+(#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">А вот объявление для типа элемента 
+с именем GENERAL, содержимое которого может быть любым:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!ELEMENT GENERAL 
+ANY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В качестве последнего примера 
+рассмотрим законченный XML-документ с двумя типами элементов. Объявление типа 
+элемента COLLECTION указывает, что он может содержать один или несколько 
+элементов CD, а объявление типа элемента CD указывает, что он может содержать 
+только символьные данные. Заметим, что документ соответствует этим объявлениям, 
+и, следовательно, является валидным:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!DOCTYPE COLLECTION<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+COLLECTION (CD)+&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">&lt;!ELEMENT CD (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!-- Вы также можете включать 
+комментарии в DTD. --&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>]<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&gt;<o:p>&nbsp;</o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;COLLECTION&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;CD&gt;Mozart 
+Violin Concertos 1, 2, and 3&lt;/CD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;CD&gt;Telemann Trumpet Concertos&lt;/CD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;CD&gt;Handel 
+Concerti Grossi Op. 3&lt;/CD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;/COLLECTION&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> Вы 
+можете объявить определенный тип элемента в данном документе только один 
+раз.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Описание 
+содержимого элемента<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вы можете описать содержимое 
+элемента – т.е. заполнить часть опись_содержимого в объявлении типа элемента – 
+четырьмя различными способами.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Пустое содержимое (EMPTY). 
+Ключевое слово EMPTY указывает, что элемент должен быть пустым – т.е. не может 
+иметь содержимого. Например: <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!ELEMENT IMAGE 
+EMPTY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Ниже приведены валидные элементы 
+IMAGE, которые вы можете поместить в документ:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;IMAGE&gt;&lt;/IMAGE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;IMAGE /&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Любое</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">содержимое</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US> (ANY). 
+</SPAN><SPAN style="FONT-SIZE: 12pt">Ключевое слово ANY указывает, что элемент 
+может иметь любое допустимое для этого типа содержимое. То есть элемент этого 
+типа может содержать или не содержать дочерние элементы в любом порядке и с 
+любым количеством вхождений, иметь или не иметь чередующиеся символьные данные. 
+Это наиболее неопределенный тип описания содержимого и дает возможность 
+создавать типы элементов без ограничений на их содержимое. Вот пример 
+соответствующего объявления: <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!ELEMENT MISC 
+ANY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Содержимое элемента (также 
+называемое дочернее содержимое). При таком описании типа содержимого элемент 
+может содержать дочерние элементы, но не может непосредственно содержать 
+символьные данные. Об этой возможности будет говориться в следующем 
+разделе.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Смешанное содержимое. При этом 
+описании типа содержимого элемент может содержать любое количество смешанных 
+данных, в том числе и чередующихся с дочерними элементами определенных типов. 
+Эта возможность будет описана далее в данной лекции.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Задание 
+содержимого элемента<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Если элемент имеет содержимое, он 
+может непосредственно содержать только определенные дочерние элементы, но не 
+символьные данные. В тексте документа вы можете разделять дочерние элементы 
+пробелами, чтобы улучшить восприятие документа, но процессор будет игнорировать 
+символы пробела и не передаст их приложению.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Рассмотрим следующий пример 
+XML-документа, описывающий одну книгу:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!DOCTYPE BOOK<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN>[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT BOOK 
+(TITLE, AUTHOR)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+TITLE (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+AUTHOR (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>]&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;TITLE&gt;The 
+Scarlet Letter&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;Nathaniel Hawthorne&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/BOOK&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">На рисунке 5.3. показано, как 
+будет отображено в браузре.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm 0pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><IMG border=0 hspace=0 alt="" 
+src="user-images\5.31.png" width=534 
+height=289></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt">Рис. 5.3.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В этом документе тип элемента BOOK 
+объявлен как имеющий содержимое элемента. (TITLE, AUTHOR), следующие за именем 
+элемента в объявлении, составляют модель содержимого. Модель содержимого 
+указывает на разрешенные типы дочерних элементов и их порядок. В этом примере 
+модель содержимого указывает на то, что элемент BOOK должен иметь ровно один 
+дочерний элемент TITLE, за которым следует ровно один дочерний элемент AUTHOR. 
+При обработке документа процессор игнорирует три пустых строки, используемые для 
+разделения дочерних элементов внутри элемента BOOK.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Модель содержимого может иметь 
+одну из следующих основных форм.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Последовательная. Последовательная 
+форма модели содержимого указывает, что элемент должен иметь заданную 
+последовательность дочерних элементов. Вы отделяете имена типов дочерних 
+элементов запятыми. Например, следующее DTD указывает, что элемент MOUNTAIN 
+должен иметь один дочерний элемент NAME, после которого идет один дочерний 
+элемент HEIGHT, за которым следует один дочерний элемент STATE: 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!DOCTYPE MOUNTAIN<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+MOUNTAIN (NAME, HEIGHT, STATE)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;!ELEMENT NAME (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+HEIGHT (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">&lt;!ELEMENT STATE (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>]&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Следовательно, следующий элемент 
+Документ будет валидным:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;MOUNTAIN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;NAME&gt;Wheeler&lt;/NAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;HEIGHT&gt;13161&lt;/HEIGHT&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;STATE&gt;New 
+Mexico&lt;/STATE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/MOUNTAIN&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Следующий элемент Документ, 
+однако, не будет валидным, поскольку порядок дочерних элементов не соответствует 
+объявленному:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;MOUNTAIN&gt;<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>&lt;!-- 
+</SPAN><SPAN style="FONT-SIZE: 12pt">Неправильный</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">элемент</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>! 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;STATE&gt;New 
+Mexico&lt;/STATE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;NAME&gt;Wheeler&lt;/NAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;HEIGHT&gt;13161&lt;/HEIGHT&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;/MOUNTAIN&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Пропуск дочернего элемента или 
+использование одного и того же типа дочернего элемента более одного раза также 
+недопустимо. Как вы видите, это достаточно строгий вид 
+объявления.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Выборочная. Выборочная форма 
+модели содержимого указывает, что элемент может иметь любой из серии допустимых 
+дочерних элементов, разделяемых символом <SPAN style="COLOR: black">|</SPAN>. 
+Например, следующее DTD указывает, что элемент FILM может состоять из одного 
+дочернего элемента STAR, или одного дочернего элемента NARRATOR, или одного 
+дочернего элемента INSTRUCTOR: <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!DOCTYPE FILM<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT FILM 
+(STAR<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>|<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>NARRATOR<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>|<SPAN style="mso-spacerun: yes">&nbsp; 
+</SPAN>INSTRUCTOR)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT STAR 
+(#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+NARRATOR (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">&lt;!ELEMENT INSTRUCTOR 
+(#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>]&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Следовательно, следующий элемент 
+Документ будет валидным:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;STAR&gt;Robert Redford&lt;/STAR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/FILM&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">как</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">и</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">элемент</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;NARRATOR&gt;Sir Gregory 
+Parsloe&lt;/NARRATOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">а также 
+элемент:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;INSTRUCTOR&gt;Galahad 
+Threepwood&lt;/INSTRUCTOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/FILM&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Следующий элемент Документ не 
+будет валидным, поскольку вы можете включить только один из дочерних 
+элементов:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;FILM&gt;<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>&lt;!-- 
+</SPAN><SPAN style="FONT-SIZE: 12pt">Неправильный</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">элемент</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>! 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;NARRATOR&gt;Sir Gregory 
+Parsloe&lt;/NARRATOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;INSTRUCTOR&gt;Galahad 
+Threepwood&lt;/INSTRUCTOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вы можете изменить любую из этих 
+форм модели содержимого, используя символы: знак вопроса (?), знак плюс (+) и 
+звездочка (*), значения которых описаны в таблице 5.1.:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: right; TEXT-INDENT: 25.5pt; MARGIN: 14pt 0cm 6pt" 
+class=MsoNormal align=right><SPAN style="FONT-SIZE: 12pt">Таблица 
+5.1.<o:p></o:p></SPAN></P>
+<DIV align=center>
+<TABLE 
+style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; MARGIN: auto auto auto 18pt; WIDTH: 361.2pt; BORDER-COLLAPSE: collapse; BORDER-TOP: medium none; BORDER-RIGHT: medium none; mso-border-alt: solid windowtext .5pt; mso-yfti-tbllook: 1184; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext" 
+class=MsoNormalTable border=1 cellSpacing=0 cellPadding=0 width=482>
+  <TBODY>
+  <TR style="HEIGHT: 15.45pt; mso-yfti-irow: 0; mso-yfti-firstrow: yes">
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; HEIGHT: 15.45pt; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt">
+      <P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt" class=MsoNormal 
+      align=center><SPAN style="FONT-SIZE: 12pt">Символ<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; HEIGHT: 15.45pt; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt">
+      <P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt" class=MsoNormal 
+      align=center><SPAN 
+    style="FONT-SIZE: 12pt">Значение<o:p></o:p></SPAN></P></TD></TR>
+  <TR style="HEIGHT: 15.45pt; mso-yfti-irow: 1">
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; HEIGHT: 15.45pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt">
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">?<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; HEIGHT: 15.45pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt">
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">Ни одного или один из предшествующих 
+      элементов<o:p></o:p></SPAN></P></TD></TR>
+  <TR style="HEIGHT: 15.45pt; mso-yfti-irow: 2">
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; HEIGHT: 15.45pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt">
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">+<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; HEIGHT: 15.45pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt">
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">Один или более из предшествующих 
+      элементов<o:p></o:p></SPAN></P></TD></TR>
+  <TR style="HEIGHT: 16.3pt; mso-yfti-irow: 3; mso-yfti-lastrow: yes">
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; HEIGHT: 16.3pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt">
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">*<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt; HEIGHT: 16.3pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt">
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">Ни одного или более из предшествующих 
+      элементов<o:p></o:p></SPAN></P></TD></TR></TBODY></TABLE></DIV>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 14pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Например, следующее объявление 
+означает, что вы можете включить один или более дочерних элементов NAME, и что 
+дочерний элемент HEIGHT является не обязательным:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ELEMENT MOUNTAIN (NAME+, HEIGHT?, 
+STATE)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Таким образом, следующий элемент 
+будет правильным:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;MOUNTAIN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;NAME&gt;Pueblo Peak&lt;/NAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;NAME&gt;Taos 
+Mountain&lt;/NAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;STATE&gt;New 
+Mexico&lt;/STATE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;/MOUNTAIN&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Другой пример: следующее 
+объявление означает, что вы можете включить несколько или ни одного дочернего 
+элемента STAR, либо один дочерний элемент NARRATOR, либо один дочерний элемент 
+INSTRUCTOR:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ELEMENT FILM (STAR*<SPAN style="mso-spacerun: yes">&nbsp; 
+</SPAN>|<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>NARRATOR<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>|<SPAN style="mso-spacerun: yes">&nbsp; 
+</SPAN>INSTRUCTOR)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><o:p>&nbsp;</o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Соответственно, каждый из 
+следующих трех элементов будет корректным:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;STAR&gt;Tom 
+Hanks&lt;/STAR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;STAR&gt;Meg 
+Ryan&lt;/STAR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;NARRATOR&gt;Sir Gregory 
+Parsloe&lt;/Narrator&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;FILM/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вы также можете воспользоваться 
+<SPAN style="COLOR: black">символами ?, + или *</SPAN> для модификации всей 
+модели содержимого, помещая символы непосредственно после закрывающих скобок. 
+Например, следующее объявление дает вам возможность включить один или несколько 
+дочерних элементов любого из этих трех типов в любом 
+порядке:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ELEMENT FILM (STAR<SPAN style="mso-spacerun: yes">&nbsp; 
+</SPAN>|<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>NARRATOR<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>|<SPAN style="mso-spacerun: yes">&nbsp; 
+</SPAN>INSTRUCTOR)+&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Такое объявление делает 
+корректными следующие элементы:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;NARRATOR&gt;Bertram Wooster&lt;/NARRATOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;STAR&gt;Sean 
+Connery&lt;/STAR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;NARRATOR&gt;Plug Basham&lt;/ NARRATOR &gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;STAR&gt;Sean 
+Connery&lt;/STAR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;STAR&gt;Meg 
+Ryan&lt;/STAR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;INSTRUCTOR&gt;Stinker Pike&lt;/INSTRUCTOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/FILM&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Наконец, вы можете формировать 
+более сложные модели содержимого путем вложения выборочной модели содержимого 
+внутрь последовательной модели, либо последовательной модели в выборочную 
+модель. Например, следующее DTD задает, что каждый элемент FILM должен иметь 
+один дочерний элемент TITLE; за ним должен следовать один дочерний элемент 
+CLASS; после него должен идти один дочерний элемент STAR, NARRATOR или 
+INSTRUCTOR:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!DOCTYPE FILM<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT FILM 
+(TITLE, CLASS, (STAR<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>|<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>NARRATOR<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>|<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>INSTRUCTOR) 
+)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+TITLE (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+CLASS (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT STAR 
+(#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+NARRATOR (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">&lt;!ELEMENT INSTRUCTOR 
+(#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>]&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В соответствии с этим DTD, 
+следующий элемент Документ будет корректным:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;The Net&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;CLASS&gt;fictional&lt;/CLASS&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;STAR&gt;Sandra Bullok&lt;/STAR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;/FILM&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">так же, как 
+такой:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;TITLE&gt;How 
+to Use XML&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;CLASS&gt;instructional&lt;/CLASS&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;INSTRUCTOR&gt;Penny 
+Donaldson&lt;/INSTRUCTOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Задание 
+смешанного содержимого<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Если элемент имеет смешанное 
+содержимое, он может включать символьные данные. Если же вы зададите в 
+объявлении один или несколько типов дочерних элементов, он может содержать любые 
+из этих дочерних элементов в любом порядке и с любым количеством вхождений (нуль 
+и более). Другими словами, при смешанном содержимом вы можете задавать типы 
+дочерних элементов, но не можете задавать порядок или количество вхождений 
+дочерних элементов, а также задавать обязательность включения для определенных 
+типов дочерних элементов.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Чтобы объявить тип элемента 
+смешанного содержимого, вы можете воспользоваться одной из следующих форм модели 
+содержимого.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Только символьные данные. Чтобы 
+объявить тип элемента, который может содержать только символьные данные, 
+используйте модель содержимого (#PCDATA). Так, следующее объявление указывает, 
+что для элемента SUBTITLE допускаются только символьные данные: 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!ELEMENT SUBTITLE 
+(#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Следующие два элемента в 
+соответствии с данной декларацией являются корректными:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;SUBTITLE&gt;A New Approach&lt;/SUBTITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;SUBTITLE&gt;&lt;/SUBTITLE&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Заметим, что элемент, который в 
+соответствии с объявлением должен содержать символьные данные, может и не иметь 
+никаких символов – т.е. быть пустым.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+Ключевое слово PCDATA относится к синтаксически анализируемым (разбираемым) 
+символьным данным. Из лекции 3 вам известно, что XML-процессор синтаксически 
+разбирает символьные данные внутри элемента – т.е. сканирует элемент в поиске 
+XML-разметки. В связи с этим вы не можете использовать левую угловую скобку 
+(&lt;) или знак амперсанда (&amp;) или символы ]]&gt; как часть символьных 
+данных, поскольку синтаксический анализатор будет интерпретировать каждый из 
+этих символов или группы символов как разметку. Однако вы можете использовать 
+любые символы с помощью ссылки на символ или на предопределенный примитив, либо 
+с помощью раздела CDATA.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Символьные данные с 
+необязательными дочерними элементами. Чтобы объявить тип элемента, который может 
+содержать символьные данные плюс ни одного или несколько дочерних элементов, 
+перечислите каждый тип дочернего элемента после ключевого слова PCDATA в модели 
+содержимого, разделяя их символами ( и помещая звездочку (*) в конце всей модели 
+содержимого. Каждое имя элемента может появляться в модели содержимого только 
+один раз. Например, следующее объявление указывает, что элемент TITLE может 
+содержать символьные данные плюс ни одного или несколько дочерних элементов 
+SUBTITLE: <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!ELEMENT TITLE (#PCDATA<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>|<SPAN style="mso-spacerun: yes">&nbsp; 
+</SPAN>SUBTITLE)*&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В соответствии с этим объявлением 
+следующие элементы TITLE являются допустимыми:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>Moby-Dick<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;SUBTITLE&gt;Or, the Whale&lt;/SUBTITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SUBTITLE&gt;Or, the Whale&lt;/SUBTITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>Moby-Dick<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>Moby-Dick<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SUBTITLE&gt;Or, the Whale&lt;/SUBTITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SUBTITLE&gt;Another Subtitle&lt;/SUBTITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Объявление 
+атрибутов<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В валидном XML-документе вы также 
+должны исчерпывающе объявить все атрибуты, которые вы предполагаете использовать 
+для элементов документа. Вы определяете все атрибуты, ассоциированные с 
+определенным элементом, с помощью специального типа DTD-разметки, называемого 
+объявлением списка атрибутов. Это объявление:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l5 level1 lfo3" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">определяет имена атрибутов, 
+ассоциированных с элементом. В валидном документе вы можете включить в начальный 
+тег элемента только те атрибуты, которые определены для 
+элемента;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l5 level1 lfo3" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">устанавливает тип данных 
+каждого атрибута;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l5 level1 lfo3" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">задает востребованность для 
+каждого атрибута. Если атрибут не востребован, в объявлении списка атрибутов 
+указывается, что должен делать процессор, если атрибут опущен. (В объявлении 
+должно, например, содержаться значение атрибута по умолчанию, которое будет 
+использовать процессор.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Форма записи 
+объявления списка атрибутов<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Объявление списка атрибутов имеет 
+следующую общую форму:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!ATTLIST Имя 
+ОпрАтр&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Здесь Имя представляет собой имя 
+элемента, ассоциированного с атрибутом или атрибутами. ОпрАтр – это одно или 
+несколько определений атрибутов, каждое из которых определяет один 
+атрибут.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Определение атрибута имеет 
+следующую форму записи:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Имя ОпрАтр 
+ОбъявУмолч<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Здесь Имя представляет собой имя 
+атрибута. (Правила выбора имен атрибутов приведены в разделе «Правила создания 
+атрибутов» в лекции 3.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">ОпрАтр представляет собой тип 
+атрибута, т.е. виды значений, которые могут быть присвоены атрибуту. (О типах 
+атрибутов пойдет речь в следующем разделе.) ОбъявУмолч – это объявление по 
+умолчанию, которое указывает на востребованность атрибута и содержит другую 
+информацию. (Об этом будет рассказано далее в этой 
+лекции.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Допустим, вы объявили тип элемента 
+с именем FILM следующим образом:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ELEMENT FILM (TITLE, (STAR<SPAN style="mso-spacerun: yes">&nbsp; 
+</SPAN>|<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>NARRATOR<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>|<SPAN style="mso-spacerun: yes">&nbsp; 
+</SPAN>INSTRUCTOR) )&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вот пример объявления списка 
+атрибутов, которое описывает два атрибута – Class и Year – для элемента 
+FILM:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ATTLIST FILM<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Class 
+CDATA "fictional"<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Year CDATA 
+#REQUIRED&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">На рисунке 5.4 представлены 
+составные части этого объявления.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm 0pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 14pt" 
+class=MsoNormal align=center><SPAN style="FONT-SIZE: 12pt"></SPAN></P>
+<P style="TEXT-ALIGN: center; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 14pt" 
+class=MsoNormal align=center><SPAN style="FONT-SIZE: 12pt"><IMG border=0 
+hspace=0 alt="" 
+src="user-images\5.3.png"></SPAN></P>
+<P style="TEXT-ALIGN: center; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 14pt" 
+class=MsoNormal align=center><SPAN style="FONT-SIZE: 12pt">Рис. 
+5.4.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вы можете присвоить атрибуту Class 
+любую строку в кавычках (ключевое слово CDATA); если вы опускаете атрибут для 
+определенного элемента, ему будет автоматически присвоено значение по умолчанию 
+«fictional». Вы можете присвоить атрибуту Year любую строку в кавычках; этот 
+атрибут, однако, должен быть обязательно присвоен для каждого элемента FILM 
+(ключевое слово #REQUIRED), поэтому он не имеет значения по 
+умолчанию.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Следующий полный XML-документ 
+включает это объявление списка атрибутов, а также элемент 
+FILM:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!DOCTYPE FILM<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT FILM 
+(TITLE, (STAR<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>|<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>NARRATOR<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>|<SPAN style="mso-spacerun: yes">&nbsp; 
+</SPAN>INSTRUCTOR) )&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ATTLIST 
+FILM<SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>Class CDATA 
+"fictional"<SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>Year CDATA 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>#REQUIRED&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+TITLE (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT STAR 
+(#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+NARRATOR (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+INSTRUCTOR (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>]&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;FILM Year="1948"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;TITLE&gt;The 
+Morning After&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">&lt;STAR&gt;Morgan 
+Attenbury&lt;/STAR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">На рисунке 5.5. показано, как 
+будет отображено в браузре.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><o:p>&nbsp;</o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><IMG border=0 hspace=0 alt="" 
+src="user-images\5.31.png" width=460 
+height=275></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt">Рис. 5.5.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Для элемента FILM атрибуту Year 
+присвоено значение «1948». Атрибут Class опущен; однако, поскольку этот атрибут 
+имеет значение по умолчанию («fictional»), оно присваивается атрибуту, как если 
+бы вы записали его в качестве значения атрибута.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+Если вы использовали для данного типа элемента более одного объявления списка 
+атрибутов, содержания двух объявлений объединяются. Если атрибут с заданным 
+именем объявлен для одного и того же элемента несколько раз, первое объявление 
+используется, а последующие – игнорируются. (Множественные объявления списков 
+атрибутов могут иметь место, если документ имеет как внутренние, так и внешние 
+DTD, о чем пойдет речь далее в этой лекции.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Тип 
+атрибута<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Тип атрибута является вторым 
+необходимым компонентом в определении атрибута. Он задает вид значений, которые 
+вы можете присваивать атрибуту внутри документа, как показано на рисунке 
+5.6.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm 0pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><IMG border=0 hspace=0 alt="" 
+src="user-images\5.4.jpg"></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt">Рис. 5.6.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вы можете задавать тип атрибута 
+тремя различными способами.<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l2 level1 lfo4" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">Строковый тип. Строковый тип 
+атрибута может быть назначен любой строке в кавычках (литералу), которая 
+отвечает общим правилам, описанным в разделе «Правила для корректного задания 
+значений атрибутов» в лекции 3. Вы должны объявить строковый тип атрибута с 
+использованием ключевого слова CDATA, как это сделано для определения атрибута 
+Class в следующем примере: <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 6pt 0cm 6pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!ATTLIST 
+FILM<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Class CDATA 
+"fictional"&gt;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l2 level1 lfo4" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">Маркерный тип. Значения, 
+которые вы можете присваивать атрибуту маркерного типа, имеют ряд 
+ограничений.<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l2 level1 lfo4" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">Нумерованный тип. Для 
+нумерованного типа атрибута вы можете присваивать одно значение или список 
+определенных значений. Об этом типе вы узнаете в разделе «Задание нумерованных 
+типов» далее в этой лекции.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 12pt"><o:p>&nbsp;</o:p></SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Задание 
+маркерного типа<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Как и любое значение атрибута, 
+значение, которое вы присваиваете маркерному типу атрибута, должно представлять 
+собой строку в кавычках, отвечающую общим правилам, описанным в разделе «Правила 
+для корректного задания значений атрибутов» в лекции 3.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Кроме того, значение должно 
+отвечать определенному ограничению, которое вы задаете в описании атрибута с 
+помощью соответствующего ключевого слова. Например, в приведенном ниже 
+XML-документе для атрибута StockCode определен маркерный тип с использованием 
+ключевого слова ID. (ID – это только одно из ключевых слов, которые вы можете 
+использовать для объявления маркерного типа.) Это ключевое слово означает, что 
+для каждого элемента атрибуту должно быть присвоено уникальное значение. 
+(Например, присвоение товарного кода «S021» двум элементам ITEM не 
+допускается.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!DOCTYPE INVENTORY<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+INVENTORY (ITEM*)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT ITEM 
+(#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ATTLIST 
+ITEM<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>StockCode ID 
+#REQUIRED&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>]<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&gt;<o:p>&nbsp;</o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;INVENTORY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;ITEM 
+StockCode="S021"&gt;Peach Tea Pot&lt;/ITEM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;ITEM 
+StockCode="S034"&gt;Electric Cofee Grinder&lt;/ITEM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;ITEM 
+StockCode="S086"&gt;Candy Thermometer&lt;/ITEM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;/INVENTORY&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">На рисунке 5.7. показано, как 
+будет отображено в браузре.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><o:p>&nbsp;</o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm 6pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><IMG 
+style="WIDTH: 517px; HEIGHT: 276px" border=0 hspace=0 alt="" 
+src="user-images\5.41.jpg" width=476 
+height=280></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt">Рис. 5.7.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Ниже приведен полный список 
+ключевых слов, которые вы можете использовать в определении маркерных типов 
+атрибутов, и ограничения, которые они накладывают на значения 
+атрибутов.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">ID. Для каждого элемента атрибут 
+должен иметь уникальное значение. Значение должно начинаться с буквы или символа 
+<SPAN style="COLOR: black">подчеркивания (_), за которыми могут идти или не идти 
+другие буквы, цифры, символы точки (.), тире (–)</SPAN> или символы 
+подчеркивания. Данный тип элемента может иметь только один атрибут типа ID, а в 
+объявлении значения атрибута по умолчанию должно фигурировать #REQUIRED или 
+#IMPLIED. Пример этого типа атрибута содержится в приведенном выше документе 
+INVENTORY.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">IDREF. Значение атрибута должно 
+совпадать со значением атрибута элемента типа ID внутри документа. Другими 
+словами, этот тип атрибута является ссылкой на уникальный идентификатор другого 
+атрибута. Например, вы можете добавить атрибут IDREF с именем GoesWith к 
+элементу ITEM: <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ELEMENT ITEM (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ATTLIST ITEM<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>StockCode ID 
+#REQUIRED<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>GoesWith IDREF 
+#IMPLIED&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Далее вы можете использовать этот 
+атрибут для ссылки на другой элемент ITEM:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;ITEM StockCode="S034"&gt;Electric Cofee 
+Grinder&lt;/ITEM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;ITEM StockCode="S047" GoesWith="S034"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">Cofee Grinder Brush<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;/ITEM&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">IDREFS. Этот тип атрибута похож на 
+тип IDREF, но при этом значение может включать ссылки на несколько 
+идентификаторов – разделенных пробелами – внутри строки в кавычках. Например, 
+если вы назначите атрибуту GoesWith тип IDREFS таким образом: 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ATTLIST ITEM<SPAN style="mso-spacerun: yes">&nbsp; 
+</SPAN>StockCode ID #REQUIRED<SPAN style="mso-spacerun: yes">&nbsp; 
+</SPAN>GoesWith IDREFS #IMPLIED&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">То можете использовать его на 
+ссылки на несколько других элементов:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;ITEM StockCode="S034"&gt;Electric Cofee 
+Grinder&lt;/ITEM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;ITEM StockCode="S039"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>1 pound Breakfast 
+Blend Cofee Beans<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/ITEM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;ITEM StockCode="S047" GoesWith="S034 
+S039"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">Cofee Grinder Brush<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/ITEM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">ENTITY. Значение атрибута должно 
+совпадать с именем примитива, объявленного в DTD. Этот примитив не 
+обрабатывается синтаксическим анализатором и ссылается на внешний файл, обычно 
+содержащий не XML-данные. О таких примитивах будет рассказано в лекции 6. 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Например, в DTD вы объявляете 
+элемент с именем IMAGE, представляющий графическое изображение, и атрибут типа 
+ENTITY с именем Source, указывающий на источник графических 
+данных:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ELEMENT IMAGE EMPTY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;ATTLIST IMAGE<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Source 
+ENTITY #REQUIRED&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Если вы объявили не анализируемый 
+примитив с именем Logo (используя технику, с которой вы познакомитесь в лекции 
+6), который содержит графические данные для изображения, вы можете присвоить 
+этот примитив атрибуту Source элемента IMAGE в документе следующим 
+образом:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;IMAGE Source="Logo" 
+/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">ENTITIES. Этот тип атрибута похож 
+на тип ENTITY, за исключением того, что значение может содержать имена 
+нескольких не анализируемых примитивов – разделенных пробелами – внутри строки в 
+кавычках. Например, если вы назначили атрибуту Source тип ENTITIES следующим 
+образом: <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ELEMENT IMAGE EMPTY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ATTLIST IMAGE Source ENTITIES #REQUIRED&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">то сможете использовать его для 
+ссылки на несколько не анализируемых примитивов (допустим, примитивов, 
+содержащих графические данные в альтернативных форматах), например, 
+так:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;IMAGE Source="LogoGif LogoBmp" 
+/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">(Здесь подразумевается, что 
+LogoGif и LogoBmp – имена не анализируемых примитивов, которые были объявлены в 
+DTD с помощью приемов, с которыми вы познакомитесь в лекции 
+6.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">NMTOKEN. Это значение есть 
+элементарное имя (name token), представляющее собой имя, состоящее из одной или 
+более букв, цифр, <SPAN style="COLOR: black">точек (.), тире (–) или символов 
+подчеркивания (_). Элементарное имя может также содержать двоеточие (:), но не 
+на первом месте.</SPAN> Например, если вы назначите атрибуту ISBN тип NMTOKEN 
+следующим образом: <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ELEMENT BOOK (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ATTLIST BOOK<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>ISBN 
+NMTOKEN #REQUIRED&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Можете присвоить ему значение, 
+начинающееся с цифры (цифры в качестве первых символов допустимы для типов 
+NMTOKEN и NMTOKENS, но не для любых других маркерных 
+типов):<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;BOOK ISBN="9-99999-999-9"&gt;The Portrait of a 
+Lady&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">NMTOKENS. Этот тип атрибута похож 
+на тип NMTOKEN, но значение может содержать несколько элементарных имен – 
+разделенных пробелами – внутри строки в кавычках. Например, если вы назначите 
+атрибуту Codes тип NMTOKENS следующим образом: <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ELEMENT SHIRT (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ATTLIST SHIRT Codes NMTOKENS #REQUIRED&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вы можете присвоить ему несколько 
+значений в виде элементарных имен:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;SHIRT Codes="38 21 97"&gt;long sleeve 
+Henley&lt;/SHIRT&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Задание 
+нумерованных типов<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Как любое значение атрибута, 
+значение, которое вы присваиваете нумерованному типу, должно представлять собой 
+строку в кавычках, отвечающую правилам, описанным в разделе «Правила для 
+корректного задания значений атрибутов» в лекции 3. Помимо этого, значение 
+должно совпадать с одним из имен, приведенных в списке типов атрибутов. Эти 
+имена могут иметь одну из следующих двух форм записи.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Открывающая скобка, вслед <SPAN 
+style="COLOR: black">за которой идет список элементарных имен, разделенных 
+символами | , после чего следует закрывающая скобка. Напомним, что элементарное 
+имя – это имя, состоящее из одной или нескольких букв, цифр, точек (.), тире (–) 
+или символов подчеркивания (_), а также может включать одно двоеточие (:), но не 
+на первом месте. Например, если вы хотите ограничить значения атрибута Class 
+словами «fictional», «instructional</SPAN>» или «documentary», то можете 
+определить это атрибут как нумерованный тип следующим образом: 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ATTLIST FILM<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>Class 
+(fictional<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>|<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>instructional<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>|<SPAN style="mso-spacerun: yes">&nbsp; 
+</SPAN>documentary)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>"fictional"</SPAN><SPAN style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вот законченный XML-документ, 
+демонстрирующий использование атрибута Class:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!DOCTYPE FILM<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT FILM 
+(TITLE, (STAR<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>|<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>NARRATOR<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>|<SPAN style="mso-spacerun: yes">&nbsp; 
+</SPAN>INSTRUCTOR) )&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ATTLIST 
+FILM<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>Class (fictional<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>|<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>instructional<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>|<SPAN style="mso-spacerun: yes">&nbsp; 
+</SPAN>documentary) "fictional"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+TITLE (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT STAR 
+(#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+NARRATOR (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+INSTRUCTOR (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>]&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;FILM Class="instructional"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;TITLE&gt;The 
+Use and Care of XML&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;NARRATOR&gt;Michael Young&lt;/NARRATOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/FILM&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">На рисунке 5.8. показано, как 
+будет отображено в браузре.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><o:p>&nbsp;</o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm 6pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><IMG border=0 hspace=0 alt="" 
+src="user-images\5.42.jpg" width=558 
+height=289></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt">Рис.5.8.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Если вы опустили атрибут Class, 
+ему будет по умолчанию присвоено значение «fictional». Присвоение атрибуту Class 
+значения, отличного от «fictional», «instructional» или «documentary» приведет к 
+ошибке.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Ключевое слово NOTATION, за 
+которым идет пробел, затем открывающая скобка, затем список имен нотаций, 
+разделяемых <SPAN style="COLOR: black">символами |, после</SPAN> чего следует 
+закрывающая скобка. Каждое из этих имен должно точно соответствовать имени 
+нотации, объявленному в DTD. Нотация описывает формат данных или идентифицирует 
+программу, применяемую для обработки определенного формата (подробнее о нотациях 
+будет рассказано в лекции 6). <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Например, в вашем DTD объявлены 
+нотации HTML, SGML и RTF. Тогда вы можете ограничить значения атрибута Format 
+одним из этих имен нотаций с помощью следующего 
+объявления:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ELEMENT EXAMPLE_DOCUMENT (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ATTLIST EXAMPLE_DOCUMENT<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>Format NOTATION 
+(HTML | SGML | RTF) #REQUIRED&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В дальнейшем вы можете 
+использовать элемент Format для указания формата определенного элемента 
+EXAMPLE_DOCUMENT, как в следующем примере:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;EXAMPLE_DOCUMENT Format="HTML"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;![CDATA[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;HTML&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;HEAD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;Mike’s Home Page&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/HEAD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BODY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;P&gt;Welcome!&lt;/P&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/BODY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/HTML&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>]]&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/EXAMPLE_DOCUMENT&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Присвоение</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">атрибуту</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US> Format 
+</SPAN><SPAN style="FONT-SIZE: 12pt">значения</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>, </SPAN><SPAN 
+style="FONT-SIZE: 12pt">отличного</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">от</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> <SPAN lang=EN-US>«HTML», 
+«SGML» </SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">или</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> <SPAN lang=EN-US>«RTF», 
+</SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">приведет</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">к</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">ошибке</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>. </SPAN><SPAN 
+style="FONT-SIZE: 12pt">(Обратите внимание на использование здесь раздела CDATA 
+– при этом вы можете свободно использовать символ левой <SPAN 
+style="COLOR: black">угловой скобки (&lt;) внутри</SPAN> символьных данных 
+элемента.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Объявление 
+значения по умолчанию<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Объявление значения по умолчанию – 
+это третий и последний обязательный компонент в определении атрибута. Оно 
+задает, является ли атрибут обязательным, и если нет, указывает, что должен 
+предпринимать процессор в случае, когда атрибут опущен. Так, объявление должно 
+обеспечить значение атрибута по умолчанию, которое будет использовать процессор 
+в том случае, если атрибут отсутствует (рисунок 5.9.).<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm 0pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 14pt" 
+class=MsoNormal align=center><SPAN style="FONT-SIZE: 12pt"></SPAN></P>
+<P style="TEXT-ALIGN: center; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 14pt" 
+class=MsoNormal align=center><SPAN style="FONT-SIZE: 12pt"><IMG border=0 
+hspace=0 alt="" 
+src="user-images\5.5.png"></SPAN></P>
+<P style="TEXT-ALIGN: center; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 14pt" 
+class=MsoNormal align=center><SPAN style="FONT-SIZE: 12pt">Рис. 
+5.9.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Объявление значения по умолчанию 
+может иметь следующие четыре формы:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l4 level1 lfo5" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">#REQUIRED. При этой форме вы 
+должны задать значение атрибута для каждого элемента ассоциированного типа. 
+Например, следующее объявление указывает, что вы должны присвоить значение 
+атрибуту Class внутри начального тега каждого элемента FILM в документе: 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 6pt 0cm 6pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!ATTLIST 
+FILM<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Class CDATA 
+#REQUIRED&gt;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l4 level1 lfo5" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">#IMPLIED. Эта форма 
+указывает, что вы можете либо включить, либо опустить атрибут для элемента 
+ассоциированного типа, а также, что если вы опускаете атрибут, то никакое 
+значение по умолчанию процессору не передается. (Эта форма «подразумевает», а не 
+«устанавливает» значение, позволяя приложению использовать свое собственное 
+значение по умолчанию – т.е. имя.) Например, следующее объявление указывает, что 
+присвоение значения атрибуту Class внутри элемента FILM является не 
+обязательным, и что в документе не представлено значение Class по умолчанию: 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 6pt 0cm 6pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!ATTLIST 
+FILM<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Class CDATA 
+#IMPLIED&gt;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l4 level1 lfo5" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">AttValue, где AttValue – 
+значение атрибута по умолчанию. При такой форме вы можете либо включить, либо 
+опустить атрибут для элемента ассоциированного типа. Если вы опускаете атрибут, 
+процессор использует значение по умолчанию, как если бы вы включили атрибут и 
+задали это значение. <o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l4 level1 lfo5" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">Задаваемое значение по 
+умолчанию, конечно, должно соответствовать заданному типу атрибута. Например, 
+следующее объявление присваивает значение по умолчанию «fictional» атрибуту 
+Class:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 6pt 0cm 6pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!ATTLIST 
+FILM<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Class CDATA 
+"fictional"&gt;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l4 level1 lfo5" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">Согласно этому объявлению 
+следующие два элемента эквивалентны:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 6pt 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;FILM&gt;The 
+Graduate&lt;/FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 6pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;FILM 
+Class="fictional"&gt;The Graduate&lt;/FILM&gt; <o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l4 level1 lfo5" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">#FIXED AttValue, где AttValue 
+– значение атрибута по умолчанию. При такой форме вы можете либо включать, либо 
+опускать атрибут для элемента ассоциированного типа. Если вы опускаете атрибут, 
+процессор будет использовать значение, заданное по умолчанию; если вы включаете 
+атрибут, вы должны задать значение по умолчанию. (Поскольку вы можете задать 
+только значение по умолчанию, нет смысла включать в элемент описание атрибута, 
+за исключением желания сделать документ более понятным для восприятия.) 
+Например, следующее объявление присваивает фиксированное значение по умолчанию 
+атрибуту Class: <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 6pt 0cm 6pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!ATTLIST 
+FILM<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Class CDATA #FIXED 
+"documentary"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">В соответствии с этим объявлением следующие два 
+эквивалентных элемента будут корректными:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 6pt 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;FILM&gt;The 
+Making of XML&lt;/FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 6pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;FILM 
+Class="documentary"&gt;The Making of XML&lt;/FILM&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">в то время как следующий элемент будет 
+некорректным:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 6pt 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!-- 
+</SPAN><SPAN style="FONT-SIZE: 12pt">Некорректный</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">элемент</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>! 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 6pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;FILM 
+Class="instructional"&gt;The Making of XML&lt;/FILM&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Использование 
+внешних подмножеств DTD<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Описания типа документа, 
+рассмотренные нами в этой лекции, полностью содержатся внутри объявления типа 
+документа в составе документа. Такой тип DTD называется внутренним подмножеством 
+DTD.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вы также можете поместить все или 
+часть DTD документа в отдельный файл, а затем ссылаться на этот файл из 
+объявления типа документа. DTD – или часть DTD – содержащаяся в отдельном файле, 
+называется внешним подмножеством DTD.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+Применение внешнего подмножества DTD имеет смысл главным образом для DTD, 
+которые являются общими для целой группы документов. Каждый документ может 
+ссылаться на один файл DTD (или копию этого файла) как на внешнее подмножество 
+DTD. При этом вам не надо копировать содержимое DTD в каждый использующий его 
+документ, а также облегчается внесение изменений в DTD. (Вам требуется 
+модифицировать только файл DTD – и все копии этого файла – вместо того, чтобы 
+редактировать все документы, которые его используют.) Как вам известно из лекции 
+1, многие стандартные XML-приложения основаны на общем DTD, включаемом во все 
+XML-документы, отвечающие этому приложению. <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Использование 
+только внешнего подмножества DTD<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Чтобы использовать только внешнее 
+подмножество DTD, опустите блок объявлений разметки, ограниченных квадратными 
+<SPAN style="COLOR: black">скобками ([]), и вместо</SPAN> этого включите 
+ключевое слово SYSTEM, после которого в кавычках должно следовать описание 
+местонахождения отдельного файла, содержащего DTD. Рассмотрим, например, 
+документ SIMPLE, используемый ранее в этой лекции и имеющий внутреннее 
+подмножество DTD:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!DOCTYPE SIMPLE<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>[ &lt;!ELEMENT 
+SIMPLE ANY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>]&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;SIMPLE&gt; This is an extremely simplistic XML document. 
+</SPAN><SPAN style="FONT-SIZE: 12pt">&lt;/SIMPLE&gt;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Если в этом документе используется 
+внешнее подмножество DTD, он будет иметь следующий вид:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!DOCTYPE SIMPLE SYSTEM "Simple.dtd"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;SIMPLE&gt; This is an extremely simplistic XML document. 
+</SPAN><SPAN style="FONT-SIZE: 12pt">&lt;/SIMPLE&gt;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp; </SPAN><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Файл Simple.dtd должен иметь 
+следующее содержимое:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!ELEMENT SIMPLE 
+ANY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Файл, содержащий внешнее 
+подмножество DTD, может включать любые объявления разметки, которые могут быть 
+включены во внутреннее подмножество DTD.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Описание местонахождения файла (в 
+данном примере Simple.dtd) называется системным литералом. Он может быть 
+заключен в одинарные (') или двойные (") кавычки и содержать любые символы, за 
+исключением символов кавычек, используемых как 
+ограничители.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Системный литерал задает 
+унифицированный идентификатор ресурса (URI – uniform resource identifier) файла, 
+содержащего внешнее подмножество DTD. В настоящее время URI практически 
+аналогичен стандартному Internet-адресу, известному как унифицированный 
+указатель ресурса (URL – Uniform Resource Locator). Вы можете использовать 
+полностью прописанный URI, подобно следующему:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>DOCTYPE</SPAN><SPAN 
+style="FONT-SIZE: 12pt" lang=EN-US> </SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>SIMPLE</SPAN><SPAN 
+style="FONT-SIZE: 12pt" lang=EN-US> </SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>SYSTEM</SPAN><SPAN 
+style="FONT-SIZE: 12pt"> " </SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>HYPERLINK</SPAN><SPAN style="FONT-SIZE: 12pt"> "</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>http</SPAN><SPAN 
+style="FONT-SIZE: 12pt">://</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>bogus</SPAN><SPAN 
+style="FONT-SIZE: 12pt">.</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>com</SPAN><SPAN 
+style="FONT-SIZE: 12pt">/</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>dtds</SPAN><SPAN 
+style="FONT-SIZE: 12pt">/</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>Simple</SPAN><SPAN 
+style="FONT-SIZE: 12pt">.</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>dtd</SPAN><SPAN 
+style="FONT-SIZE: 12pt">"<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN><SPAN style="COLOR: black"><A 
+href="http://bogus.com/dtds/Simple.dtd"><SPAN 
+style="COLOR: black">http://bogus.com/dtds/Simple.dtd</SPAN></A>"&gt;<o:p></o:p></SPAN></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Или, вы можете использовать 
+частичный URI, который задает местонахождение относительно местонахождения 
+XML-документа, содержащего URI, например:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!DOCTYPE SIMPLE SYSTEM "Simple.dtd"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Использование 
+и внешних, и внутренних подмножеств DTD<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Чтобы использовать и внешнее и 
+внутреннее подмножество DTD, следует использовать ключевое слово SYSTEM вместе с 
+системным литералом, задающим местонахождение файла с внешним подмножеством DTD, 
+после чего внутри квадратных скобок ([]) следует объявление разметки внутреннего 
+подмножества DTD.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вот пример простого XML-документа, 
+имеющего как внутреннее, так и внешнее подмножество DTD:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!DOCTYPE BOOK SYSTEM "Book.dtd"<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>[&lt;!ATTLIST 
+BOOK<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>ISBN CDATA #IMPLIED<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>Year CDATA 
+"2000"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+TITLE (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;</SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>]&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;BOOK Year="1998"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;TITLE&gt;The 
+Scarlet Letter&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;/BOOK&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вот содержимое файла Book.dtd, в 
+котором хранится внешнее подмножество DTD:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ELEMENT BOOK ANY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ATTLIST BOOK<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>ISBN 
+NMTOKEN #REQUIRED&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Если вы используете внешнее и 
+внутреннее подмножество DTD, XML-процессор объединяет их содержимое следующим 
+образом:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l0 level1 lfo6" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">в общем случае он 
+осуществляет слияние двух подмножеств, чтобы сформировать полный DTD. В 
+рассмотренном примере объединенный DTD определяет два элемента, TITLE и BOOK, а 
+также два атрибута для элемента BOOK, ISBN и Year;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l0 level1 lfo6" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">однако в случае, если атрибут 
+с одним и тем же именем и типом элемента объявляется более одного раза, 
+XML-процессор использует первое объявление и игнорирует все последующие; 
+<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l0 level1 lfo6" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">внутреннее подмножество DTD 
+имеет приоритет перед внешним подмножеством DTD (даже если ссылка на внешнее 
+подмножество идет первой в объявлении типа документа). Таким образом, любой 
+атрибут (или примитив), определенный во внутреннем подмножестве, доминирует над 
+атрибутом с тем же именем и типом элемента, объявленным во внешнем подмножестве. 
+В примере XML-процессор считает, что атрибут ISBN имеет тип CDATA и объявление 
+значения по умолчанию #IMPLIED, поэтому следующий элемент (в котором не указан 
+ISBN) является корректным: <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 6pt 0cm 0pt 63.8pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;BOOK 
+Year="1850"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 49.65pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;TITLE&gt;The 
+Scarlet Letter&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 6pt 2cm" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/BOOK&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Способ объединения внутреннего и 
+внешнего подмножеств DTD XML-процессором дает вам возможность использовать общий 
+DTD (например такой, который используется для XML-приложений) в качестве 
+внешнего подмножества DTD, а затем адаптировать (или субклассировать, как 
+говорят программисты) DTD для конкретного документа путем включения внутреннего 
+подмножества. Ваше внутреннее подмножество может добавлять элементы, атрибуты 
+или примитивы – он также может изменять определения атрибутов или 
+примитивов.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Условия 
+игнорирование разделов внешнего подмножества DTD<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вы можете заставить XML-процессор 
+игнорировать часть внешнего подмножества DTD с помощью раздела IGNORE. Вы 
+можете, например, использовать раздел IGNORE при разработке документа с целью 
+временного отключения альтернативного или необязательного блока объявлений 
+разметки. При этом вам не нужно удалять строки, а затем повторно их вставлять. 
+(Если вы программист, то вам известно, что такой прием подобен «комментированию» 
+фрагмента кода, который вы хотите временно игнорировать.) Раздел IGNORE 
+начинается с символов &lt;![IGNORE[ и заканчивается символами 
+]]&gt;.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">На рисунке 5.10 представлен пример 
+полного описания внешнего подмножества DTD, включающего раздел 
+IGNORE.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 6pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 14pt" 
+class=MsoNormal align=center><SPAN style="FONT-SIZE: 12pt"></SPAN></P>
+<P style="TEXT-ALIGN: center; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 14pt" 
+class=MsoNormal align=center><SPAN style="FONT-SIZE: 12pt"><IMG border=0 
+hspace=0 alt="" 
+src="user-images\5.6.jpg"></SPAN></P>
+<P style="TEXT-ALIGN: center; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 14pt" 
+class=MsoNormal align=center><SPAN style="FONT-SIZE: 12pt">Рис. 
+5.10.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Если вы хотите временно 
+восстановить блок объявлений разметки в разделе IGNORE, вам достаточно просто 
+заменить ключевое слово IGNORE на INCLUDE, не удаляя при этом 
+символы-ограничители (&lt;![, [ и ]]&gt;), как в следующем 
+примере:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;![INCLUDE[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!-- необязательный блок 
+объявлений разметки, <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>который временно восстановлен --&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ATTLIST BOOK<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>Category CDATA 
+"fiction"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!ELEMENT TITLE 
+(#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+AUTHOR (#PCDATA)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">]]&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Впоследствии вы можете снова 
+быстро отключить раздел, вернув заголовок IGNORE. Раздел INCLUDE, вложенный в 
+раздел IGNORE, также игнорируется.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> Вы 
+можете использовать разделы IGNORE и INCLUDE только во внешнем подмножестве DTD, 
+либо во внешнем параметрическом примитиве. <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Преобразование корректно 
+сформированного документа в валидный.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В этом разделе вы попытаетесь на 
+практике применить полученные при изучении этой лекции знания, преобразовав 
+корректно сформированный документ в валидный. Вы модифицируете документ 
+Inventory.xml, созданный вами в лекции 2, чтобы сделать его валидным. Вы также 
+добавите новый элемент и два атрибута, чтобы освоить описанные в этой лекции 
+приемы.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 14pt 0cm 6pt" 
+class=MsoNormal><B style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 12pt"><o:p>&nbsp;</o:p></SPAN></B></P>
+<P>&nbsp;</P>
+				</div>
+			</div>
+		</div>
+		<div id="sidebar">
+			<div id="about-box">
+				<h2>3 СЕМЕСТР</h2>
+				<p>Учимся,работаем)</p>
+			</div>
+			<ul>
+				<li>
+					<h2>Список лекций</h2>
+					<ul>
+						<li><a style="" href="page1.html">Лекция №1</a></li>
+<li><a style="" href="page2.html">Задания к лекции №1</a></li>
+<li><a style="" href="page3.html">Лекция №2</a></li>
+<li><a style="" href="page4.html">Задания к лекции №2</a></li>
+<li><a style="" href="page5.html">Лекция №3</a></li>
+<li><a style="" href="page6.html">Задания к лекции №3</a></li>
+<li><a style="" href="page7.html">Лекция №4</a></li>
+<li><a style="" href="page8.html">Лекция №5</a></li>
+<li><a style="" href="page9.html">Задания к лекции №5</a></li>
+<li><a style="" href="page12.html">Лекция №6</a></li>
+<li><a style="" href="page11.html">Задания к лекции №6</a></li>
+<li><a style="" href="page13.html">Лекция №7</a></li>
+<li><a style="" href="page14.html">Задания к лекции №7</a></li>
+<li><a style="" href="page15.html">Лекция №8</a></li>
+<li><a style="" href="page16.html">Задания к лекции №8</a></li>
+<li><a style="" href="page17.html">Лекция №9</a></li>
+<li><a style="" href="page18.html">Задания к лекции №9</a></li>
+<li><a style="" href="page19.html">Лекция №10</a></li>
+<li><a style="" href="page20.html">Задания к лекции №10</a></li>
+
+					</ul>
+				</li>
+			
+			</ul>
+		</div>
+		<!-- end sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+</div>
+<!-- end page -->
+<hr />
+<div id="footer">
+	<p>БГТУ| 2011</p>
+</div>
+</body>
+</html>

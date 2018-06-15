@@ -1,0 +1,26 @@
+#include "Header.h"
+using namespace std;
+int main()
+{
+	setlocale(LC_CTYPE, "Russian");
+	string symb = "as*fd*gf*g";
+	cout << "Начальная строка:" << symb << endl;
+	for (int a = 0; a < symb.length(); ++a)
+	{
+		if (symb[a] == '*')
+		{
+			for (int c = a; c < symb.length(); ++c)
+			{
+				symb[c] = symb[c + 1];
+			}
+		}
+	}
+	cout << "Переделанная строка:" << symb << endl;
+	cout << "Строка с повторением элементов:";
+	for (int a = 0; a < symb.length(); ++a)
+	{
+		cout << symb[a] << symb[a];
+	}
+	cout << endl;
+	return 0;
+}

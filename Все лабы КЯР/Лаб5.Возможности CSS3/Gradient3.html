@@ -1,0 +1,36 @@
+<html>
+<head>
+<style type="text/css">
+#wrap1,#wrap2 {
+margin:10px;
+height:300px;
+width:350px;
+border:1px #000 solid;
+float:left;
+}
+#text1,#text2 {
+background-color:rgba(0,0,0,0.7);
+color:white;
+padding:10px;
+font-weight:bold;
+border-bottom:1px white solid;
+}
+#wrap1 {
+background:radial-gradient(white 20%,black 40%);
+background:-webkit-radial-gradient(white 20%,black 40%); /* для Safari */
+}
+#wrap2 {
+background:radial-gradient(circle,#8F04A8 0%,#5D016D 40%,black 60%);
+background:-webkit-radial-gradient(circle,#8F04A8 20%,#5D016D 30%,black 45%); /* для Safari */
+}
+</style>
+</head>
+<body>
+<div id="wrap1">
+<div id="text1">radial-gradient(white 20%,black 40%)</div>
+</div>
+<div id="wrap2">
+<div id="text2">radial-gradient(circle,#8F04A8 0%, #5D016D 40%,black 60%)</div>
+</div>
+</body>
+</html>

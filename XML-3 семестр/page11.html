@@ -1,0 +1,791 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=cp1251" />
+<title>Заголовок-окна</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="header">
+	<div id="logo">
+		<h1><a href="index.html">Иформационные технологии</a></h1>
+		<h2>.</h2>
+	</div>
+	<div id="menu">
+		<ul>
+			<li><a style="" href="index.html">Знакомство с XML</a></li>
+
+		</ul>
+	</div>
+</div>
+<hr />
+<div id="page">
+	<div id="bg">
+		<div id="content">
+			<div class="post" style="padding-top: 57px;">
+				<h2 class="title">Задания к лекции №6</h2>
+				<div class="entry">
+
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 14pt" 
+class=MsoNormal><B style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 11pt">Задания<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 11pt">Добавьте примитивы в документ<o:p></o:p></SPAN></I></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">В вашем текстовом редакторе 
+откройте документ Inventory Valid.xml, созданный вами в разделе «Преобразование 
+корректно сформированного документа в валидный» в главе 5.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">В начало DTD документа (блок 
+текста, ограниченный символами [] в верхней части документа) добавьте следующие 
+объявления примитива и нотации: <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">&lt;!-- примитивы для присвоения 
+значений элементу BINDING: --&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ENTITY mass "mass market paperback"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ENTITY trade "trade paperback"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ENTITY hard "hardcover"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">&lt;!-- внешние примитивы, 
+содержащие обзоры --&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">&lt;!-- они будут присвоены 
+атрибуту Review элементов BOOK --&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!NOTATION DOC SYSTEM "Microsoft Word 
+document"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!NOTATION TXT SYSTEM "plain text file"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ENTITY rev_leaves<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>SYSTEM "Review 
+Leaves of Grass.doc"<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>NDATA 
+DOC&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ENTITY rev_faun1<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>SYSTEM "Review 01 
+of The Marble Faun.doc"<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>NDATA 
+DOC&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ENTITY rev_faun2<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>SYSTEM "Review 02 
+of The Marble Faun.txt"<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>NDATA 
+TXT&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ENTITY rev_screw<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>SYSTEM "Review of 
+The Turn of the Screw.txt"<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 11pt">NDATA TXT&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">Первые три примитива представляют 
+собой внутренние разбираемые примитивы, которые вы можете вставлять в элементы 
+BINDING, вместо того, чтобы вводить описание типа переплета для каждого 
+элемента. Использование примитивов дает возможность обеспечить однозначность 
+ваших описаний типов переплета для различных книг. Кроме того, примитивы 
+облегчают модификацию описания. (Например, вы можете заменить «hardcover» на 
+«hardback» для каждого элемента BINDING, в котором встречается этот тип обложки, 
+простым редактированием примитива hard.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">Следующие (и последние) четыре 
+примитива представляют собой общие внешние не разбираемые примитивы, которые 
+позволяют вам подключать внешние файлы, содержащие обзоры книг для элементов 
+BOOK.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">Добавьте атрибут Reviews в 
+объявление списка атрибутов для элемента BOOK далее в DTD следующим образом: 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ATTLIST BOOK <SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>InStock<SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>(yes | 
+no)<SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>#REQUIRED<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">Reviews ENTITIES #IMPLIED&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">Reviews представляет собой не 
+обязательный атрибут (#IMPLIED), которому вы можете присвоить имена одного или 
+нескольких общих внешних не разбираемых примитивов. (Reviews имеет тип 
+ENTITIES).<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">В каждом элементе BINDING замените 
+описание переплета соответствующей ссылкой на примитив. Например, вы должны 
+изменить элемент BINDING для книги The Adventures of Huckleberry Finn с 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;BINDING&gt;mass market 
+paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">на</SPAN><SPAN 
+style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;BINDING&gt;&amp;mass;&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">Добавьте</SPAN><SPAN 
+style="FONT-SIZE: 11pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 11pt">атрибуты</SPAN><SPAN 
+style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" lang=EN-US> Reviews 
+</SPAN><SPAN style="FONT-SIZE: 11pt">элементам</SPAN><SPAN 
+style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" lang=EN-US> BOOK </SPAN><SPAN 
+style="FONT-SIZE: 11pt">следующим</SPAN><SPAN 
+style="FONT-SIZE: 11pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 11pt">образом</SPAN><SPAN 
+style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" lang=EN-US>: 
+<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l0 level1 lfo1" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 11pt; mso-ansi-language: EN-US; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol" 
+lang=EN-US><SPAN style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 11pt">Для</SPAN><SPAN 
+style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" lang=EN-US> Leaves of Grass: 
+&lt;BOOK InStock="no" Reviews="rev_leaves"&gt;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l0 level1 lfo1" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 11pt; mso-ansi-language: EN-US; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol" 
+lang=EN-US><SPAN style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 11pt">Для</SPAN><SPAN 
+style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" lang=EN-US> The Marble Faun: 
+&lt;BOOK InStock="yes" Reviews="rev_faun1 rev_faun2"&gt;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l0 level1 lfo1" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 11pt; mso-ansi-language: EN-US; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol" 
+lang=EN-US><SPAN style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 11pt">Для</SPAN><SPAN 
+style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" lang=EN-US> The Turn of the 
+Screw: &lt;BOOK InStock="no" Reviews="rev_screw"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">Чтобы отразить новое имя файла, 
+которое вы собираетесь присвоить, измените комментарий в начале документа с 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!-- </SPAN><SPAN style="FONT-SIZE: 11pt">Имя</SPAN><SPAN 
+style="FONT-SIZE: 11pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 11pt">файла</SPAN><SPAN 
+style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" lang=EN-US>: Inventory 
+Valid.xml --&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">на</SPAN><SPAN 
+style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!-- </SPAN><SPAN style="FONT-SIZE: 11pt">Имя</SPAN><SPAN 
+style="FONT-SIZE: 11pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 11pt">файла</SPAN><SPAN 
+style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" lang=EN-US>: Inventory Valid 
+Entity.xml --&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">Воспользуйтесь командой Save As 
+(Сохранить как) вашего текстового редактора, чтобы сохранить копию 
+модифицированного документа под именем Inventory Valid Entity.xml. 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">Полный XML-документ представлен в 
+<SPAN style="COLOR: black; mso-themecolor: text1">Листинге 
+6.1.<o:p></o:p></SPAN></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="COLOR: black; FONT-SIZE: 11pt; mso-themecolor: text1">Листинг</SPAN></I><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="COLOR: black; FONT-SIZE: 11pt; mso-ansi-language: EN-US; mso-themecolor: text1" 
+lang=EN-US> 6.1.</SPAN></I><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" lang=EN-US> Inventory Valid 
+Entity.xml<SPAN 
+style="COLOR: black; mso-themecolor: text1"><o:p></o:p></SPAN></SPAN></I></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml version="1.0" encoding="windows-1251" 
+?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!--</SPAN><SPAN style="FONT-SIZE: 11pt">Имя</SPAN><SPAN 
+style="FONT-SIZE: 11pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 11pt">файла</SPAN><SPAN 
+style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" lang=EN-US>: Inventory Valid 
+Entity.xml --&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">&lt;!DOCTYPE 
+INVENTORY<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN>&lt;!-- примитивы для присвоения значений 
+элементу BINDING: --&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!ENTITY mass 
+"mass market paperback"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ENTITY trade 
+"trade paperback"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ENTITY hard 
+"hardcover"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 11pt">&lt;!-- внешние примитивы, содержащие обзоры 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!-- они будут присвоены 
+атрибуту Review элементов BOOK --&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!NOTATION DOC 
+SYSTEM "Microsoft Word document"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!NOTATION TXT 
+SYSTEM "plain text file"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>&lt;!ENTITY rev_leaves 
+SYSTEM "Review of Leaves of Grass.doc" <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>NDATA DOC&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;</SPAN>!ENTITY rev_faun1 SYSTEM 
+"Review 01 of The Marble Faun.doc" NDATA DOC&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ENTITY 
+rev_faun2 SYSTEM "Review 02 of The Marble Faun.txt" NDATA 
+TXT&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ENTITY 
+rev_screw SYSTEM "Review of The Turn of the Screw.txt" NDATA 
+TXT&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;!ELEMENT INVENTORY (BOOK)*&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;!ELEMENT BOOK (TITLE, AUTHOR, BINDING, PAGES, PRICE)&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;!ATTLIST BOOK<SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>InStock (yes|no) #REQUIRED<SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>Reviews 
+ENTITIES #IMPLIED&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;!ELEMENT TITLE (#PCDATA | SUBTITLE)*&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;!ELEMENT SUBTITLE (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;!ELEMENT AUTHOR (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;!ATTLIST AUTHOR<SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>Born CDATA #IMPLIED&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1"></SPAN>&lt;!ELEMENT BINDING 
+(#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;!ELEMENT PAGES (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;!ELEMENT PRICE (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>]<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US>&gt;<o:p>&nbsp;</o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;INVENTORY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BOOK InStock="yes"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;The Adventures of Huckleberry 
+Finn&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR Born="1835"&gt;Mark Twain&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;&amp;mass;&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;298&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$5.49&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BOOK InStock="no" Reviews="rev_leaves"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;Leaves of Grass&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR Born="1819"&gt;Walt 
+Whitman&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp; 
+</SPAN>&lt;BINDING&gt;&amp;hard;&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;462&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$7.75&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BOOK InStock="yes"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;The Legend of Sleepy 
+Hollow&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;Washington Irving&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;&amp;mass;&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;98&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$2.95&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BOOK InStock="yes" Reviews="rev_faun1 
+rev_faun2"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;The Marble Faun&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR Born="1804"&gt;Nathaniel 
+Hawthorne&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;&amp;trade;&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;473&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$10.95&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BOOK InStock="no"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;Moby-Dick<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SUBTITLE&gt;Or, the Whale&lt;/SUBTITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR Born="1819"&gt;Herman 
+Melville&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;&amp;hard;&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;724&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$9.95&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BOOK InStock="yes"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;The Portrait of a Lady&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;Henry James&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;&amp;mass;&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;256&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$4.95&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BOOK InStock="yes"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;The Scarlet Letter&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;Nathaniel Hawthorne&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;&amp;trade;&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;253&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$4.25&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-tab-count: 1">&nbsp;&nbsp; </SPAN>&lt;BOOK 
+InStock="no" Reviews="rev_screw"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;The Turn of the Screw&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;Henry James&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;&amp;trade;&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;384&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;</SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$3.35&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">&lt;/INVENTORY&gt;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 11pt">Если вы хотите проверить 
+валидность вашего документа, воспользуйтесь сценарием проверки на валидность, 
+приведенным в разделе «Проверка валидности XML-документа» в главе 
+9.<o:p></o:p></SPAN></P>
+<P style="MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 11pt"><o:p>&nbsp;</o:p></SPAN></P>
+				</div>
+			</div>
+		</div>
+		<div id="sidebar">
+			<div id="about-box">
+				<h2>3 СЕМЕСТР</h2>
+				<p>Учимся,работаем)</p>
+			</div>
+			<ul>
+				<li>
+					<h2>Список лекций</h2>
+					<ul>
+						<li><a style="" href="page1.html">Лекция №1</a></li>
+<li><a style="" href="page2.html">Задания к лекции №1</a></li>
+<li><a style="" href="page3.html">Лекция №2</a></li>
+<li><a style="" href="page4.html">Задания к лекции №2</a></li>
+<li><a style="" href="page5.html">Лекция №3</a></li>
+<li><a style="" href="page6.html">Задания к лекции №3</a></li>
+<li><a style="" href="page7.html">Лекция №4</a></li>
+<li><a style="" href="page8.html">Лекция №5</a></li>
+<li><a style="" href="page9.html">Задания к лекции №5</a></li>
+<li><a style="" href="page12.html">Лекция №6</a></li>
+<li><a style="" href="page11.html">Задания к лекции №6</a></li>
+<li><a style="" href="page13.html">Лекция №7</a></li>
+<li><a style="" href="page14.html">Задания к лекции №7</a></li>
+<li><a style="" href="page15.html">Лекция №8</a></li>
+<li><a style="" href="page16.html">Задания к лекции №8</a></li>
+<li><a style="" href="page17.html">Лекция №9</a></li>
+<li><a style="" href="page18.html">Задания к лекции №9</a></li>
+<li><a style="" href="page19.html">Лекция №10</a></li>
+<li><a style="" href="page20.html">Задания к лекции №10</a></li>
+
+					</ul>
+				</li>
+			
+			</ul>
+		</div>
+		<!-- end sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+</div>
+<!-- end page -->
+<hr />
+<div id="footer">
+	<p>БГТУ | 2011</p>
+</div>
+</body>
+</html>

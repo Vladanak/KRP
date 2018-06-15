@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="schedule.xml">
+
+<xs:element name="schedule">
+	<xs:complexType>
+	  <xs:sequence>
+		<xs:element name="day">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="dayname" type="xs:string"></xs:element>
+					<xs:element name="lesson">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="name" type="xs:string"></xs:element>
+								<xs:element name="time" type="xs:time"></xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+	  </xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+</xs:schema>

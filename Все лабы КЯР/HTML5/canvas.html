@@ -1,0 +1,170 @@
+<html>
+<head>
+    
+    <title></title>
+    <script src="Draw.js" type="text/javascript"></script>
+
+    <style type="text/css">
+ p.a1{color: green; margin-left: 50px; }
+ul.menu > li:hover > ul.submenu {
+    display: block;
+}
+ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ul:after {
+    display: block;
+    content: ' ';
+    clear: both;
+    float: none;
+}
+ul.menu > li {
+    float: left;
+    position: relative;
+}
+ul.menu > li > a {
+    display: block;
+    padding: 10px;
+    color: white;
+width: 200px;
+    background-color: red;
+    text-decoration: none;
+}
+ul.menu > li > a:hover {
+    background-color: black;
+}
+ul.submenu {
+    display: none;
+    position: absolute;
+    width: 200px;
+    top: 37px;
+    left: 0;
+    background-color: white;
+    border: 1px solid red;
+}
+ul.submenu > li {
+    display: block;
+}
+ul.submenu > li > a {
+    display: block;
+    padding: 10px;
+
+    color: white;
+    background-color: red;
+    text-decoration: none;
+}
+ul.submenu > li > a:hover {
+    text-decoration: underline;
+}
+			#menu ul li {display: inline;}
+			#menu ul {border-bottom:1px solid #000000; margin-left:0; padding:3px 0;}
+			#menu ul li a {text-decoration:none; margin-left:3px; border:1px solid #000000; padding: 3px 4px; border-bottom:0; background:#CEDEFF;}
+			#menu ul li a:link {color:#493;}
+			#menu ul li a:visited {color:#647;}
+			#menu ul li a:hover {color:#000; background:#6699FF; border-color:#227}
+			#menu ul li a#nowopen {background:#fff; border-bottom: 1px solid #fff;}
+			#menu {margin:0 25% 0 25%;}
+			body {background-image: url(3.png);
+background-size: cover;}
+						#pole p, legend {color: red;
+                                          font-size:18px;
+                                         font-style:italic;
+                                        font-weight:bold;}
+big{color:yellow}
+
+#body2 {
+background-repeat:no-repeat; 
+background-attachment:fixed; 
+background-position:right top;
+}
+        #div3 {
+            background: linear-gradient(to top,#8B6969,#FF8C00);
+            width: 20%;
+            height: 80%;
+            margin: 0;
+            font-size:19px;
+        }
+    </style>
+
+    
+</head>
+<body>
+
+<audio controls autoplay style="display:none;">
+<source src="rel.mp3"/>
+</audio>
+        Проба HTML5)))
+		<ul class="menu">
+				<li><a href="Продолжение.html">Главная</a></li>
+				<li><a href="CM Punk.html">CM Punk</a>
+                                <ul class="submenu">
+                                  <li><a href="CM Punk.html">Биография</a></li>
+                                  <li><a href="CM Punk video.html">Видео о нём</a></li>
+                                 </ul>
+                                </li>
+				<li><a href="geoloc.html">Развлечения</a>
+                           <ul class="submenu">
+                                    <li><a href="geoloc.html">Геолокация</a></li>
+                                  <li><a href="canvas.html">Канвас</a></li>
+                                <li><a href="Komp.html">Для компьютера</a></li>
+                              </ul>
+                               </li>
+			</ul>
+    
+ <table>
+     <tr>
+         <td id="div3" valign="top"><form name="form1">
+            <fieldset form="form1">
+                
+             <legend>Что можно нарисовать</legend>
+             <label>Линия</label><br />
+             Начало линии <input type="number" id="x0" min="0" max="700"  value="0"/>
+                 <input type="number" id="y0" min="0" max="500"  value="0"/><br />
+             Конец линии <input type="number" id="xn" min="0" max="700" value="700"/>
+                <input type="number" id="yn" min="0" max="500" value="500"/>
+                <input type="color" id="color"/>
+
+                <input type="button" value="Построить" onclick="Line(x0,y0,xn,yn,color)" /><br />
+
+             
+ <hr />
+             
+             
+                <label>Окружность</label><br />
+                Корды центра <input type="number" id="xc" min="0" max="500" value="250"/>
+                <input type="number" id="yc" min="0" max="500" value="250"/><br />
+                Угол <input type="number" id="angle" min="0" max="500" value="30"/>
+                Радиус<input type="number" id="rad" min="0" max="500" value="100"/>
+                <input type="color" id="colorc" />
+
+                <input type="button" value="Построить окр" onclick="Circle(xc,yc,angle,rad,colorc)" /><br />
+                
+             <hr />
+             
+             <label>Прямоугольник</label><br />
+                Корды начала <input type="number" id="xr" min="0" max="699" value="250" />
+                <input type="number" id="yr" min="0" max="500" value="250" /><br />
+                Ширина <input type="number" id="w" min="0" max="500" value="150" />
+                Высота<input type="number" id="h" min="0" max="500" value="250" />
+                <input type="color" id="colorr" />
+
+                <input type="button" value="Построить прям" onclick="Rectangle(xr,yr,w,h,colorr)" /><br /><br />
+
+             
+             <input type="button" value="Поехали!!!" onclick="Rocket(color,colorr)" /><br />
+             <input type="button" value="Очистить поле" onclick="Clear()" />   
+            </fieldset></td>
+         </form>
+         <td  width="60%">
+             Холст<br />
+             <canvas id="canvas" width="700" height="500" style="border-style:solid;border-width:1px; background-color: white;">
+                 Канвас не поддерживается!!!
+             </canvas>
+</td>
+     </tr>
+ </table>
+</body>
+</html>

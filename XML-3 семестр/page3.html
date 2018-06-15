@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=cp1251" />
+<title>Заголовок-окна</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="header">
+	<div id="logo">
+		<h1><a href="index.html">Иформационные технологии</a></h1>
+		<h2>.</h2>
+	</div>
+	<div id="menu">
+		<ul>
+			<li><a style="" href="index.html">Знакомство с XML</a></li>
+
+		</ul>
+	</div>
+</div>
+<hr />
+<div id="page">
+	<div id="bg">
+		<div id="content">
+			<div class="post" style="padding-top: 57px;">
+				<h2 class="title">Лекция №2</h2>
+				<div class="entry">
+
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Создание и 
+отображение вашего первого XML-документа<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В этой лекции вы получите 
+представление о процессе создания и отображения XML-документа в Web-браузере. 
+Сначала вы создадите простой XML-документ, исследуете его структуру и 
+познакомитесь с основными правилами создания корректно сформированного 
+XML-документа. Затем вы узнаете, как отобразить этот документ в браузере 
+Microsoft Internet Explorer 5 путем создания и присоединения простой стилевой 
+таблицы, которая сообщает браузеру, как форматировать элементы в документе. 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Создание 
+XML-документа<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Поскольку описание XML-документа 
+представляет собой простой текст, вы можете создать его, используя ваш любимый 
+текстовой редактор, например, редактор Notepad, входящий в состав Microsoft 
+Windows. Еще лучше воспользоваться редактором, в котором предусмотрена 
+возможность анализа исходных кодов, например, текстовым редактором Microsoft 
+Visual Studio, рассчитанным на работу с Microsoft Visual C++ и другими 
+приложениями Visual Studio.<o:p></o:p></SPAN></P>
+<P style="MARGIN: 14pt 0cm; tab-stops: 112.5pt center 212.6pt" 
+class=MsoNormal><B style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 12pt"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>Анатомия XML-документа<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">XML-документ состоит из двух 
+основных частей: пролога и элемента Документ (его также называют корневым 
+элементом), как показано на рисунке 2.1. <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm 0pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><v:shapetype id=_x0000_t75 
+coordsize="21600,21600" o:spt="75" o:preferrelative="t" 
+path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f"><v:stroke 
+joinstyle="miter"></v:stroke><v:formulas><v:f 
+eqn="if lineDrawn pixelLineWidth 0"></v:f><v:f eqn="sum @0 1 0"></v:f><v:f 
+eqn="sum 0 0 @1"></v:f><v:f eqn="prod @2 1 2"></v:f><v:f 
+eqn="prod @3 21600 pixelWidth"></v:f><v:f 
+eqn="prod @3 21600 pixelHeight"></v:f><v:f eqn="sum @0 0 1"></v:f><v:f 
+eqn="prod @6 1 2"></v:f><v:f eqn="prod @7 21600 pixelWidth"></v:f><v:f 
+eqn="sum @8 21600 0"></v:f><v:f eqn="prod @7 21600 pixelHeight"></v:f><v:f 
+eqn="sum @10 21600 0"></v:f></v:formulas><v:path o:extrusionok="f" 
+gradientshapeok="t" o:connecttype="rect"></v:path><o:lock v:ext="edit" 
+aspectratio="t"></o:lock></v:shapetype><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 14pt" 
+class=MsoNormal align=center><SPAN style="FONT-SIZE: 12pt"></SPAN></P>
+<P style="TEXT-ALIGN: center; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 14pt" 
+class=MsoNormal align=center><SPAN style="FONT-SIZE: 12pt"><IMG border=0 
+hspace=0 alt="" 
+src="user-images\2.1.jpg"></SPAN></P>
+<P style="TEXT-ALIGN: center; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 14pt" 
+class=MsoNormal align=center><SPAN style="FONT-SIZE: 12pt">Рис. 
+2.1.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 12pt">Пролог<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В данном примере документа пролог 
+состоит из трех строк:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;?xml 
+version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!-- File Name: Inventory.xml 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Первая строка представляет собой 
+объявление XML, указывающее на то, что это XML-документ и содержащее номер 
+версии. Объявление XML не является обязательным, хотя спецификация требует его 
+включения. Если вы включаете XML-объявление, оно должно находиться в начале 
+документа.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вторая строка пролога состоит из 
+пробела. С целью улучшения внешнего вида документа вы можете вставлять любое 
+количество пустых строк между элементами пролога. При обработке они будут 
+игнорироваться.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Третья строка пролога представляет 
+собой комментарий. Добавление комментариев в XML-документ не обязательно, но 
+позволяет сделать его более понятным. Комментарий начинается с символов<SPAN 
+style="COLOR: red"> </SPAN><SPAN style="COLOR: black">&lt;!-- </SPAN>и 
+заканчивается <SPAN style="COLOR: black">символами --&gt;.</SPAN> Между этими 
+двумя группами символов вы можете поместить любой текст (за исключением --&gt;); 
+XML-процессор проигнорирует его.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> Все 
+составляющие пролога, упомянутые в этом разделе, будут подробно описаны далее в 
+последующих лекциях.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Пролог может также содержать 
+следующие необязательные компоненты:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l0 level1 lfo1" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">объявление типа документа, 
+определяющее тип и структуру документа. Объявление типа документа должно 
+следовать после XML-объявления;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l0 level1 lfo1" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">одна или несколько инструкций 
+по обработке, содержащих информацию о порядке проходов при обработке приложения 
+XML-процессором. Далее в этой лекции вы познакомитесь с инструкцией по обработке 
+для связывания таблицы стиля с XML-документом.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+XML-процессор – это программный модуль, считывающий XML-документ и 
+обеспечивающий доступ к его содержимому. Он также предоставляет этот доступ 
+другим программным модулям, или приложениям, которые манипулируют и отображают 
+содержимое документа. Если вы отображаете XML-документ в Internet Explorer 5, 
+браузер включает в себя как XML-процессор, так и приложение. (Если для 
+отображения XML-документа вы используете HTML и сценарий (скрипт-код), то при 
+этом самостоятельно создаете часть приложения.) Обратите внимание, что термин 
+приложение в данном случае отличен от термина, применяемого для обозначения 
+XML-приложения (или словаря) как целевого набора элементов и структуры 
+документа, которые используются для описания документов определенного типа. 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Элемент 
+Документ<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Второй основной частью 
+XML-документа является единый элемент Документ, или корневой элемент, который в 
+свою очередь содержит дополнительные элементы.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В XML-документе элементы 
+определяют его логическую структуру и несут в себе информацию, содержащуюся в 
+документе (в нашем примере это информация о книгах, такая как название, автор, 
+цена). Типовой элемент состоит из начального тега, содержимого элемента и 
+конечного тега. Содержимым элемента могут быть символьные данные, другие 
+(вложенные) элементы, либо сочетание данных и вложенных 
+элементов.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В рассматриваемом примере элемент 
+Документ – INVENTORY. Его начальный тег – &lt;INVENTORY&gt;, конечный тег – 
+&lt;/INVENTORY&gt;, а содержимое – восемь вложенных элементов 
+BOOK.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+Текст в XML-документе представляет собой перемежающиеся символьные данные и 
+данные, относящиеся к разметке. Разметка – это текст, ограниченный разделителями 
+и описывающий структуру документа. А именно, начальный и конечный теги элемента, 
+теги пустого элемента, объявления типа документа, инструкции по обработке, 
+ограничители раздела CDATA, символьные ссылки, ссылки на примитивы (entity). 
+Остальной текст представляет собой символьные данные – реальное информационное 
+содержимое документа (в нашем примере это названия, фамилии авторов, цена и 
+другая информация о книге).<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+Элемент Документ в XML-документе похож на элемент BODY на HTML-странице, за 
+исключением того, что вы можете присвоить ему любое допустимое 
+имя.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В свою очередь, каждый элемент 
+BOOK содержит ряд вложенных элементов, как показано на рисунке 
+2.2.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><IMG border=0 hspace=0 alt="" 
+src="user-images\2.2.jpg" width=534 
+height=287></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt">Рис. 2.2.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+Имя, которое содержится в начальном и конечном теге, есть тип 
+элемента.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Каждый из элементов, вложенных в 
+элемент BOOK, например, элемент TITLE, содержит только символьные данные, как 
+показано на рисунке 2.3.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm 0pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><IMG border=0 hspace=0 alt="" 
+src="user-images\2.3.jpg" width=506 
+height=120></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt">Рис. 2.3.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Во 2 части вы узнаете о 
+дополнительных элементах XML-документа и о включении атрибутов в начальный тег 
+элемента.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Некоторые 
+базовые правила XML<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Ниже приведено несколько основных 
+правил создания форматированного XML-документа. Форматированный документ 
+соответствует минимальному набору правил, обеспечивающих возможность обработки 
+документа браузером или другой программой. Документ, составленный вами ранее в 
+этой лекции, является примером форматированного XML-документа, удовлетворяющего 
+этим правилам.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Документ должен иметь только один 
+элемент верхнего уровня (элемент Документ или корневой элемент). Все другие 
+элементы должны быть вложены в элемент верхнего уровня.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Элементы должны быть вложены 
+упорядоченным образом. То есть, если элемент начинается внутри другого элемента, 
+он должен и заканчиваться внутри этого элемента.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Каждый элемент должен иметь 
+начальный и конечный тег. В отличие от HTML, в XML не разрешается опускать 
+конечный тег – даже в том случае, когда браузер в состоянии определить, где 
+заканчивается элемент. (В лекции 3 вы познакомитесь с усеченной нотацией, 
+которую можно применять для пустых элементов – т.е. элементов, не имеющих 
+содержимого.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Имя типа элемента в начальном теге 
+должно в точности соответствовать имени в соответствующем конечном 
+теге.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Имена типов элементов 
+чувствительны к регистру, в котором они набраны. В действительности весь текст 
+внутри XML-разметки является чувствительным к регистру. Например, следующее 
+описание элемента является неправильным, поскольку имя типа элемента в начальном 
+теге не соответствует имени типа в конечном теге: <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;TITLE&gt;Leaves of grass&lt;/Title&gt;<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 12pt">Отображение</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US> XML-</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 12pt">документа</SPAN></B><B 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вы можете открыть XML-документ 
+непосредственно через Internet Explorer 5, точно так же, как вы бы открыли HTML 
+Web-страницу.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Если XML-документ не содержит 
+связи с таблицей стилей, Internet Explorer 5 помечает различные составные части 
+документа различным цветом, чтобы облегчить их распознавание, а также 
+представляет элемент Документ в виде иерархического дерева с возможностью 
+свертывания и развертывания структуры и просмотра с меньшей или большей степенью 
+детализации.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Если же XML-документ имеет связь с 
+таблицей стиля, Internet Explorer 5 отобразит только символьные данные из 
+элементов документа, отформатировав их в соответствии с правилами, 
+установленными в таблице стиля. Вы можете использовать либо таблицу каскадных 
+стилей (CSS-таблицу, аналогичную той, которая используется для HTML-страниц), 
+либо XSL-таблицу стилей, которая является более мощным инструментом и строится в 
+соответствии с синтаксисом, принятым для XML. Такие таблицы могут использоваться 
+исключительно для XML-документов.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Обнаружение 
+ошибок XML в Internet Explorer 5<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Прежде чем Internet Explorer 5 
+отобразит ваш XML-документ, его встроенный синтаксический XML-анализатор 
+(parser) просматривает содержимое документа. Если он обнаружит ошибку, Internet 
+Explorer 5 отобразит страницу с сообщением об ошибке, не предпринимая попытки 
+отобразить документ. Internet Explorer 5 отобразит страницу с сообщением об 
+ошибке независимо от того, связан ли XML-документ с таблицей 
+стиля.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+Синтаксический XML-анализатор является составной частью XML-процессора, который 
+сканирует XML-документ, анализирует его структуру и обнаруживает синтаксические 
+ошибки.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+Когда вы открываете XML-документ непосредственно в Internet Explorer 5, 
+транслятор проверяет лишь соответствие документа формальным правилам построения 
+(корректность формы), и в случае обнаружения несоответствия выдает сообщение об 
+ошибке. Полное соответствие правилам для документа (валидность) не проверяется. 
+Даже в случае, если вы не связываете таблицу стилей с XML-документом, Internet 
+Explorer 5 использует для отображения документа имеющуюся по умолчанию таблицу 
+стилей; именно поэтому в описании ошибки упоминается использование XSL-таблицы 
+стилей («using XSL style sheet»). О XSL-таблицах стиля вы узнаете в лекции 
+10.<o:p></o:p></SPAN></P>
+<P>&nbsp;</P>
+				</div>
+			</div>
+		</div>
+		<div id="sidebar">
+			<div id="about-box">
+				<h2>3 СЕМЕСТР</h2>
+				<p>Учимся,работаем)</p>
+			</div>
+			<ul>
+				<li>
+					<h2>Список лекций</h2>
+					<ul>
+						<li><a style="" href="page1.html">Лекция №1</a></li>
+<li><a style="" href="page2.html">Задания к лекции №1</a></li>
+<li><a style="" href="page3.html">Лекция №2</a></li>
+<li><a style="" href="page4.html">Задания к лекции №2</a></li>
+<li><a style="" href="page5.html">Лекция №3</a></li>
+<li><a style="" href="page6.html">Задания к лекции №3</a></li>
+<li><a style="" href="page7.html">Лекция №4</a></li>
+<li><a style="" href="page8.html">Лекция №5</a></li>
+<li><a style="" href="page9.html">Задания к лекции №5</a></li>
+<li><a style="" href="page12.html">Лекция №6</a></li>
+<li><a style="" href="page11.html">Задания к лекции №6</a></li>
+<li><a style="" href="page13.html">Лекция №7</a></li>
+<li><a style="" href="page14.html">Задания к лекции №7</a></li>
+<li><a style="" href="page15.html">Лекция №8</a></li>
+<li><a style="" href="page16.html">Задания к лекции №8</a></li>
+<li><a style="" href="page17.html">Лекция №9</a></li>
+<li><a style="" href="page18.html">Задания к лекции №9</a></li>
+<li><a style="" href="page19.html">Лекция №10</a></li>
+<li><a style="" href="page20.html">Задания к лекции №10</a></li>
+
+					</ul>
+				</li>
+			
+			</ul>
+		</div>
+		<!-- end sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+</div>
+<!-- end page -->
+<hr />
+<div id="footer">
+	<p>БГТУ| 2011</p>
+</div>
+</body>
+</html>

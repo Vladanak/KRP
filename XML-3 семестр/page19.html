@@ -1,0 +1,2937 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=cp1251" />
+<title>Заголовок-окна</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="header">
+	<div id="logo">
+		<h1><a href="index.html">Иформационные технологии</a></h1>
+		<h2>.</h2>
+	</div>
+	<div id="menu">
+		<ul>
+			<li><a style="" href="index.html">Знакомство с XML</a></li>
+
+		</ul>
+	</div>
+</div>
+<hr />
+<div id="page">
+	<div id="bg">
+		<div id="content">
+			<div class="post" style="padding-top: 57px;">
+				<h2 class="title">Лекция №10</h2>
+				<div class="entry">
+
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Основы 
+использования XSL-таблиц стилей<?xml:namespace prefix = o ns = 
+"urn:schemas-microsoft-com:office:office" /><o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Существуют два основных шага для 
+отображения XML-документа при использовании XSL-таблицы 
+стилей.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Создание файла XSL-таблицы стилей. 
+XSL является приложением XML, т. е. XSL-таблица представляет собой корректно 
+сформированный XML-документ, который отвечает правилам XSL. Подобно любому 
+XML-документу, XSL-таблица стилей содержит простой текст, и вы можете создать ее 
+с помощью вашего любимого текстового редактора. В последующих разделах 
+рассказывается, как создавать различные типы XSL-таблиц стилей. 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Связывание XSL-таблицы стилей с 
+XML-документом. Вы можете связать XSL-таблицу стилей с XML-документом, включив в 
+документ инструкцию по обработке xml-stylesheet, которая имеет следующую 
+обобщенную форму записи: <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml-stylesheet type="text/xsl" 
+href=XSLFilePath?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Здесь XSLFilePath представляет 
+собой заключенный в кавычки URL, указывающий местонахождение файла таблицы 
+стилей. Вы можете использовать полный URL, например:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;?xml-stylesheet 
+type="text/xsl"<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>href="http:/www.my_domain.com/Inventory.xsl"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Чаще используют неполный URL, 
+который задает местонахождение относительно месторасположения XML-документа, 
+содержащего инструкцию по обработке xml-stylesheet, 
+например:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml-stylesheet type="text/xsl" 
+href="Inventory.xsl"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">(Относительный URL встречается 
+чаще, поскольку вы обычно храните файл таблицы стилей в той же папке, где 
+хранится XML-документ, либо в одной из вложенных в нее 
+папок.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Подсказка.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> Хотя 
+вы и можете связать XSL-таблицу стилей с использованием полного URL, таблица 
+стилей при этом должна размещаться на том же домене, что и XML-документ, с 
+которым вы ее связываете. Например, если домен <A 
+href="http://localhost:3232/external/?popup=0&amp;url=http%3A%2F%2Fmspress.microsoft.com%2F"><FONT 
+color=#330066>http://mspress.microsoft.com/</FONT></A> содержит XML-документ, то 
+и XSL-таблица стилей должна размещаться на том же домене.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Обычно инструкция по обработке 
+xml-stylesheet добавляется в пролог XML-документа вслед за объявлением XML, как 
+вы увидите в примере XML-документа, рассматриваемого в следующем разделе (см. <A 
+href="http://localhost:3232/department/internet/xml/10/2.html#example.10.2"><FONT 
+color=#330066>Листинг 10.2</FONT></A>). Более подробная информация об 
+инструкциях по обработке и описании мест в документе, куда они могут быть 
+корректно помещены, содержится в разделе «Использование инструкций по обработке» 
+в <A href="http://localhost:3232/department/internet/xml/4/1.html"><FONT 
+color=#330066>лекции 4</FONT></A>.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Если вы связали XSL-таблицу стилей 
+с XML-документом, вы можете открыть этот документ непосредственно в Internet 
+Explorer 5, и браузер отобразит XML-документ с использованием инструкций по 
+преобразованию, содержащихся в таблице стилей. В отличие от таблиц каскадных 
+стилей, если вы связываете с XML-документом более одной XSL-таблицы стилей, 
+браузер использует первую таблицу и игнорирует все остальные. Если вы свяжете с 
+XML-документом и CSS-таблицу и XSL-таблицу стилей, браузер использует только 
+XSL-таблицу стилей.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+Если вы не связали XML-документ ни с CSS-таблицей, ни с XSL-таблицей стилей, 
+Internet Explorer 5 отобразит документ с помощью встроенной XSL-таблицы, которая 
+используется по умолчанию. Эта таблица стилей отображает исходный XML-текст в 
+виде дерева с возможностью свертывания/развертывания 
+уровней.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Использование 
+одного шаблона XSL<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В отличие от CSS, содержащей 
+правила, XSL-таблица стилей включает один или несколько шаблонов, каждый из 
+которых содержит информацию для отображения в определенной ветви элементов в 
+XML-документе. В этом разделе вы узнаете, как создать простую XSL-таблицу 
+стилей, которая включает только один шаблон. Этот шаблон содержит информацию для 
+отображения всего документа.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В <A 
+href="http://localhost:3232/department/internet/xml/10/2.html#example.10.1"><FONT 
+color=#330066>Листинге 10.1</FONT></A> представлен первый пример XSL-таблицы 
+стилей. Эта таблица стилей связана с XML-документом, представленным в <A 
+href="http://localhost:3232/department/internet/xml/10/2.html#example.10.2"><FONT 
+color=#330066>Листинге 10.2</FONT></A>.<A name=example.10.1></A><SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Листинг</SPAN></I><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US> 10.1. 
+</SPAN></I><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: DE-LU" lang=DE-LU>XslDemo01.xsl <SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN><o:p></o:p></SPAN></I></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: DE-LU" 
+lang=DE-LU>&lt;?xml version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: DE-LU" 
+lang=DE-LU>&lt;!-- </SPAN><SPAN style="FONT-SIZE: 12pt">Имя</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: DE-LU"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">файла</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: DE-LU" lang=DE-LU>: XslDemo01.xsl 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: DE-LU" 
+lang=DE-LU>&lt;xsl:stylesheet 
+xmlns:xsl="http://www.w3.org/TR/WD-xsl"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: DE-LU" 
+lang=DE-LU><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;xsl:template 
+match="/"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;H2&gt;Book Description&lt;/H2&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Author: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of 
+select="BOOK/AUTHOR"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Title: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of 
+select="BOOK/TITLE"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Price: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of 
+select="BOOK/PRICE"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Binding type: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of 
+select="BOOK/BINDING"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Number of pages: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="BOOK/PAGES"/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/xsl:template&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/xsl:stylesheet&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><A name=example.10.2></A><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;?xml 
+version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!-- </SPAN><SPAN style="FONT-SIZE: 12pt">Имя</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">файла</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>: XslDemo01.xml 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml-stylesheet type="text/xsl" 
+href="XslDemo01.xsl"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;Moby-Dick&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Herman&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;Melville&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;hardcover&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;724&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$9.95&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Листинг</SPAN></I><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US> 10.2. 
+XslDemo01.xml</SPAN></I><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></I></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!-- </SPAN><SPAN style="FONT-SIZE: 12pt">Имя</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">файла</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>: XslDemo01.xml 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml-stylesheet type="text/xsl" 
+href="XslDemo01.xsl"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;Moby-Dick&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Herman&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;Melville&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;hardcover&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;724&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$9.95&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;/BOOK&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">На рисунке 10.1. показано, как 
+будет отображено в браузре.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm 6pt" class=MsoNormal 
+align=center><A name=image.10.1></A><SPAN 
+style="FONT-SIZE: 12pt"><?xml:namespace prefix = v ns = 
+"urn:schemas-microsoft-com:vml" /><v:shapetype id=_x0000_t75 
+coordsize="21600,21600" o:spt="75" o:preferrelative="t" 
+path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f"><v:stroke 
+joinstyle="miter"></v:stroke><v:formulas><v:f 
+eqn="if lineDrawn pixelLineWidth 0"></v:f><v:f eqn="sum @0 1 0"></v:f><v:f 
+eqn="sum 0 0 @1"></v:f><v:f eqn="prod @2 1 2"></v:f><v:f 
+eqn="prod @3 21600 pixelWidth"></v:f><v:f 
+eqn="prod @3 21600 pixelHeight"></v:f><v:f eqn="sum @0 0 1"></v:f><v:f 
+eqn="prod @6 1 2"></v:f><v:f eqn="prod @7 21600 pixelWidth"></v:f><v:f 
+eqn="sum @8 21600 0"></v:f><v:f eqn="prod @7 21600 pixelHeight"></v:f><v:f 
+eqn="sum @10 21600 0"></v:f></v:formulas><v:path o:extrusionok="f" 
+gradientshapeok="t" o:connecttype="rect"></v:path><o:lock v:ext="edit" 
+aspectratio="t"></o:lock></v:shapetype><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><IMG 
+style="WIDTH: 514px; HEIGHT: 410px" border=0 hspace=0 alt="" 
+src="user-images/10.2.jpg"></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt">Рис. 10.1.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Каждая XSL-таблица стилей должна 
+иметь элемент Документ, представленный ниже. (Напомним, что элемент Документ, 
+известный как корневой элемент, является XML-элементом верхнего уровня, который 
+содержит все остальные элементы.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;xsl:stylesheet 
+xmlns:xsl="http://www.w3.org/TR/WD-xsl"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">&lt;!-- один или несколько элементов шаблона 
+…--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/xsl:stylesheet&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Элемент Документ xsl:stylesheet 
+служит не только хранилищем других элементов, но также идентифицирует документ 
+как XSL-таблицу стилей. Этот элемент является одним из XSL-элементов 
+специального назначения, используемых в таблице стилей. Все XSL-элементы 
+принадлежат пространству имен xsl – т. е. вы предваряете имя каждого 
+XSL-элемента префиксом xsl:, обозначающим пространство имен. Вы определяете это 
+пространство имен в начальном теге элемента xsl:stylesheet, например, следующим 
+образом:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">xmlns:xsl="http://www.w3.org/TR/WD-xsl"<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Это определение позволяет вам 
+использовать пространство имен внутри элементов таблицы стилей. (Относительно 
+пространства имен в XML см. раздел «Вставка HTML-элементов в XML-документы и 
+использование пространства имен» в <A 
+href="http://localhost:3232/department/internet/xml/7/1.html"><FONT 
+color=#330066>лекции 7</FONT></A>.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Элемент Документ xsl:stylesheet 
+XSL-таблицы стилей должен содержать один или несколько шаблонов элементов, 
+которые для краткости будем называть шаблонами. Элемент Документ из <A 
+href="http://localhost:3232/department/internet/xml/10/2.html#example.10.1"><FONT 
+color=#330066>Листинга 10.1</FONT></A> содержит только один шаблон, который 
+имеет следующую форму:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;xsl:template match="/"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!-- 
+</SPAN><SPAN style="FONT-SIZE: 12pt">дочерние</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">элементы</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US> … 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/xsl:template&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Браузер использует шаблон для 
+отображения определенной ветви элементов в иерархии XML-документа, с которым вы 
+связываете таблицу стилей. Атрибут match шаблона указывает на определенную 
+ветвь. (Атрибут match аналогичен селектору в правиле CSS). Значение атрибута 
+match носит название образца (pattern). Образец в данном примере ("/") 
+представляет корневой элемент всего XML-документа. Этот шаблон, таким образом, 
+содержит инструкции для отображения всего XML-документа.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Каждая XSL-таблица стилей должна 
+содержать один и только один шаблон с атрибутом match, который имеет значение 
+"/". Вы также можете включить один или несколько дополнительных шаблонов с 
+инструкциями для отображения определенных подчиненных ветвей в структуре 
+XML-документа; каждая из них должна иметь образец, отвечающий определенной 
+ветви.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Корневой образец ("/") не 
+представляет элемент Документ (или корневой элемент) XML-документа. Он 
+представляет весь документ, для которого элемент Документ является дочерним. (Т. 
+е. он аналогичен корневому узлу Document в объектной модели документа 
+DOM)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вот полное описание шаблона из 
+рассматриваемой таблицы стилей:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;xsl:template match="/"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;H2&gt;Book 
+Description&lt;/H2&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;SPAN 
+STYLE="font-style:italic"&gt;Author: &lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:value-of 
+select="BOOK/AUTHOR"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;SPAN 
+STYLE="font-style:italic"&gt;Title: &lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:value-of 
+select="BOOK/TITLE"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;SPAN 
+STYLE="font-style:italic"&gt;Price: &lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:value-of 
+select="BOOK/PRICE"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;SPAN 
+STYLE="font-style:italic"&gt;Binding type: &lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:value-of 
+select="BOOK/BINDING"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;SPAN 
+STYLE="font-style:italic"&gt;Number of pages: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:value-of 
+select="BOOK/PAGES"/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/xsl:template&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Шаблон содержит два вида 
+XML-элементов. XML-элементы, представляющие HTML-разметку. Примерами подобного 
+вида XML-элемента из рассматриваемой таблицы стилей являются: 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;H2&gt;Book 
+Description&lt;/H2&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">который отображает заголовок 
+второго уровня,<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;SPAN STYLE="font-style:italic"&gt;Author: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 6pt 0cm 6pt 1cm" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">который отображает блок текста, набранного курсивом 
+(Author:), &lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">который создает пустую 
+строку.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Все эти XML-элементы являются 
+корректно сформированными и представляют стандартные HTML-элементы. Браузер 
+просто копирует каждый HTML-элемент непосредственно на выход HTML, который 
+воспринимает и отображает их.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Подсказка.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+Каждый из элементов, представляющих HTML-разметку, должен быть корректно 
+сформированным XML-элементом, а также стандартным HTML-элементом. (Не забывайте, 
+что XSL-таблица стилей является XML-документом.) Следовательно, вы не можете 
+использовать HTML-конструкции, которые не являются корректно сформированным XML, 
+такие, как элементы, состоящие только из начального тега. Например, чтобы задать 
+элемент перевода строки в HTML, вы не можете просто ввести &lt;BR&gt;, как вы 
+это делаете для HTML-страницы. Вместо этого вы должны использовать корректно 
+сформированный тег пустого XML-элемента, &lt;BR/&gt;.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">XSL-элементы. Примеры 
+XSL-элементов из рассматриваемой таблицы стилей являются элементами 
+xsl:value-of, например: <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;xsl:value-of select="BOOK/AUTHOR"/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Браузер отличает XML-элемент от 
+элемента, представляющего HTML, поскольку первый имеет в качестве префикса 
+описание пространства имен xsl:. XSL-элементы в шаблоне не копируются на выход 
+HTML. Они лишь содержат инструкции по выбору и модификации данных XML, либо 
+используются для выполнения других задач.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">XSL-элемент value-of добавляет 
+текстовое содержимое определенного XML-элемента – а также любых его дочерних 
+элементов, которые он имеет – в выходной модуль HTML, который воспринимается и 
+отображается браузером. Вы указываете определенный XML-элемент заданием образца, 
+который присваиваете атрибуту select XSL-элемента value-of. В рассмотренном выше 
+примере элемента value-of атрибуту select присвоен образец «BOOK/AUTHOR», что 
+приводит к выводу текстового содержимого элемента AUTHOR XML-документа. 
+Текстовое содержимое элемента AUTHOR состоит из символьных данных, принадлежащих 
+двум его дочерним элементам, FIRSTNAME и LASTNAME.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Обратите внимание, что XML-элемент 
+в образце задается с помощью оператора пути (в данном случае BOOK/AUTHOR), 
+который определяет местонахождение элемента в иерархии XML-документа. (Оператор 
+пути походит на путь к файлу, который операционная система использует для 
+указания местонахождения файла или папки.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Главный момент, на который здесь 
+следует обратить внимание, состоит в том, что оператор пути в значении атрибута 
+select относится к текущему элементу. Каждый контекст внутри XSL-таблицы стилей 
+относится к текущему элементу. Поскольку рассматриваемый пример шаблона 
+относится к корневому элементу всего документа (посредством установки атрибута 
+match="/"), текущим «элементом» для данного шаблона является корневой элемент 
+документа. (В данном случае текущий элемент не обладает соответствующим 
+литералом, а является родителем элемента Документ.) Таким образом, внутри этого 
+шаблона оператор пути BOOK/AUTHOR указывает на элемент AUTHOR, вложенный в 
+элемент BOOK, вложенный в корневой элемент документа. <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Если вы опустите атрибут select 
+для XSL-элемента value-of, элемент будет осуществлять вывод текстового 
+содержимого плюс текстовое содержимое всех дочерних элементов в текущий элемент. 
+(В нашем примере, поскольку текущим является корневой элемент, пропуск атрибута 
+select приведет к выводу всех символьных данных в 
+XML-документ.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Целью представленного в 
+рассматриваемом примере шаблона элементов является отображение текста названия 
+для каждого из дочерних XML-элементов в документе (AUTHOR, TITLE, PRICE, BINDING 
+и PAGES) плюс текстового содержимого каждого элемента. Обратите внимание, что 
+порядок элементов value-of в шаблоне определяет порядок, в котором браузер 
+отображает эти элементы. Таким образом, даже из этой простой таблицы стилей вы 
+можете понять, что XSL-таблица стилей является гораздо более гибкой, чем CSS, 
+которая всегда отображает элементы в том порядке, в котором они следуют в 
+документе.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Итак, как вы могли заметить, 
+XSL-таблица стилей сообщает браузеру, как отобразить XML-документ путем 
+избирательного преобразования XML-элементов в блок HTML-разметки, который 
+воспринимается и отображается браузером аналогично разметке, содержащейся на 
+HTML-странице. Заметим, однако, что вам не нужно включать в XSL-шаблон элементы, 
+представляющие элементы HTML или BODY, которые являются стандартными составными 
+частями HTML-страницы, поскольку браузер сам эффективно их 
+формирует.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">На <A 
+href="http://localhost:3232/department/internet/xml/10/3.html#image.10.2"><FONT 
+color=#330066>рисунке 10.2</FONT></A> показано как браузер генерирует первую 
+часть блока HTML-разметки для документа и таблицы стилей из <A 
+href="http://localhost:3232/department/internet/xml/10/2.html#example.10.1"><FONT 
+color=#330066>Листингов 10.1</FONT></A> и <A 
+href="http://localhost:3232/department/internet/xml/10/2.html#example.10.2"><FONT 
+color=#330066>10.2</FONT></A>.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm 6pt" class=MsoNormal 
+align=center><A name=image.10.2></A><SPAN 
+style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><IMG 
+style="WIDTH: 404px; HEIGHT: 291px" border=0 hspace=0 alt="" 
+src="user-images/10.3.png"></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt">Рис</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>. 
+10.2.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>XML-</SPAN><SPAN style="FONT-SIZE: 12pt">документ</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Herman&lt;/FIRSTNAME<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;Melville&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>XSL-</SPAN><SPAN style="FONT-SIZE: 12pt">таблица</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">стилей</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;H2&gt;Book 
+Description&lt;/H2&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;SPAN 
+STYLE="font-style:italic"&gt;Author: &lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:value-of 
+select="BOOK/AUTHOR"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Отображаемый</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US> 
+HTML<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;H2&gt;Book 
+Description&lt;/H2&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;SPAN 
+STYLE="font-style:italic"&gt;Author: &lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">Hermann Melville<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Отображение 
+переменного числа элементов<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В примере, рассмотренном в 
+предыдущем разделе (см. <A 
+href="http://localhost:3232/department/internet/xml/10/2.html#example.10.2"><FONT 
+color=#330066>Листинг 10.2</FONT></A>), XML-документ содержал только один 
+элемент BOOK. В случае, если документ содержит несколько элементов BOOK, 
+методика, с которой вы познакомились в предыдущем разделе, способна отобразить 
+только один из элементов. Возьмем, для примера, XML-документ, содержащий 
+следующий элемент Документ:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;INVENTORY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;TITLE&gt;The 
+Adventures of Huckleberry Finn&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Mark&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;Twain&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;mass market 
+paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;298&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$5.49&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;TITLE&gt;The 
+Adventures of Tom Sawyer&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Mark&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;Twain&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;mass market 
+paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;205&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$4.75&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;TITLE&gt;The 
+Ambassadors&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Henry&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;James&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;mass market 
+paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;305&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$5.95&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/INVENTORY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Предположим, что таблица стилей, 
+используемая для отображения этого документа, содержит следующий 
+шаблон:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;xsl:stylesheet 
+xmlns:xsl="http://www.w3.org/TR/WD-xsl"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:template 
+match="/"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;H2&gt;Book Description&lt;/H2&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Author: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of 
+select="INVENTORY/BOOK/AUTHOR"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Title: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of 
+select="INVENTORY/BOOK/TITLE"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Price: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of 
+select="INVENTORY/BOOK/PRICE"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Binding type: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of 
+select="INVENTORY/BOOK/BINDING"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Number of pages: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="INVENTORY/BOOK/PAGES"/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">&lt;/xsl:template&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/xsl:stylesheet&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Этот шаблон использует методику, 
+описанную в предыдущем разделе. Обратите внимание, что образец присваиваемых 
+каждому атрибуту select начинается с указания элемента Документ, в данном случае 
+INVENTORY (например, «INVENTORY/BOOK/AUTHOR»).<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Каждый образец, однако, 
+соответствует трем различным элементам. Например, «INVENTORY/BOOK/AUTHOR» 
+соответствует элементу AUTHOR для всех трех элементов BOOK. В подобной ситуации 
+браузер использует только первый из соответствующих элементов. Таким образом, 
+таблица стилей отобразит содержимое только первого элемента BOOK, как показано 
+на <A 
+href="http://localhost:3232/department/internet/xml/10/4.html#image.10.3"><FONT 
+color=#330066>рисунке 10.3.</FONT></A><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm 6pt" class=MsoNormal 
+align=center><A name=image.10.3></A><SPAN 
+style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 14pt" 
+class=MsoNormal align=center><SPAN style="FONT-SIZE: 12pt"><IMG 
+style="WIDTH: 510px; HEIGHT: 510px" border=0 hspace=0 alt="" 
+src="user-images/10.4.jpg"></SPAN></P>
+<P style="TEXT-ALIGN: center; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 14pt" 
+class=MsoNormal align=center><SPAN style="FONT-SIZE: 12pt">Рис. 
+10.3.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Чтобы отобразить все отвечающие 
+образцу элементы, следует использовать XSL-элемент for-each, который вызывает 
+повторный вывод для каждого из содержащихся в XML-файле элементов. XSL-таблица 
+стилей, представленная в <A 
+href="http://localhost:3232/department/internet/xml/10/4.html#example.10.3"><FONT 
+color=#330066>Листинге 10.3</FONT></A>, демонстрирует данную методику. Эта 
+таблица стилей связана с XML-документом, содержащимся в <A 
+href="http://localhost:3232/department/internet/xml/10/4.html#example.10.4"><FONT 
+color=#330066>Листинге 10.4</FONT></A>. <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><A name=example.10.3></A><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Листинг</SPAN></I><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US> 10.3. 
+XslDemo02.xsl <o:p></o:p></SPAN></I></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>xml version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!-- </SPAN><SPAN style="FONT-SIZE: 12pt">Имя</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">файла</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>: XslDemo02.xsl 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;xsl:stylesheet 
+xmlns:xsl="http://www.w3.org/TR/WD-xsl"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:template 
+match="/"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;H2&gt;Book Inventory&lt;/H2&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:for-each select="INVENTORY/BOOK"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Title: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="TITLE"/&gt;&lt;BR /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Author: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="AUTHOR"/&gt;&lt;BR /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>&lt;SPAN 
+STYLE="font-style:italic"&gt;Binding type: &lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="BINDING"/&gt;&lt;BR /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Number of pages: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="PAGES"/&gt;&lt;BR /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Price: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="PRICE"/&gt;&lt;P /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/xsl:for-each&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/xsl:template&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/xsl:stylesheet&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><A name=example.10.4></A><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Листинг</SPAN></I><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US> 10.4. XslDemo.xml 
+<o:p></o:p></SPAN></I></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!--<SPAN style="mso-spacerun: yes">&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">Имя</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">файла</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>: XslDemo.xml 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml-stylesheet type="text/xsl" 
+href="XslDemo02.xsl"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;INVENTORY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;The Adventures of Huckleberry 
+Finn&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Mark&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;Twain&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;mass market 
+paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;298&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$5.49&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;The Adventures of Tom 
+Sawyer&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Mark&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;Twain&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;mass market 
+paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>&lt;PAGES&gt;205&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$4.75&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;The Ambassadors&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Henry&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;James&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;mass market 
+paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;305&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$5.95&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;The Awakening&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Kate&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;Chopin&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;mass market 
+paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;195&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$4.95&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;Billy Budd&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Herman&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;Melville&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;mass market 
+paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;195&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$4.49&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;A Connecticut Yankee in King Arthur's 
+Court&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Mark&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;Twain&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;</SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>&lt;BINDING&gt;mass 
+market paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;385&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$5.49&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;Joan of Arc&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Mark&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;Twain&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;trade paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;465&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$6.95&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;Leaves of Grass&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Walt&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;Whitman&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;hardcover&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;462&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$7.75&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;The Legend of Sleepy 
+Hollow&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Washington&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;Irving&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;mass market 
+paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;98&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$2.95&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;The Marble Faun&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Nathaniel&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;Hawthorne&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;trade paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;473&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$10.95&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;Moby-Dick&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Herman&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;Melville&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;hardcover&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;724&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$9.95&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;Passing&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Nella&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;Larsen&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;trade paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;165&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$5.95&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;The Portrait of a Lady&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Henry&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;James&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;mass market 
+paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;256&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$4.95&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;Roughing It&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Mark&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;Twain&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;mass market 
+paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;324&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$5.25&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;The Scarlet Letter&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Nathaniel&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;Hawthorne&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;trade paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;253&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$4.25&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;The Turn of the Screw&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;FIRSTNAME&gt;Henry&lt;/FIRSTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LASTNAME&gt;James&lt;/LASTNAME&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;trade paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;384&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$3.35&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/INVENTORY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Шаблон в таблице стилей из <A 
+href="http://localhost:3232/department/internet/xml/10/4.html#example.10.3"><FONT 
+color=#330066>Листинга 10.3</FONT></A> содержит следующий элемент 
+for-each:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;xsl:for-each select="INVENTORY/BOOK"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;SPAN 
+STYLE="font-style:italic"&gt;Title: &lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:value-of 
+select="TITLE"/&gt;&lt;BR /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;SPAN 
+STYLE="font-style:italic"&gt;Author: &lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:value-of 
+select="AUTHOR"/&gt;&lt;BR /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;SPAN 
+STYLE="font-style:italic"&gt;Binding type: &lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:value-of 
+select="BINDING"/&gt;&lt;BR /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;SPAN 
+STYLE="font-style:italic"&gt;Number of pages: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:value-of 
+select="PAGES"/&gt;&lt;BR /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;SPAN 
+STYLE="font-style:italic"&gt;Price: &lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:value-of 
+select="PRICE"/&gt;&lt;P /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/xsl:for-each&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Элемент for-each выполняет две 
+основные задачи:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l0 level1 lfo1" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">осуществляет вывод блока 
+элементов, содержащихся внутри элемента for-each, повторяя его для каждого 
+XML-элемента в документе, отвечающего образцу, присвоенному атрибуту select 
+элемента for-each. В данном примере цикл выполняется по одному разу для каждого 
+элемента BOOK, найденного в элементе Документ с именем INVENTORY. Образец, 
+присваиваемый атрибуту select, работает точно так же, как образец, присваиваемый 
+атрибуту select элемента value-of; <o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l0 level1 lfo1" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">внутри элемента for-each 
+задает текущий элемент, устанавливаемый атрибутом select элемента for-each 
+(/INVENTORY/BOOK в нашем примере указывает на элемент BOOK внутри элемента 
+INVENTORY, входящего в корневой элемент документа) следующим образом: 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 6pt 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;xsl:stylesheet 
+xmlns:xsl=http://www.w3.org/TR/WD-xsl&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;xsl:template match="/"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;!-- Здесь текущим является корневой 
+"элемент"<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">документа</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>, "/". 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;xsl:for-each 
+select="INVENTORY/BOOK"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;!-- Здесь текущим является элемент /INVENTORY/BOOK. 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/xsl:for-each&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/xsl:template&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 6pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/xsl:stylesheet&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Аналогично, внутри элемента 
+for-each каждый дочерний элемент может быть выбран путем задания образца, 
+содержащего только имя элемента, например:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;xsl:value-of select="TITLE"/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Использование 
+нескольких шаблонов<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Другой способ отображения 
+повторяющихся XML-элементов состоит в создании отдельного шаблона для каждого 
+элемента с последующим вызовом этого шаблона с использованием XSL-элемента 
+apply-templates. Пример использования подобной методики приведен в XSL-таблице 
+стилей, представленной в <A 
+href="http://localhost:3232/department/internet/xml/10/5.html#example.10.5"><FONT 
+color=#330066>Листинге 10.5</FONT></A>. Эта таблица стилей предназначена для 
+связывания с XML-документом из <A 
+href="http://localhost:3232/department/internet/xml/10/4.html#example.10.4"><FONT 
+color=#330066>Листинга 10.4</FONT></A>, XslDemo.xml; установить эту связь вы 
+можете путем модификации инструкции xml-stylesheet в документе следующим 
+образом:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Листинг</SPAN></I><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US> 10.5. 
+</SPAN></I><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: DE-LU" lang=DE-LU>XslDemo03.xsl 
+<o:p></o:p></SPAN></I></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: DE-LU" 
+lang=DE-LU>&lt;?xml version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: DE-LU" 
+lang=DE-LU>&lt;!-- </SPAN><SPAN style="FONT-SIZE: 12pt">Имя</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: DE-LU"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">файла</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: DE-LU" lang=DE-LU>: XslDemo03.xsl 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: DE-LU" 
+lang=DE-LU>&lt;xsl:stylesheet 
+xmlns:xsl="http://www.w3.org/TR/WD-xsl"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: DE-LU" 
+lang=DE-LU><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;xsl:template 
+match="/"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;H2&gt;Book Inventory&lt;/H2&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:apply-templates select="INVENTORY/BOOK" 
+/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/xsl:template&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:template 
+match="BOOK"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Title: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="TITLE"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Author: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="AUTHOR"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Binding type: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="BINDING"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Number of pages: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="PAGES"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Price: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="PRICE"/&gt;&lt;P/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">&lt;/xsl:template&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/xsl:stylesheet&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Рассматриваемая в примере таблица 
+стилей содержит два шаблона. Один шаблон содержит инструкции для отображения 
+всего документа (путем установки match="/", указывающей на корневую часть 
+документа). Все XSL-таблицы стилей требуют наличия такого шаблона. Другой шаблон 
+содержит инструкции для отображения элемента BOOK (шаблон с установкой match= 
+«BOOK»). Сначала браузер обрабатывает шаблон, соответствующий корневой части 
+элемента:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;xsl:template 
+match="/"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;H2&gt;Book 
+Inventory&lt;/H2&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;xsl:apply-templates select="INVENTORY/BOOK" 
+/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/xsl:template&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>XSL</SPAN><SPAN style="FONT-SIZE: 12pt">-элемент </SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>apply</SPAN><SPAN 
+style="FONT-SIZE: 12pt">-</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>templates</SPAN><SPAN style="FONT-SIZE: 12pt"> сообщает браузеру, что 
+для каждого элемента </SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>BOOK</SPAN><SPAN 
+style="FONT-SIZE: 12pt"> внутри корневого элемента </SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>INVENTORY</SPAN><SPAN style="FONT-SIZE: 12pt"> он должен обрабатывать 
+шаблон, отвечающий элементу </SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>BOOK</SPAN><SPAN 
+style="FONT-SIZE: 12pt"> – т. е. шаблон, для атрибута </SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>match</SPAN><SPAN 
+style="FONT-SIZE: 12pt"> которого установлено значение "</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>BOOK</SPAN><SPAN 
+style="FONT-SIZE: 12pt">". Таблица стилей включает следующий шаблон, отвечающий 
+элементу BOOK:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;xsl:template 
+match="BOOK"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;SPAN 
+STYLE="font-style:italic"&gt;Title: &lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:value-of 
+select="TITLE"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;SPAN 
+STYLE="font-style:italic"&gt;Author: &lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:value-of 
+select="AUTHOR"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;SPAN 
+STYLE="font-style:italic"&gt;Binding type: &lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:value-of 
+select="BINDING"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;SPAN 
+STYLE="font-style:italic"&gt;Number of pages: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:value-of 
+select="PAGES"/&gt;&lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;SPAN 
+STYLE="font-style:italic"&gt;Price: &lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:value-of 
+select="PRICE"/&gt;&lt;P/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/xsl:template&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Поскольку этот шаблон отвечает 
+элементу BOOK, элемент BOOK является текущим элементом в контексте шаблона. В 
+связи с этим доступ к дочерним элементам BOOK осуществляется посредством 
+образца, содержащего только имя элемента, как в нашем 
+примере:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;xsl:value-of select="TITLE"/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+Если вы не укажете атрибут select для элемента apply-templates, браузер 
+обрабатывает соответствующий шаблон (если он имеется) для каждого дочернего 
+элемента текущего элемента. В рассматриваемом примере элемента apply-templates 
+единственным дочерним элементом для текущего элемента (корневая часть документа) 
+является элемент INVENTORY, который не имеет соответствующего шаблона. Таким 
+образом, если вы опустите атрибут select, никакие данные не будут 
+выведены.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Браузер обрабатывает шаблон BOOK 
+один раз для каждого элемента BOOK, отображая всю информацию о книгах, имеющуюся 
+в документе, как показано на <A 
+href="http://localhost:3232/department/internet/xml/10/5.html#image.10.5"><FONT 
+color=#330066>рисунке 10.5.</FONT></A><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><o:p>&nbsp;</o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm 6pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><IMG 
+style="WIDTH: 474px; HEIGHT: 356px" border=0 hspace=0 alt="" 
+src="user-images/10.5.jpg"></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt">Рис 10.5<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Фильтрация и 
+сортировка данных XML<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В последующих двух разделах вы 
+познакомитесь с основами применения XSL-таблиц стилей для фильтрации и 
+сортировки данных XML. После этого вам будут представлены примеры таблиц стилей, 
+демонстрирующие методики фильтрации и сортировки.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 12pt">Фильтрация<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Значение, которое присваивается 
+атрибутам match или select, представляет собой образец, соответствующий одному 
+или нескольким элементам в XML-документе. (Атрибут match используется для 
+элемента template, а атрибут select – для элементов value-of, for-each и 
+apply-templates.) Образцы, с которыми вы имели дело до сих пор, содержали только 
+оператор пути, который задавал имя элемента и, возможно, одного или нескольких 
+вложенных элементов. Вы можете ограничить количество элементов, отвечающих 
+шаблону, введя фильтр – выражение, заключенное в квадратные скобки ([]) и 
+следующее непосредственно оператором пути. Например, образец, присвоенный 
+следующему атрибуту match, указывает, что соответствующий элемент должен носить 
+имя BOOK, и кроме того (это определяется фильтром), должен иметь дочерний 
+элемент BINDING, который содержит текст «trade paperback»:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;xsl:template match="BOOK[BINDING='trade 
+paperback']"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Если в фильтр включено только имя 
+элемента, то соответствующий элемент должен иметь дочерний элемент с указанным 
+именем. Например, следующий образец отвечает любому элементу ITEM, имеющему 
+дочерний элемент с именем CD, независимо от содержимого элемента 
+CD:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">match="ITEM[CD]"<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Следующий образец отвечает любому 
+элементу SHIRT, имеющему дочерний элемент COLOR, содержащий текст 
+«red»:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">match="SHIRT[COLOR='red']"<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">А следующий образец, наоборот, 
+отвечает любому элементу SHIRT, имеющему дочерний элемент COLOR, который не 
+содержит текст «red»:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>select="SHIRT[COLOR='red']"<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание</SPAN></I><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>.</SPAN></I><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">Если элемент имеет более одного дочернего элемента с 
+именем, указанным в условии фильтрации, оператор сравнения применяется только к 
+первому дочернему элементу. Например, если элемент SHIRT имеет два дочерних 
+элемента COLOR, образец «SHIRT[COLOR='red']» будет отвечать элементу, только 
+если первый элемент COLOR содержит слово «red».<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 12pt">Сортировка<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В этой лекции вы уже познакомились 
+с двумя элементами, которые вы можете использовать для обработки повторяющихся 
+элементов: for-each и apply-templates. Вы можете использовать атрибут order-by 
+для этих элементов, чтобы управлять порядком, в котором браузер обрабатывает 
+элементы, тем самым осуществляя сортировку данных XML.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вы можете назначать атрибуту 
+order-by один или несколько образцов, разделяя их точкой с запятой. Браузер 
+будет сортировать элементы с использованием образцов в том порядке, в котором 
+они перечислены. Для указания направления сортировки (по возрастанию или по 
+убыванию) следует предварить образец префиксом + или – .<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Например, атрибут order-by, 
+установленный для следующего элемента for-each, предписывает браузеру 
+сортировать элементы BOOK по фамилиям авторов в порядке возрастания, а также 
+осуществлять сортировку для одинаковых фамилий по именам, также по 
+возрастанию:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;xsl:for-each select="INVENTORY/BOOK"<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>order-by="+AUTHOR/LASTNAME; 
++AUTHOR/FIRSTNAME"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В другом примере следующая 
+установка order-by осуществляет сортировку элементов BOOK по названиям книг по 
+убыванию:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 6pt 0cm" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;xsl:apply-templates select="INVENTORY/BOOK" 
+order-by="-TITLE"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Оператор пути, который вы 
+присваиваете атрибуту order-by, действует относительно образца, назначенного 
+атрибуту select. Так, в данном примере установка order-by= «-TITLE» указывает на 
+элемент TITLE внутри элемента BOOK, вложенного в элемент INVENTORY.<A 
+name=image.10.5></A><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Пример 
+таблицы стилей, осуществляющей фильтрацию и сортировку<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В этом разделе приведено два 
+примера XSL-таблиц стилей, представленных в <A 
+href="http://localhost:3232/department/internet/xml/10/7.html#example.10.6"><FONT 
+color=#330066>Листингах 10.6</FONT></A> и <A 
+href="http://localhost:3232/department/internet/xml/10/7.html#example.10.7"><FONT 
+color=#330066>10.7</FONT></A>. Каждый из них осуществляет фильтрацию и 
+сортировку элементов BOOK, подлежащих отображению. <A 
+name=example.10.6></A><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Листинг 10.6. Xsldemo04.xsl <o:p></o:p></SPAN></I></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;?xml 
+version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!-- Имя файл: XslDemo04.xsl 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;xsl:stylesheet 
+xmlns:xsl="http://www.w3.org/TR/WD-xsl"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;xsl:template 
+match="/"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;H2&gt;Book Inventory&lt;/H2&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:for-each <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>select="INVENTORY/BOOK[BINDING='trade paperback']" <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>order-by="+AUTHOR/LASTNAME; +AUTHOR/FIRSTNAME"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Author: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="AUTHOR"/&gt;&lt;BR /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Title: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="TITLE"/&gt;&lt;BR /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Binding type: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="BINDING"/&gt;&lt;BR /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Number of pages: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="PAGES"/&gt;&lt;BR /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Price: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="PRICE"/&gt;&lt;P /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/xsl:for-each&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/xsl:template&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/xsl:stylesheet&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><A name=example.10.7></A><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Листинг</SPAN></I><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US> 10.7. 
+Xsldemo05.xsl <o:p></o:p></SPAN></I></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!-- </SPAN><SPAN style="FONT-SIZE: 12pt">Имя</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">файл</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>: XslDemo05.xsl 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;xsl:stylesheet 
+xmlns:xsl="http://www.w3.org/TR/WD-xsl"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:template 
+match="/"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;H2&gt;Book Inventory&lt;/H2&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:apply-templates select="INVENTORY/BOOK" <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>order-by="+AUTHOR/LASTNAME; +AUTHOR/FIRSTNAME"/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/xsl:template&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;xsl:template 
+match="BOOK[BINDING='trade paperback']"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Author: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="AUTHOR"/&gt;&lt;BR /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Title: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="TITLE"/&gt;&lt;BR /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Binding type: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="BINDING"/&gt;&lt;BR /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Number of pages: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="PAGES"/&gt;&lt;BR /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;SPAN STYLE="font-style:italic"&gt;Price: 
+&lt;/SPAN&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="PRICE"/&gt;&lt;P /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">&lt;/xsl:template&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/xsl:stylesheet&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Обе таблицы стилей разработаны для 
+связывания с XML-документом из <A 
+href="http://localhost:3232/department/internet/xml/10/4.html#example.10.4"><FONT 
+color=#330066>Листинга 10.4</FONT></A> (XslDemo.xml). В них использован 
+следующий фильтр, предписывающий браузеру отображать только книги, имеющие 
+прошитый бумажный переплет (trade paperback):<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">[BINDING='trade 
+paperback']<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В обоих примерах используется 
+следующая установка order-by, задающая сортировку элементов BOOK по возрастанию 
+по фамилиям авторов, а затем по именам авторов:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>order-by="+AUTHOR/LASTNAME; +AUTHOR/FIRSTNAME"<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">На <A 
+href="http://localhost:3232/department/internet/xml/10/7.html#image.10.6"><FONT 
+color=#330066>рисунке 10.6</FONT></A> показано как выглядит первая часть 
+выводимой информации, которая является одинаковой для обеих таблиц 
+стилей.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm 6pt" class=MsoNormal 
+align=center><A name=image.10.6></A><SPAN 
+style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><IMG 
+style="WIDTH: 473px; HEIGHT: 381px" border=0 hspace=0 alt="" 
+src="user-images/10.6.jpg"></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt">Рис. 10.6.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Таблица стилей из <A 
+href="http://localhost:3232/department/internet/xml/10/7.html#example.10.6"><FONT 
+color=#330066>Листинга 10.6</FONT></A> использует элемент for-each для 
+отображения множества элементов BOOK. В приведенной ниже таблице стилей для 
+элемента for-each установлены и фильтр, и атрибут 
+order-by:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;xsl:for-each<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>select="INVENTORY/BOOK[BINDING='trade paperback']"<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>order-by="+AUTHOR/LASTNAME; +AUTHOR/FIRSTNAME"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">&lt;!-- отображение текущего элемента BOOK 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/xsl:for-each&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Таблица стилей из <A 
+href="http://localhost:3232/department/internet/xml/10/7.html#example.10.7"><FONT 
+color=#330066>Листинга 10.7</FONT></A> использует для отображения множества 
+элементов BOOK элемент apply-templates вместе с отдельными шаблонами, 
+отвечающими элементам «BOOK». В этой таблице стилей фильтр добавлен к шаблону, 
+соответствующему элементам BOOK:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;xsl:template match="BOOK[BINDING='trade 
+paperback']"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Добавление фильтра к элементу 
+apply-templates будет иметь тот же эффект.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Атрибут order-by может быть 
+добавлен к элементу apply-templates следующим образом:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;xsl:apply-templates select="INVENTORY/BOOK"<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>order-by="+AUTHOR/LASTNAME; +AUTHOR/FIRSTNAME"/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Атрибут order-by следует добавить 
+к элементу apply-templates, поскольку элемент template не распознает этот 
+атрибут. <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Доступ к 
+атрибутам XML<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">XSL трактует атрибут, 
+принадлежащий элементу в XML-документе, как дочерний элемент. Однако для ссылки 
+на атрибут в образце XSL вы должны предварить имя атрибута символом @, что 
+указывает на то, что имя относится к атрибуту, а не к 
+элементу.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Например, фильтр в следующем 
+начальном теге выделяет все элементы BOOK с атрибутом InStock, имеющем значение 
+«yes». Другими словами, он выбирает только книги, которые имеются в 
+наличии:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;xsl:for-each 
+select="INVENTORY/BOOK[@InStock='yes']"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вы можете использовать XSL-элемент 
+value-of для извлечения значений атрибута точно так же, как вы это делаете для 
+извлечения текстового содержимого элемента. Например, следующий элемент value-of 
+получает значение атрибута Born, принадлежащего элементу 
+AUTHOR:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;xsl:value-of select="AUTHOR/@Born"/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Таблица стилей, представленная в 
+<A 
+href="http://localhost:3232/department/internet/xml/10/8.html#example.10.8"><FONT 
+color=#330066>Листинге 10.8</FONT></A>, демонстрирует технику доступа к 
+атрибутам, принадлежащим элементам в XML-документе. Эта таблица стилей связана с 
+XML-документом из <A 
+href="http://localhost:3232/department/internet/xml/10/8.html#example.10.9"><FONT 
+color=#330066>Листинга 10.9</FONT></A> и отображает все имеющиеся в наличии 
+книги из каталога. <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><A name=example.10.8></A><I 
+style="mso-bidi-font-style: normal"><SPAN style="FONT-SIZE: 12pt">Листинг 10.8. 
+XslDemo06.xsl <o:p></o:p></SPAN></I></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;?xml 
+version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!-- Имя файла: XslDemo06.xsl 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;xsl:stylesheet 
+xmlns:xsl="http://www.w3.org/TR/WD-xsl"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;xsl:template 
+match="/"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;H2&gt;Books In Stock&lt;/H2&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TABLE BORDER="1" CELLPADDING="5"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;THEAD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TH&gt;Title&lt;/TH&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TH&gt;Author&lt;/TH&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TH&gt;Binding Type&lt;/TH&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TH&gt;Number of Pages&lt;/TH&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TH&gt;Price&lt;/TH&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/THEAD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:for-each 
+select="INVENTORY/BOOK[@InStock='yes']"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TR ALIGN="CENTER"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="TITLE"/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/TD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="AUTHOR"/&gt; &lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>(born &lt;xsl:value-of select="AUTHOR/@Born"/&gt;)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/TD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="BINDING"/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/TD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="PAGES"/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/TD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;xsl:value-of select="PRICE"/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/TD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/TR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/xsl:for-each&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;/TABLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/xsl:template&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/xsl:stylesheet&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><A name=example.10.9></A><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Листинг</SPAN></I><I 
+style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US> 10.9. 
+XslDemo06.xml <SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN><o:p></o:p></SPAN></I></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!-- </SPAN><SPAN style="FONT-SIZE: 12pt">Имя</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">файла</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>: XslDemo06.xml 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml-stylesheet type="text/xsl" 
+href="XslDemo06.xsl"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;INVENTORY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;BOOK 
+InStock="yes"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;The Adventures of Huckleberry 
+Finn&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR Born="1835"&gt;Mark Twain&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;mass market 
+paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;298&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$5.49&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;BOOK 
+InStock="no"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;Leaves of Grass&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR Born="1819"&gt;Walt 
+Whitman&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;hardcover&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;462&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$7.75&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;BOOK 
+InStock="yes"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;The Marble Faun&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR Born="1804"&gt;Nathaniel 
+Hawthorne&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;trade paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;473&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$10.95&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;BOOK 
+InStock="yes"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;Moby-Dick&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR Born="1819"&gt;Herman 
+Melville&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;hardcover&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;724&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$9.95&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/INVENTORY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Каждый элемент BOOK в 
+XML-документе содержит атрибут InStock, имеющий значение «yes» или «no», 
+указывающий наличие или отсутствие книги в хранилище. Каждый элемент AUTHOR 
+имеет атрибут Born, содержащий год рождения автора.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вместо отображения значения 
+атрибута InStock таблица стилей использует атрибут в условии фильтрации с целью 
+избежать отображения элементов BOOK для книг, которых нет в 
+наличии:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;xsl:for-each 
+select="INVENTORY/BOOK[@InStock='yes']"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp; </SPAN><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">&lt;!-- отображение каждого элемента BOOK 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/xsl:for-each&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Таблица стилей отображает каждый 
+элемент BOOK в виде HTML-таблицы, а не через список элементов SPAN, как в 
+предыдущих примерах. Она отображает значение атрибута Born после значения 
+элемента AUTHOR, используя XSL-элемент value-of. Следующие элементы создают 
+ячейку таблицы для отображения этих значений:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;TD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;xsl:value-of 
+select="AUTHOR"/&gt; &lt;BR/&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>(born 
+&lt;xsl:value-of select="AUTHOR/@Born"/&gt;)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;/TD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm 6pt" class=MsoNormal 
+align=center><A name=image.10.7></A><SPAN 
+style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><IMG 
+style="WIDTH: 520px; HEIGHT: 367px" border=0 hspace=0 alt="" 
+src="user-images/10.7.jpg"></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt">Рис. 10.7.<o:p></o:p></SPAN></P>
+<P>&nbsp;</P>
+				</div>
+			</div>
+		</div>
+		<div id="sidebar">
+			<div id="about-box">
+				<h2>3 СЕМЕСТР</h2>
+				<p>Учимся,работаем)</p>
+			</div>
+			<ul>
+				<li>
+					<h2>Список лекций</h2>
+					<ul>
+						<li><a style="" href="page1.html">Лекция №1</a></li>
+<li><a style="" href="page2.html">Задания к лекции №1</a></li>
+<li><a style="" href="page3.html">Лекция №2</a></li>
+<li><a style="" href="page4.html">Задания к лекции №2</a></li>
+<li><a style="" href="page5.html">Лекция №3</a></li>
+<li><a style="" href="page6.html">Задания к лекции №3</a></li>
+<li><a style="" href="page7.html">Лекция №4</a></li>
+<li><a style="" href="page8.html">Лекция №5</a></li>
+<li><a style="" href="page9.html">Задания к лекции №5</a></li>
+<li><a style="" href="page12.html">Лекция №6</a></li>
+<li><a style="" href="page11.html">Задания к лекции №6</a></li>
+<li><a style="" href="page13.html">Лекция №7</a></li>
+<li><a style="" href="page14.html">Задания к лекции №7</a></li>
+<li><a style="" href="page15.html">Лекция №8</a></li>
+<li><a style="" href="page16.html">Задания к лекции №8</a></li>
+<li><a style="" href="page17.html">Лекция №9</a></li>
+<li><a style="" href="page18.html">Задания к лекции №9</a></li>
+<li><a style="" href="page19.html">Лекция №10</a></li>
+<li><a style="" href="page20.html">Задания к лекции №10</a></li>
+
+					</ul>
+				</li>
+			
+			</ul>
+		</div>
+		<!-- end sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+</div>
+<!-- end page -->
+<hr />
+<div id="footer">
+	<p>БГТУ| 2011</p>
+</div>
+</body>
+</html>

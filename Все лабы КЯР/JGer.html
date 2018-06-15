@@ -1,0 +1,252 @@
+﻿<html>
+<head>
+<script type='text/javascript'>
+    function f1()
+    {
+        alert('Вас приветствует учебный центр');
+    }
+    function f2()
+            {
+            var x=confirm('Хотите стать Web-дизайнером');
+            if(x==true)
+            {
+            alert('Учите стили CSS и JavaScript!');
+            }
+            else
+            {
+            alert('Упускаете время!');
+            }
+            }
+    function f3() {
+        x = prompt('Введите Ваше имя:', 'Имя');
+        document.write('Добро пожаловать на наши курсы, ' + x);
+    }
+    function f4() {
+        var v = 4;
+        var b = 5;
+        var z = v + b;
+        document.write('Сумма = ' + z);
+    }
+    function f5() {
+        document.write('10' + '5');
+    }
+    function f6() {
+        var v = 45;
+        document.write(v + '2');
+    }
+    function f7() {
+        var b = 25;
+        document.write('111' + b);
+    }
+    function f8() {
+        document.write('Результатом сложения строки и числа всегда будет строка');
+    }
+    function f9() {
+        var x = 10;
+        var y = 15;
+        var z = (35 * y - 25 * x / 5 + 232);
+        var b = (((8 * y / x) + (5 * (x / y)) - 43) * 6);
+        var n=(z%b);
+        document.writeln('первое выраж:',z);
+        document.writeln('второе выраж:',b);
+        document.writeln('третье выраж:',n);
+        alert(n);
+    }
+    function f10() {
+        var x = 100;
+        if(x<20 || x>40 && x!==15 && x%5==0)
+            document.write('Правильное значение');
+        else
+            document.write('Не Правильное значение');
+    }
+    function f100() {
+        var x = 1;
+        var y = 2;
+        if (x-y<0 || x==0)
+            document.write('Отриц или рав 0');
+        else
+            document.write('Положит');
+    }
+    function f11() {
+        x = prompt('Введите первое число:', ' ');
+        y = prompt('Введите первое число:', ' ');
+        if (x>y)
+            document.write('X > Y');
+        else
+            document.write('X < Y');
+    }
+    function f111() {
+   x=confirm('Вы согласны на перемирие?');
+        if (x==true)
+            document.write('Да будет мир!');
+        else
+            document.write('Да будет война!!');
+    }
+    function f12() {
+        var s = +prompt('От 1 до 7 ', ' ');
+        switch (s) {
+            case 1: alert("Понедельник");
+                {
+                    break;
+                }
+            case 2: alert("Вторник");
+                {
+                    break;
+                }
+            case 3: alert("Среда");
+                {
+                    break;
+                }
+            case 4: alert("Четверг");
+                {
+                    break;
+                }
+            case 5: alert("Пятница");
+                {
+                    break;
+                }
+            case 6: alert("Суббота");
+                {
+                    break;
+                }
+            case 7: alert("Воскресенье");
+                {
+                    break;
+                }
+        }
+        }
+        function f13() {
+            try {
+                documant.write("Вторая строка");
+            }
+            catch (e) {
+                alert("Ошибка :" + e.message);
+            }
+            finally {
+                alert('vot');
+            }
+        }
+        function ftable() {
+            var a = prompt("Введите первое число:",'');
+            var b = prompt("Введите второе число:",'');
+            var loop1,loop2;
+            document.writeln("ТАБЛИЦА УМНОЖЕНИЯ ДЛЯ: <b>" + a + "*" + b + "</b><hr><pre>");
+            document.write("<table border='1'>");
+            document.write("<tr align='center'><td> </td>");
+            for (loop1 = 1; loop1 <= b; loop1++) document.write("<td>" + loop1 + " </td>");
+            document.write("</tr>");
+            for (loop1 = 1; loop1 <= a; loop1++) {
+                document.write("<tr align='center'><td>" + loop1 + " </td>");
+                for (loop2 = 1; loop2 <= b; loop2++) {
+                    document.writeln("<td bgcolor='white'>"+loop1 + " x " + loop2 + " = " + (loop1 * loop2)+"</td>");
+                }
+                document.write("</tr>"); 
+            }
+            document.write("</table>");
+        }
+        function krug() {
+            var a = new Number ( prompt("Введите минимальный радиус:", ''));
+            var b = new Number ( prompt("Введите Максимальный радиус:", ''));
+            document.write("<table border='1'>");
+            document.write("<tr align='center'>");
+            document.write("<td bgcolor='green'>" + "Радиус" + " </td>");
+            document.write("<td bgcolor='orange'>" + "Площадь круга" + " </td>");
+            document.write("<td bgcolor='gray'>" + "Длина окружности" + " </td>");
+            document.write("</tr>");
+            do {
+                document.write("<tr align='center'>");
+                document.writeln("<td bgcolor='blue'>" + a.toFixed(1) + "</td>");
+                document.writeln("<td bgcolor='yellow'>" + (Math.round(3.14 * (a * a))) + "</td>");
+                document.writeln("<td bgcolor='red'>" + (Math.round(2 * 3.14 * a)) + "</td>");
+                document.write("</tr>");
+                a = a + 0.3;
+            } while (a < b);
+            document.write("</table>");
+        }
+        function tri() {
+            var a = new Number( prompt("Введите дробное число:", ''));
+            var b = new Number( prompt("Введите второе число:", ''));
+            document.write("<table border='1'>");
+            document.write("<tr align='center'>");
+            document.write("<td bgcolor='green'>" + "Число" + " </td>");
+            document.write("<td bgcolor='orange'>" + "Метод" + " </td>");
+            document.write("<td bgcolor='gray'>" + "Результат" + " </td>");
+            document.write("<td bgcolor='puple'>" + "Описание метода" + " </td>");
+            document.write('<tr>');
+            document.write('<td>' + a + '</td>');
+            document.write('<td>' + 'toString(2)' + '</td>');
+            document.write('<td>' + a.toString(2) + '</td>');
+            document.write('<td>' + 'Строковое представление числа в 2-ичной системе счисления' + '</td>');
+            document.write('</tr>');
+            document.write('<tr>');
+            document.write('<td>' + a + '</td>');
+            document.write('<td>' + 'toExponential(4)' + '</td>');
+            document.write('<td>' + a.toExponential(4) + '</td>');
+            document.write('<td>' + 'Представление числа в экспоненциальной форме' + '</td>');
+            document.write('</tr>');
+            document.write('<tr>');
+            document.write('<td>' + a + '</td>');
+            document.write('<td>' + 'toFixed(3)' + '</td>');
+            document.write('<td>' + a.toFixed(3) + '</td>');
+            document.write('<td>' + 'Представление числа в форме с фиксированным кол-вом цифр после точки' + '</td>');
+            document.write('</tr>');
+            document.write('<tr>');
+            document.write('<td>' + a + '</td>');
+            document.write('<td>' + 'toPrecision(1)' + '</td>');
+            document.write('<td>' + a.toPrecision(1) + '</td>');
+            document.write('<td>' + 'Представление числа с заданным общим кол-вом значащих цифр' + '</td>');
+            document.write('</tr>');
+            document.write('<td>' + b + '</td>');
+            document.write('<td>' + 'toString(2)' + '</td>');
+            document.write('<td>' + b.toString(2) + '</td>');
+            document.write('<td>' + 'Строковое представление числа в 2-ичной системе счисления' + '</td>');
+            document.write('</tr>');
+            document.write('<tr>');
+            document.write('<td>' + b + '</td>');
+            document.write('<td>' + 'toExponential(4)' + '</td>');
+            document.write('<td>' + b.toExponential(4) + '</td>');
+            document.write('<td>' + 'Представление числа в экспоненциальной форме' + '</td>');
+            document.write('</tr>');
+            document.write('<tr>');
+            document.write('<td>' + b + '</td>');
+            document.write('<td>' + 'toFixed(3)' + '</td>');
+            document.write('<td>' + b.toFixed(3) + '</td>');
+            document.write('<td>' + 'Представление числа в форме с фиксированным кол-вом цифр после точки' + '</td>');
+            document.write('</tr>');
+            document.write('<tr>');
+            document.write('<td>' + b + '</td>');
+            document.write('<td>' + 'toPrecision(1)' + '</td>');
+            document.write('<td>' + b.toPrecision(1) + '</td>');
+            document.write('<td>' + 'Представление числа с заданным общим кол-вом значащих цифр' + '</td>');
+        }
+        
+</script>
+    <style>
+        input{
+            font-size:12px;
+            color:forestgreen;
+            font-family:'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <input type='button' value='Окно оповещения' onclick='f1()' />
+    <input type='button' value='Окно подтверждения' onclick='f2()' />
+    <input type='button' value='Окно запроса' onclick='f3()' />
+    <input type='button' value='1' onclick='f4()' />
+    <input type='button' value='2' onclick='f5()' />
+    <input type='button' value='3' onclick='f6()' />
+    <input type='button' value='4' onclick='f7()' />
+    <input type='button' value='5' onclick='f8()' />
+    <input type='button' value='6' onclick='f9()' />
+    <input type='button' value='7' onclick='f10()' />
+    <input type='button' value='7.1' onclick='f100()' />
+    <input type='button' value='8' onclick='f11()' />
+    <input type='button' value='8.1' onclick='f111()' />
+    <input type='button' value='9' onclick='f12()' />
+    <input type='button' value='10' onclick='f13()' />
+    <input type='button' value='Таблица Умножения' onclick='ftable()' />
+    <input type='button' value='Круг' onclick='krug()' />
+    <input type='button' value='Третье' onclick='tri()' />
+</body>
+</html>

@@ -1,0 +1,190 @@
+﻿<html>
+<head>
+    <style type="text/css">
+        @font-face{
+            font-family:Tie;
+            src:url(calibri.ttf);
+        }
+        a:before{
+            content:'студент 1 курса ';
+            font-weight:bold;
+        }
+        a:after{
+            content:' проживающий по адресу улю';
+             font-weight:bold;
+        }
+           a:link {
+              color: darkred;
+          }
+            a:visited {
+               color: hsl(31,12%,30%);
+          }
+            a:hover {
+           color:black;
+         }
+           a:active {
+              color:darkgray;
+          }
+        body {
+            background-image:url(2-12.jpg);
+            background-size:300px 300px;
+        }
+         .hot:first-letter {
+            color:darkred;
+            font-size:20pt;
+            border:1px solid black;
+            text-shadow:3px 2px 1px #FFAE00;
+            border-radius:8px;
+        }
+
+        p.pot:last-child {
+            border-color: gold;
+            font-size: 20pt;
+            font-style: normal;
+            font-variant: small-caps;
+            word-spacing: 5pt;
+            text-overflow:ellipsis;
+        }
+        p:first-line{
+                   color:orangered;
+             padding-bottom: 5px;
+              border-bottom: 2px solid maroon;
+              font-family:Tie;
+        }
+        #hai {
+            color: blue;
+            font-family: "Times New Roman",sans-serif;
+            font-size: 20pt;
+        }
+
+        #hau {
+            color: green;
+            font-family: "Times New Roman",sans-serif;
+            font-size: 15pt;
+        }
+        #d1{
+              color: yellow;
+            font-family: "Times New Roman",sans-serif;
+            font-size: 10pt;
+        }
+         #d2{
+              color: yellow;
+            font-family: "Times New Roman",sans-serif;
+            font-size: 10pt;
+        }
+          #d3{
+              color: yellow;
+            font-family: "Times New Roman",sans-serif;
+            font-size: 10pt;
+        }
+           #d4{
+              color: yellow;
+            font-family: "Times New Roman",sans-serif;
+            font-size: 10pt;
+        }
+            #d5{
+              color: yellow;
+            font-family: "Times New Roman",sans-serif;
+            font-size: 10pt;
+        }
+        .di {
+            list-style-image:url(i2.jpg);
+        }
+       tr{
+           border-width:2px;
+           color: hsl(60,30%,2%);
+           font-size:12pt;
+           font-family:"Times New Roman";
+           text-align:center;
+       }
+    </style>
+    <script>
+        function tegi() {
+            d = "";
+            for (i = 0; i < document.all.length; i++) {
+                d += i + " " + document.all[i].tagName + "\n";
+            }
+            alert(d);
+        }
+        function poisk() {
+            var z = document.body;
+            alert(z.innerHTML);
+        }
+        function span1() {
+            alert("содержимое первого элемента <span> через идентификатор ");
+            el = document.getElementById("hai").innerHTML;
+            alert(el);
+        }
+        function span2() {
+            window.alert("cодержимое первого элемента <span> используя частную колекцию");
+            el = document.getElementsByTagName("span")[0];
+            window.alert(el.innerHTML);
+        }
+        function span3() {
+            alert("содержимое первого элемента <span> через all");
+            var f = document.querySelector('p > span');
+            alert(f.innerHTML);
+        }
+        function tablica() {
+            alert('Вот так!');
+            var sum = 0;
+            for (var i = 1; i <= 5; i++) {
+                sum += parseInt(document.getElementById("d"+i).innerHTML);
+            }
+            sum = sum / 5;
+            alert('мой средний балл : ' + sum)
+            document.getElementById("hai").innerHTML += ' '+sum;
+            fe = document.getElementById("hai").innerHTML;
+            
+            
+        }
+    </script>
+    <link rel="stylesheet" href="new.css">
+    <title> Моя первая страница! </title>
+</head>
+<body>
+    <h1 align=center> Моя первая страница! </h1>
+    <p class="hot"> Я, <a href="а.html">Муравейко Владислав Сергеевич</a>, изучаю <Font color="#00ff00"> HTML </Font> и CSS.</p>
+    <h2 align=center> Моя автобиография</h2>
+    <h3 align=center>Начало</h3>
+    <p class="hot"> Родился в <span style="color:black;font-size:21pt;" class="p">Бресте</span> и закончил школу №25.Траляля тополя Тата ра ра пам </p>
+    <h3 align=center>Средняя Школа</h3>
+    <p class="hot">Не учился.<br>Потом <span id="hai">  начал  </span> учиться</br>Очень хорошо учился</p>
+    <h3 align=center>Настоящее</h3>
+    <p class="hot">
+        Поступил после школы в <span id="hau">Белорусский Государственный Технологический Университет</span>.<br>Специальность Программное Обеспечение Информационных Технологий.</br>
+        Ну и вот.
+    </p>
+    <h2 align=center>Цвета</h2>
+    <ol>
+        <li style="color:red;font-size:21pt;">Black</li>
+        <Ul type="disc" style="color:red;font-size:21pt;"><li>Smug Black</li><li>Light Black</li></Ul>
+        <li style="color:goldenrod;font-size:12pt;">Grey</li>
+        <ul type="square" style="color:goldenrod;font-size:12pt;"><li>Light Grey</li><li>Dark Grey</li><li>Light-Dark Grey</li></ul>
+        <li style="color:blue;font-size:17pt;"><b>Green</b></li>
+        <ul type="circle" style="color:blue;font-size:17pt;"><li>Light Green</li><li>Dark Green</li></ul>
+    </ol>
+    <ol class="di">
+        <li>HELLO</li>
+        <li>HOW ARE YOU?</li>
+    </ol>
+    <h2 align=center>Воображение</h2>
+    <table border="1" align="center" width=300>
+        <caption><b>Инфо о студенте</b></caption>
+        <tr><td>ФИО</td><td colspan=3><a href="а.html">Муравейко Владислав Сергеевич</a></td></tr>
+        <tr><td rowspan=1><img src="i.jpg"></td><td rowspan=1 colspan=3>Адрес: ул.Белорусская, д.19, ком.416</td></tr>
+        <tr><td rowspan=6>1 семестр2016/2017 уч. года</td><td>Дата</td><td>Предмет</td><td>Оценка</td></tr>
+        <tr><td>30.12.2016</td><td>Физика</td><td id="d1">9</td></tr>
+        <tr><td>04.01.2017</td><td>ОИТ</td><td id="d2">9</td></tr>
+        <tr><td>09.01.2017</td><td>Математика</td><td id="d3">9</td></tr>
+        <tr><td>13.01.2017</td><td>АЛОЦВМ</td><td id="d4">9</td></tr>
+        <tr><td>17.01.2017</td><td>ОАиП</td><td id="d5">9</td></tr>
+    </table>
+    <input type='button' value='1 Задание' onclick='tegi()' />
+    <input type='button' value='2 Задание' onclick='poisk()' />
+    <input type='button' value='3 Задание' onclick='span1()' />
+    <input type='button' value='4 Задание' onclick='span2()' />
+    <input type='button' value='5 Задание' onclick='span3()' />
+    <input type='button' value='6 Задание' onclick='tablica()' />
+</body>
+</html>

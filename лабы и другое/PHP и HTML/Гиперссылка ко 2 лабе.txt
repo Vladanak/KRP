@@ -1,0 +1,16 @@
+<html>
+<head>
+<title> Основная задача </title>
+<style type="text/css">
+body{
+background-color: #d2b48c;
+font-family: monospace;
+}
+</style>
+</head>
+<body>
+<h1 align=center> Starbuzz Кафе </h1>
+<p align=center> Обеспечить вас необходимым количеством кофеина для поддержания жизненного тонуса.</p>
+<p align=center> Просто выпейте это! </p>
+</body>
+</html>

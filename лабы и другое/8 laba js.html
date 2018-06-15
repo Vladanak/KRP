@@ -1,0 +1,39 @@
+﻿<html>
+<head>
+    <title>8 laba</title>
+    <script>
+        function gro()
+        {
+            if (document.getElementById("23").src.indexOf("i.jpg") > 0) {
+                document.getElementById("23").src = "i2.jpg"
+            }
+            else {
+                document.getElementById("23").src = "i.jpg"
+            }
+
+        }
+        function tr()
+        {
+            document.getElementById("20").innerHTML = "<img src='i2.jpg' />";
+        }
+        function ty()
+        {
+            document.getElementById("20").innerHTML = "<span>fwefsdsdsdsds</span>";
+
+        }
+        document.write("<span onmouseover=style.color='yellow' onmouseout=style.color='black'>" + "ФИТ ЗДЕСЬ С ВАМИ!" + "</span>");
+        document.write("<br>");
+        document.write("<span onclick=style.fontSize='25px' onmouseout=style.fontSize='16px'>" + "ПОИТ ЗДЕСЬ!!" + "</span>");
+        document.write("<br>");
+        document.write("<img src='i2.jpg' onmouseover=style.width='500px' onmouseout=style.width='382px' />");
+    </script>
+</head>
+<body>
+<br />
+<img src="i.jpg" id="23" onclick="gro()" />
+    <br />
+ <span id="20" onclick="tr ()">fwefsdsdsdsds</span>
+    <br />
+    <span ondblclick="style.border='inset red 2px'">grgregregergergeg</span>
+</body>
+</html>

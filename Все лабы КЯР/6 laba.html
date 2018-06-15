@@ -1,0 +1,128 @@
+﻿<html>
+<head>
+    <title>6 лаба</title>
+    <script>
+        function go()
+        {
+            Win = window.open("about:blank","MyWin","width=640, height=480");
+            Win.name = "KO";
+        }
+        function tr() {
+            newWin = window.open("about:blank","hello","width=200,height=200");
+            newWin.document.write("Привет, мир!"+"<br>"+newWin.name);
+            Win.document.write("Привет, мир!" + "<br>" + Win.name);
+        }
+        function exit() {
+            Win.close();
+            newWin.close();
+        }
+        function infa()
+        {
+            document.write('<table border=1>');
+            document.write('<tr>');
+            document.write('<td>');
+            document.write('Информация о браузере:');
+            document.write('</td>');
+            document.write('<td>');
+            document.write(navigator.userAgent);
+            document.write('</td>');
+            document.write('</tr>');
+            document.write('<tr>');
+            document.write('<td>');
+            document.write('Версия:');
+            document.write('</td>');
+            document.write('<td>');
+            document.write(navigator.appVersion);
+            document.write('</td>');
+            document.write('</tr>');
+            document.write('<tr>');
+            document.write('<td>');
+            document.write('Название:');
+            document.write('</td>');
+            document.write('<td>');
+            document.write(navigator.appName);
+            document.write('</td>');
+            document.write('</tr>');
+            document.write('<tr>');
+            document.write('<td>');
+            document.write('Код браузера:');
+            document.write('</td>');
+            document.write('<td>');
+            document.write(navigator.appCodeName);
+            document.write('</td>');
+            document.write('</tr>');
+            document.write('<tr>');
+            document.write('<td>');
+            document.write('Платформа:');
+            document.write('</td>');
+            document.write('<td>');
+            document.write(navigator.platform);
+            document.write('</td>');
+            document.write('</tr>');
+            document.write('<tr>');
+            document.write('<td>');
+            document.write('Включена ли Джава:');
+            document.write('</td>');
+            document.write('<td>');
+            document.write(navigator.javaEnabled());
+            document.write('</td>');
+            document.write('</tr>');
+            document.write('<tr>');
+            document.write('<td>');
+            document.write('Ширина и высота:');
+            document.write('</td>');
+            document.write('<td>');
+            document.write(screen.width + "x" + screen.height);
+            document.write('</td>');
+            document.write('</tr>');
+            document.write('<tr>');
+            document.write('<td>');
+            document.write('Глубина цвета:');
+            document.write('</td>');
+            document.write('<td>');
+            document.write(screen.colorDepth);
+            document.write('</td>');
+            document.write('</tr>');
+            document.write('<tr>');
+            document.write('<td>');
+            document.write('Посещённые URL:');
+            document.write('</td>');
+            document.write('<td>');
+            document.write(history.length);
+            document.write('</td>');
+            document.write('</tr>');
+            document.write('<tr>');
+            document.write('<td>');
+            document.write('URL текущей:');
+            document.write('</td>');
+            document.write('<td>');
+            document.write(location.href);
+            document.write('</td>');
+            document.write('</tr>');
+            document.write('<tr>');
+            document.write('<td>');
+            document.write('URL загруженного:');
+            document.write('</td>');
+            document.write('<td>');
+            document.write(location.pathname);
+            document.write('</td>');
+            document.write('</tr>');
+            document.write('<tr>');
+            document.write('<td>');
+            document.write('Имя домена загруженyого:');
+            document.write('</td>');
+            document.write('<td>');
+            document.write(location.host);
+            document.write('</td>');
+            document.write('</tr>');
+            document.write('</table>');
+        }
+    </script>
+</head>
+<body>
+    <input type='button' value='Окно ' onclick='go()' />
+    <input type='button' value='Окно zakr ' onclick='exit()' />
+    <input type='button' value='Окно 2 ' onclick='tr()' />
+    <input type='button' value='Инфа ' onclick='infa()' />
+</body>
+</html>

@@ -1,0 +1,626 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=cp1251" />
+<title>Заголовок-окна</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="header">
+	<div id="logo">
+		<h1><a href="index.html">Иформационные технологии</a></h1>
+		<h2>.</h2>
+	</div>
+	<div id="menu">
+		<ul>
+			<li><a style="" href="index.html">Знакомство с XML</a></li>
+
+		</ul>
+	</div>
+</div>
+<hr />
+<div id="page">
+	<div id="bg">
+		<div id="content">
+			<div class="post" style="padding-top: 57px;">
+				<h2 class="title">Лекция №4</h2>
+				<div class="entry">
+
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Добавление 
+комментариев, инструкций по обработке и разделов CDATA<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В этой лекции вы узнаете, как 
+добавлять и использовать в ваших документах три типа XML-разметки: комментарии, 
+инструкции по обработке и разделы CDATA. Эти три составляющие не обязательны для 
+корректно сформированных (или валидных) XML-документов, но они могут быть 
+полезными. Вы можете использовать комментарии, чтобы сделать ваш документ более 
+понятным для восприятия. С помощью инструкций по обработке вы можете изменить 
+способ обработки или отображения ваших документов приложением. Вы также можете 
+воспользоваться разделами CDATA, чтобы включать в символьные данные элемента 
+практически любые сочетания символов.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Добавление 
+комментариев<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Одним из принципов XML является 
+создание предельно ясных и простых для понимания документов. Помещенные в нужном 
+месте исчерпывающие примечания могут оказать существенную помощь при восприятии 
+XML-документа, подобно тому, как комментарии заметно облегчают чтение исходного 
+кода программы на языке С++ или BASIC.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> В 
+Microsoft Internet Explorer 5 XML-процессор не анализирует и не обрабатывает 
+текст комментариев в XML-разметке. Тем не менее, он делает тексты комментариев 
+доступными для написанного внутри HTML-страницы кода сценария. В лекции 9 вы 
+узнаете, как применять сценарии для доступа к тексту комментария, а также к 
+другим компонентам XML-документа. Internet Explorer 5 отображает все комментарии 
+в XML-документе, если вы открыли документ в браузере, и если документ не имеет 
+соответствующей таблицы стилей.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Форма записи 
+комментариев<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Комментарий начинается с символов 
+<SPAN style="COLOR: black">&lt;!--</SPAN> и заканчивается символами <SPAN 
+style="COLOR: black">--&gt;.</SPAN><SPAN style="COLOR: red"> </SPAN>Между этими 
+двумя ограничителями вы можете поместить любые символы, за исключением двойного 
+тире (--). Вы даже можете вставлять внутрь комментария символ левой угловой 
+скобки (&lt;) и знак амперсенда (&amp;). Вот пример правильно записанного 
+комментария:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!-- Здесь вы можете поместить 
+любой текст, за исключением двойного тире. Символы &lt; и &amp; также допустимы! 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">В каком месте 
+вы можете поместить комментарий<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вы можете вставить комментарий в 
+любое место в вашем XML-документе, но вне описания разметки, например, поместить 
+их в пролог документа:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;?xml 
+version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!-- Это комментарий в прологе. 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;DOCELEMENT&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>This is a very simple XML-document.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/DOCELEMENT&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вы можете поместить их вслед за 
+элементом Документ:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;DOCELEMENT&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>This is a very simple XML-document.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/DOCELEMENT&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!-- Это комментарий, следующий 
+за элементом Документ. --&gt;.<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">И вы можете поместить их внутри 
+содержимого элемента:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;?xml 
+version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;DOCELEMENT&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!-- Это комментарий, который 
+является частью содержимого корневого элемента. --&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>This is a very simple XML-document.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/DOCELEMENT&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Ниже приведен пример неправильной 
+записи комментария, поскольку он помещен внутри разметки:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;?xml 
+version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;DOCELEMENT &lt;!-- Это 
+НЕПРАВИЛЬНАЯ ЗАПИСЬ комментария! --&gt;<SPAN style="mso-spacerun: yes">&nbsp; 
+</SPAN>&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>This is a very simple XML-document.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/DOCELEMENT&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Тем не менее, вы можете помещать 
+комментарий внутри определения типа элемента (DTD) – несмотря на то, что DTD 
+является видом разметки – если только при этом комментарий не находится внутри 
+другой разметки, входящей в состав DTD. Подробнее о DTD и правилах размещения 
+комментариев внутри него узнаете в лекции 5.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Использование 
+инструкций по обработке<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Назначение инструкций по обработке 
+– сообщить информацию, передаваемую XML-процессором 
+приложению.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+XML-процессор представляет собой программный модуль, который прочитывает и 
+хранит содержимое XML-документа. Приложение – это отдельный программный модуль, 
+который получает содержимое документа от XML-процессора, а затем обрабатывает и 
+отображает это содержимое. Если вы отображаете XML-документ в Internet Explorer 
+5, браузер содержит как XML-процессор, так и часть приложения. (Если вы пишете 
+сценарий для обработки и отображения XML-документа, то тем самым самостоятельно 
+создаете часть приложения.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Форма записи 
+инструкции по обработке<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Инструкция по обработке имеет 
+следующую общую форму записи:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;? Кому инструкция 
+?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Здесь «Кому» есть имя приложения, 
+которому адресована инструкция. Допускается любое имя при соблюдении следующих 
+правил:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l1 level1 lfo1" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">имя должно начинаться с буквы 
+или символа подчеркивания (_), после чего могут следовать или не следовать 
+другие буквы, цифры, точки (.), тире (–) или символы подчеркивания 
+(_);<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l1 level1 lfo1" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">имя «xml», в любом сочетании 
+строчных или прописных букв, зарезервировано («xml» строчными буквами 
+используется в объявлении XML-документа, которое представляет собой 
+разновидность инструкции по обработке).<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Инструкция есть информация, 
+передаваемая приложению. Она может состоять из любой последовательности 
+символов, за исключением пары <SPAN style="COLOR: black">?&gt;</SPAN>, 
+зарезервированной для обозначения окончания инструкции по 
+обработке.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Как вы можете 
+использовать инструкции по обработке<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В зависимости от процессора, 
+который будет прочитывать документ, вы можете использовать различные инструкции 
+по обработке. Если вы используете в качестве XML-процессора Internet Explorer 5, 
+у вас есть две основные возможности применения инструкций по 
+обработке:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l0 level1 lfo2" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">вы можете применять 
+стандартные, зарезервированные инструкции, чтобы сообщить Internet Explorer 5, 
+как отображать документ с использованием соответствующей таблицы стилей. 
+Например, следующая инструкция по обработке предписывает Internet Explorer 5 
+использовать CSS-таблицу из файла Inventory01.css:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 6pt 0cm 6pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;?xml-stylesheet 
+type="text/css" href=" Inventory01.css"?&gt;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l0 level1 lfo2" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">если вы пишете Web-сценарий 
+для управления и отображения XML-документа, вы можете поместить в документ любые 
+не зарезервированные инструкции по обработке, а ваша программа-сценарий будет 
+считывать эти инструкции и выполнять определенные действия. Например, вы можете 
+вставить в документ следующую инструкцию по обработке, сообщающую вашему 
+сценарию уровень детализации при отображении: <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 6pt 0cm 6pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;? MyScript detail="2"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В лекции 9 вы узнаете, как 
+использовать сценарии для доступа к составляющим XML-документа, включая 
+инструкции по обработке.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Куда вы 
+можете поместить инструкции по обработке<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вы можете поместить инструкцию по 
+обработке в любое место XML-документа вне других элементов разметки – т.е. вы 
+можете помещать их аналогично комментариям: в пролог документа, после элемента 
+Документ, либо внутри содержимого элемента. Ниже приведен XML-документ с 
+правильно записанными инструкциями по обработке:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;?xml 
+version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!-- Далее следует инструкция 
+по обработке внутри пролога: --&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml-stylesheet type="text/css" 
+href="Inventory01.css"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;INVENTORY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;!-- Инструкция по обработке внутри содержимого элемента: 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;?</SPAN><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>ScriptA</SPAN><SPAN style="FONT-SIZE: 12pt" lang=EN-US> </SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>emphasize</SPAN><SPAN style="FONT-SIZE: 12pt">="</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>yes</SPAN><SPAN 
+style="FONT-SIZE: 12pt">" ?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;TITLE&gt; The 
+Adventures of Huckleberry Finn&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;Mark Twain&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;mass market 
+paperback&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;298&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$5.49&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;Leaves of Grass&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;Walt Whitman&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;hardcover&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;462&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$7.75&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/INVENTORY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!-- Это инструкция по 
+обработке после элемента Документ: --&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?ScriptA Category="books" Style="formal" 
+?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вот пример инструкции по 
+обработке, неверно помещенной внутрь элемента разметки:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;BOOK &lt;?ScriptA emphasize="yes" ?&gt;<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;TITLE&gt;Leaves of Grass&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;Walt Whitman&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BINDING&gt;hardcover&lt;/BINDING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;462&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PRICE&gt;$7.75&lt;/PRICE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Тем не менее, вы можете помещать 
+инструкцию по обработке внутри определения типа документа (DTD) – несмотря на 
+то, что DTD представляет собой форму разметки – если только она не находится 
+внутри имеющегося в DTD другого элемента разметки (подробнее в лекции 
+5).<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Использование 
+разделов CDATA<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Внутри символьных данных в 
+содержимом элемента, нельзя помещать символ левой угловой скобки <SPAN 
+style="COLOR: black">(&lt;) или знак амперсанда (&amp;) . Одним из способов 
+преодолеть это ограничение является использование ссылки на символ (&lt; или 
+&amp;), либо н</SPAN>а предопределенный общий примитив (&lt; или &amp;) . Однако 
+в том случае, если вам требуется многократно вставлять символы &lt; или &amp;, 
+использование ссылок неудобно и затрудняет восприятие данных. В этом случае 
+проще поместить текст, содержащий такие символы, в раздел 
+CDATA.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Форма записи 
+раздела CDATA<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Раздел CDATA начинается с символов 
+&lt;![CDATA[ и заканчивается символами ]]&gt;. Между этими двумя ограничителями 
+вы можете поместить любые символы (включая &lt; или &amp;), за исключением 
+]]&gt; (что будет интерпретировано как конец раздела CDATA). Все символы внутри 
+раздела CDATA трактуются как литеральная часть символьных данных элемента, а не 
+XML-разметка.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Ниже приведен пример правильно 
+записанного раздела CDATA:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 6pt 0cm" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;![CDATA[ Здесь вы можете разместить любые символы, 
+за исключением двух правых квадратных скобок с последующим знаком 
+"больше".]]&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+Ключевое слово CDATA (как и другие ключевые слова XML) должно быть набрано 
+прописными буквами.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Если вы хотите включить в состав 
+имеющихся символьных данных блок исходного кода или разметку, которые будут 
+отображаться браузером, то можете воспользоваться разделом CDATA с целью 
+предотвратить интерпретацию синтаксическим анализатором символов &lt; или &amp; 
+как XML-разметку. Например:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;A-SECTION&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вот пример очень простой 
+HTML-страницы:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;![CDATA[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;HTML&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;HEAD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;TITLE&gt;R. Jones &amp; Sons&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/HEAD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;BODY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;P&gt;Добро пожаловать на нашу 
+домашнюю страницу</SPAN><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>!&lt;/P&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/BODY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/HTML&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>]]&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/A-SECTION&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Внутри раздела CDATA процессор 
+будет предполагать, что &lt;HTML&gt;, например, есть начало вложенного элемента, 
+но не часть символьных данных элемента A-SECTION.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+Поскольку вы можете непосредственно помещать символы &lt; и &amp; внутрь раздела 
+CDATA, вам не нужно использовать ссылки на символы (&amp;#60; и &amp;#38;), либо 
+на предопределенные примитивы общего назначения &amp;lt; и &amp;amp;. 
+Фактически, если вы используете подобную ссылку, синтаксический анализатор 
+интерпретирует каждый из символов в ссылке как литерал и не замещает ссылку 
+символами &lt; и &amp;.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Куда вы 
+можете поместить раздел CDATA<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вы можете поместить раздел CDATA в 
+любое место, занимаемое символьными данными – т.е. внутри содержимого элемента, 
+но не внутри XML-разметки. Вот правильно записанный раздел 
+CDATA:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;?xml 
+version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;MUSICAL&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;TITLE_PAGE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;![CDATA[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;Oklahoma!&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>By<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>Rogers &amp; Hammerstein<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>]]&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">&lt;/TITLE_PAGE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!-- Здесь расположены другие 
+элементы… --&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/MUSICAL&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Ошибочно сформированный 
+XML-документ, представленный ниже, содержит два неправильно записанных раздела 
+CDATA. Первый из них не находится внутри содержимого элемента. Второй находится 
+внутри содержимого элемента, но также и внутри начального тега 
+разметки.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;?xml 
+version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;![CDATA[ ОШИБКА: не внутри 
+содержимого элемента! ]]&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;DOC_ELEMENT&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN>&lt;SUB_ELEMENT &lt;![CDATA[ ОШИБКА: 
+внутри разметки! ]]&gt; &gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>содержимое 
+подэлемента…<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/SUB_ELEMENT&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;/DOC_ELEMENT&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+Разделы CDATA не являются вложениями. Вы не можете поместить один раздел CDATA 
+внутрь другого.<o:p></o:p></SPAN></P>
+<P><SPAN 
+style="FONT-FAMILY: 'Times New Roman','serif'; FONT-SIZE: 12pt; mso-ansi-language: RU; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: RU; mso-bidi-language: AR-SA"><BR 
+style="PAGE-BREAK-BEFORE: always; mso-special-character: line-break" 
+clear=all></SPAN>&nbsp;</P>
+				</div>
+			</div>
+		</div>
+		<div id="sidebar">
+			<div id="about-box">
+				<h2>3 СЕМЕСТР</h2>
+				<p>Учимся,работаем)</p>
+			</div>
+			<ul>
+				<li>
+					<h2>Список лекций</h2>
+					<ul>
+						<li><a style="" href="page1.html">Лекция №1</a></li>
+<li><a style="" href="page2.html">Задания к лекции №1</a></li>
+<li><a style="" href="page3.html">Лекция №2</a></li>
+<li><a style="" href="page4.html">Задания к лекции №2</a></li>
+<li><a style="" href="page5.html">Лекция №3</a></li>
+<li><a style="" href="page6.html">Задания к лекции №3</a></li>
+<li><a style="" href="page7.html">Лекция №4</a></li>
+<li><a style="" href="page8.html">Лекция №5</a></li>
+<li><a style="" href="page9.html">Задания к лекции №5</a></li>
+<li><a style="" href="page12.html">Лекция №6</a></li>
+<li><a style="" href="page11.html">Задания к лекции №6</a></li>
+<li><a style="" href="page13.html">Лекция №7</a></li>
+<li><a style="" href="page14.html">Задания к лекции №7</a></li>
+<li><a style="" href="page15.html">Лекция №8</a></li>
+<li><a style="" href="page16.html">Задания к лекции №8</a></li>
+<li><a style="" href="page17.html">Лекция №9</a></li>
+<li><a style="" href="page18.html">Задания к лекции №9</a></li>
+<li><a style="" href="page19.html">Лекция №10</a></li>
+<li><a style="" href="page20.html">Задания к лекции №10</a></li>
+
+					</ul>
+				</li>
+			
+			</ul>
+		</div>
+		<!-- end sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+</div>
+<!-- end page -->
+<hr />
+<div id="footer">
+	<p>БГТУ| 2011</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,2048 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=cp1251" />
+<title>Заголовок-окна</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="header">
+	<div id="logo">
+		<h1><a href="index.html">Иформационные технологии</a></h1>
+		<h2>.</h2>
+	</div>
+	<div id="menu">
+		<ul>
+			<li><a style="" href="index.html">Знакомство с XML</a></li>
+
+		</ul>
+	</div>
+</div>
+<hr />
+<div id="page">
+	<div id="bg">
+		<div id="content">
+			<div class="post" style="padding-top: 57px;">
+				<h2 class="title">Лекция №6</h2>
+				<div class="entry">
+
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN>Определение и использование 
+примитивов<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В этой лекции вы прежде всего 
+познакомитесь с основной терминологией, используемой для примитивов, а также с 
+различными способами классификации примитивов. Затем вы узнаете, как объявлять 
+каждый из примитивов различных типов и как вставлять примитивы в ваш документ в 
+необходимом месте. Далее вы узнаете, как использовать возможности XML, которые 
+позволяют вам вставлять любые типы символов в любом контексте: как ссылки на 
+символ и как ссылки на примитивы. В конце лекции имеется упражнение, которое 
+позволит вам попрактиковаться в использовании примитивов в полном 
+XML-документе.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Определения и 
+классификация примитивов<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Механизм примитивов в XML является 
+средством повышения производительности, а также способом встраивать различные 
+типы данных в ваш XML-документ. В XML-документе вы можете определить часто 
+используемый блок XML-текста как примитив, что позволяет вам быстро вставлять 
+текст в нужное место. Вы можете также определить как примитив внешний файл, 
+чтобы иметь возможность включать данные файла в вашем документе; эти данные 
+могут содержать XML-текст, другой текст, либо не текстовые данные. Вы 
+определяете примитив в описании типа документа (DTD) с использованием 
+синтаксиса, аналогичного тому, который используется для объявления элемента или 
+атрибута в валидном XML-документе. О DTD и объявлениях типа документа, 
+содержащего их, говорилось в лекции 5.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В спецификации XML термин примитив 
+(entity) в широком смысле относится к любому из следующих типов единиц хранения 
+информации для XML-документов.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Собственно XML-документ как 
+целое.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Внешнее 
+подмножество DTD.<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Внешний файл, определенный как 
+внешний примитив в DTD и допускающий использование посредством 
+ссылки.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Строка в кавычках, определенная 
+как внутренний примитив в DTD и допускающая использование посредством 
+ссылки.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Заметим, что первые три типа 
+единиц хранения информации являются файлами, а последний – строкой символов, 
+заключенных в кавычки.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В этой лекции, термин примитив 
+используется в узком смысле, а именно, для обозначения внешнего файла или строки 
+в кавычках, определенных как примитив в DTD документа и допускающих 
+использование в документе посредством ссылок на примитивы. Например, следующее 
+DTD определяет внешний файл Topics.xml (этот файл содержит список тем в статье, 
+включенной в документ) как внешний примитив с именем topics, а также строку в 
+кавычках («A Short History of XML») как внешний примитив с именем 
+title:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!DOCTYPE ARTICLE<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+ARTICLE (TITLEPAGE, INTRODUCTION, SECTION*)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+TITLEPAGE (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+INTRODUCTION (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+SECTION (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ENTITY 
+topics SYSTEM "Topics.xml"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ENTITY title 
+"A short History of XML"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">]<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Впоследствии вы можете вставить 
+полный список тем в любое нужное вам место статьи (например, в аннотацию, 
+введение или заключение), просто включив ссылку на примитив &amp;topics; – как 
+для следующего элемента:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;INTRODUCTION&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>This article will 
+cover the following topics:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">&amp;topics;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;/INTRODUCTION&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вы можете вставить название статьи 
+в любое место, включив ссылку на примитив &amp;title; – как для следующего 
+элемента:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;TITLEPAGE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>Title:<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>&amp;title;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>Author: Michael 
+Young<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;/TITLEPAGE&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Механизм примитивов наиболее 
+полезен при наличии часто используемых фрагментов XML-текста. Например, если 
+название статьи многократно фигурирует по ее тексту, использование примитива 
+(как в предыдущем примере) позволит сократить время набора, добиться 
+однородности и облегчить внесение изменений в название. Вы можете изменить текст 
+названия, встречающегося в различных листах статьи, просто отредактировав 
+объявление примитива в DTD. Например:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt; tab-stops: 304.75pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!ENTITY title "A Long History 
+of XML"&gt; <SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>&lt;! -- модифицированное объявление 
+примитива --&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Если вы знакомы с 
+программированием, то легко уловите сходство между механизмом использования 
+примитивов XML и определением констант в языках программирования (например, 
+объявления с помощью инструкции #define в C).<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Механизм примитивов также 
+необходим при включении не XML-данных в XML-документ (например, графические 
+данные для изображения).<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Типы 
+примитивов<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Существует множество 
+разновидностей примитивов. Материал, излагаемый в этом разделе, может показаться 
+довольно абстрактным (прежде, чем вы познакомитесь с деталями и рассмотрите 
+примеры), возвращение к этой информации впоследствии позволит значительно 
+облегчить восприятие примитивов.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Примитивы классифицируются по трем 
+признакам:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l3 level1 lfo1" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">общие и параметрические. 
+Общий примитив включает содержимое документа – т.е. XML-текст или другие 
+текстовые или не текстовые данные, которые вы можете использовать внутри 
+элемента Документ. Оба примера примитивов, рассмотренных в предыдущем разделе 
+(title и topics) относятся к общим примитивам. Параметрический примитив содержит 
+XML-текст, который может быть помещен в DTD. В спецификации XML термин примитив 
+относится к общим примитивам;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l3 level1 lfo1" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">внутренние и внешние. 
+Внутренний примитив содержится внутри строки в кавычках (примитив title в 
+предыдущем разделе). Внешний примитив содержится в отдельном файле (примитив 
+topics в предыдущем разделе);<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l3 level1 lfo1" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">разбираемый или не 
+разбираемый. Разбираемый примитив содержит XML-текст (символьные данные, 
+разметка или то и другое). Когда вы вставляете ссылку на разбираемый примитив в 
+документ, ссылка замещается содержимым примитива (замещающий текст), который 
+становится составной частью документа. Синтаксический анализатор XML разбирает 
+(сканирует) содержимое примитива точно так же, как он сканирует непосредственно 
+введенный в документ текст. Оба примера примитивов, рассмотренных в предыдущем 
+разделе (title и topics) являются разбираемыми примитивами. 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Не разбираемый примитив может 
+содержать любой тип данных: XML-данные или, что чаще, не XML-данные. Не 
+XML-данные могут представлять собой либо текстовые данные (например, название) 
+или не текстовые данные (например, графические данные для изображения). 
+Поскольку не разбираемый примитив обычно не содержит XML, его содержимое нельзя 
+непосредственно вставить в документ посредством ссылки на примитив. Тем не 
+менее, вы можете связать с именем примитива атрибут типа ENTITY или ENTITIES, 
+чтобы приложение получило доступ к имени примитива и его описанию, а также могло 
+работать с его данными.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Поскольку примитивы 
+классифицируются по этим трем признакам и в каждой классификации имеются две 
+категории, теоретически существует восемь потенциальных типов примитивов, как 
+показано на диаграмме.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Однако три типа примитивов из этих 
+восьми в XML не поддерживаются (на диаграмме они зачеркнуты). Следовательно, 
+реально в XML имеется только пять типов примитивов:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l1 level1 lfo2" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">общие внутренние 
+разбираемые;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l1 level1 lfo2" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">общие внешние 
+разбираемые;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l1 level1 lfo2" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">общие внешние не 
+разбираемые;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l1 level1 lfo2" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">параметрические внутренние 
+разбираемые;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l1 level1 lfo2" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">параметрические внешние 
+разбираемые.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">На рисунке 6.1 изображено 
+разновидность примитива.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm 0pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><v:shapetype id=_x0000_t75 
+coordsize="21600,21600" o:spt="75" o:preferrelative="t" 
+path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f"><v:stroke 
+joinstyle="miter"></v:stroke><v:formulas><v:f 
+eqn="if lineDrawn pixelLineWidth 0"></v:f><v:f eqn="sum @0 1 0"></v:f><v:f 
+eqn="sum 0 0 @1"></v:f><v:f eqn="prod @2 1 2"></v:f><v:f 
+eqn="prod @3 21600 pixelWidth"></v:f><v:f 
+eqn="prod @3 21600 pixelHeight"></v:f><v:f eqn="sum @0 0 1"></v:f><v:f 
+eqn="prod @6 1 2"></v:f><v:f eqn="prod @7 21600 pixelWidth"></v:f><v:f 
+eqn="sum @8 21600 0"></v:f><v:f eqn="prod @7 21600 pixelHeight"></v:f><v:f 
+eqn="sum @10 21600 0"></v:f></v:formulas><v:path o:extrusionok="f" 
+gradientshapeok="t" o:connecttype="rect"></v:path><o:lock v:ext="edit" 
+aspectratio="t"></o:lock></v:shapetype><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 14pt" 
+class=MsoNormal align=center><SPAN style="FONT-SIZE: 12pt"></SPAN></P>
+<P style="TEXT-ALIGN: center; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 14pt" 
+class=MsoNormal align=center><SPAN style="FONT-SIZE: 12pt"><IMG border=0 
+hspace=0 alt="" 
+src="user-images\6.1.jpg"></SPAN></P>
+<P style="TEXT-ALIGN: center; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 14pt" 
+class=MsoNormal align=center><SPAN style="FONT-SIZE: 12pt">Рис 
+6.1<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 14pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">О том, как определять и 
+использовать их, вы и узнаете в этой лекции.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Объявление 
+общих примитивов<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Примитив создается путем 
+объявления его в DTD документа. Вы объявляете примитив с использованием 
+разновидности объявления разметки, схожей с той, которая используется для 
+объявления элементов и атрибутов. В последующих разделах вы узнаете, как 
+объявлять каждый из типов общих примитивов.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Объявление 
+общего внутреннего разбираемого примитива<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Объявление общего внутреннего 
+разбираемого примитива имеет следующую форму записи:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!ENTITY ИмяПримитива 
+ЗначениеПримитива&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Здесь ИмяПримитива есть имя 
+примитива. Вы можете выбрать любое имя, следуя следующим 
+правилам:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l2 level1 lfo3" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">имя должно начинаться с буквы 
+или с символа подчеркивания (_), после чего может следовать ни одна или 
+несколько букв, цифр, точек (.), тире (–) или символов 
+подчеркивания;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l2 level1 lfo3" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">примитив может иметь такое же 
+имя, что и параметрический примитив в документе. (Общие примитивы и 
+параметрические примитивы занимают различные пространства имен.) Примитив также 
+может иметь такое же имя, как элемент или атрибут;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l2 level1 lfo3" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">помните, что для всего текста 
+внутри разметки имеет значение регистр, в котором набраны символы. Это относится 
+и к именам примитивов. Так, примитив с именем Bowser и примитив с именем bowser 
+будут считаться различными.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="COLOR: black; FONT-SIZE: 12pt">ЗначениеПримитива 
+</SPAN><SPAN style="FONT-SIZE: 12pt">есть значение примитива. Значение, которое 
+вы присваиваете общему примитиву, представляет собой группу символов, 
+заключенных в кавычки, которая также носит название литерал. Вы можете присвоить 
+любое значение типа литерал общему внутреннему примитиву, соблюдая при этом 
+следующие правила:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l0 level1 lfo4" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">строка должна быть заключена 
+в одинарные (') или в двойные (") кавычки;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l0 level1 lfo4" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">строка не может содержать тот 
+же символ кавычек, который используется в качестве 
+ограничителей;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l0 level1 lfo4" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">строка не может содержать 
+символ амперсанда (&amp;), если только он не используется в качестве первого 
+символа в указании ссылки на символ или на общий примитив. Строка также не 
+должна содержать символ процентов (%). (Чтобы познакомиться с возможными 
+исключениями, обратитесь к разделу 4 спецификации XML, которую вы можете найти 
+по адресу http://www.w3.org/TR/REC-xml.);<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l0 level1 lfo4" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">содержимое строки должно быть 
+корректным для места, в которое вы предполагаете вставить примитив. Например, 
+если вы помещаете примитив внутрь элемента, он должен содержать один или 
+несколько компонентов, которые могут быть корректно вставлены в другие элементы 
+(вложенные элементы, символьные данные и т.д., как описано в разделе «Типы 
+содержимого элемента» в лекции 3). Либо, если вы вставляете примитив внутрь 
+значения атрибута, он должен содержать символы, которые являются допустимыми для 
+значений атрибута. Далее в этой лекции вы узнаете, куда можно помещать общие 
+внутренние разбираемые примитивы.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Например, следующее DTD определяет 
+общий внутренний разбираемый примитив с именем title:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt" 
+class=MsoNormalCxSpMiddle><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!DOCTYPE 
+ARTICLE<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+ARTICLE (TITLEPAGE, INTRODUCTION, SECTION*)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+TITLEPAGE (#PCDATA | SUBTITLE)*&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+SUBTITLE (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+INTRODUCTION (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+SECTION (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ENTITY 
+title<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>"The Story of XML<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>&lt;SUBTITLE&gt;The 
+Future Language of the Internet&lt;/SUBTITLE&gt;"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">]&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Примитив title содержит символьные 
+данные плюс элемент (SUBTITLE). В соответствии с объявлением в DTD это 
+содержимое может быть корректно вставлено только в элемент TITLEPAGE, как 
+показано ниже:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;TITLEPAGE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>Title:<SPAN style="mso-spacerun: yes">&nbsp; 
+</SPAN>&amp;title;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>Author: Michael Young<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">&lt;/TITLEPAGE&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">XML-процессор заменит ссылку на 
+примитив (&amp;title;) содержимым примитива и обработает содержимое, как если бы 
+вы непосредственно набрали его в документе в позиции ссылки, подобно 
+следующему:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;TITLEPAGE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>Title:<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>The Story of XML<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;SUBTITLE&gt;The Future Language of the 
+Internet&lt;/SUBTITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">Author: Michael Young<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;/TITLEPAGE&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Объявление 
+общего внешнего разбираемого примитива<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Объявление для общего внешнего 
+разбираемого примитива имеет следующую форму записи:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!ENTITY ИмяПримитива SYSTEM 
+СистемЛитерал&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Здесь ИмяПримитива есть имя 
+примитива. Вы можете выбрать любое имя, следуя правилам задания имен для общих 
+примитивов, приведенным в предыдущем разделе.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">СистемЛитерал есть системный 
+литерал, который описывает местонахождение файла, содержащего данные примитива. 
+Системный литерал может быть ограничен одинарными (') или двойными (") кавычками 
+и содержать любые символы, кроме символа кавычек, используемого как 
+ограничители.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Системный литерал задает 
+унифицированный идентификатор ресурса (URI) файла, содержащего данные примитива. 
+На сегодняшний день URI практически то же самое, что стандартный Internet-адрес, 
+известный как унифицированный указатель ресурса (URL). Вы можете использовать 
+либо полный URI, например:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>ENTITY</SPAN><SPAN 
+style="FONT-SIZE: 12pt" lang=EN-US> </SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>abstract</SPAN><SPAN style="FONT-SIZE: 12pt" lang=EN-US> </SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>SYSTEM</SPAN><SPAN 
+style="FONT-SIZE: 12pt"> "</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>HYPERLINK</SPAN><SPAN style="FONT-SIZE: 12pt"> '</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>http</SPAN><SPAN 
+style="FONT-SIZE: 12pt">://</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>bogus</SPAN><SPAN 
+style="FONT-SIZE: 12pt">.</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>com</SPAN><SPAN 
+style="FONT-SIZE: 12pt">/</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>documents</SPAN><SPAN style="FONT-SIZE: 12pt">/</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>Abstract</SPAN><SPAN style="FONT-SIZE: 12pt">.</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>xml</SPAN><SPAN 
+style="FONT-SIZE: 12pt">'<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN>http://bogus.com/documents/Abstract.xml"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">либо частичный URI, который задает 
+местонахождение относительно местонахождения XML-документа, содержащего URI, 
+например:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ENTITY abstract SYSTEM ":Abstract.xml"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Относительные URI в XML-документах 
+работают аналогично относительным URL для HTML-страниц. Файл внешнего примитива 
+может содержать только те составляющие, которые могут быть корректно вставлены в 
+элемент (символьные данные, вложенные элементы и т.д., как описано в разделе 
+"Типы содержимого элемента" в лекции 3). Вы можете вставить общий внешний 
+разбираемый примитив только внутрь содержимого элемента. (Можно включить его в 
+значение в объявлении внутреннего примитива, но затем нужно вставить это 
+содержимое в элемент.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Например, следующее DTD определяет 
+внешний файл Topics.xml как общий внешний разбираемый 
+примитив:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!DOCTYPE ARTICLE<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+ARTICLE (TITLEPAGE, INTRODUCTION, SECTION*)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+TITLEPAGE (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+INTRODUCTION ANY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+SECTION (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ENTITY 
+topics SYSTEM "Topics.xml"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">]<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вот содержимое файла 
+Topics.xml:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;HEADING&gt;Topics&lt;/HEADING&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>The Need for XML<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>The Official Goals of XML<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>Standard XML Applications<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Real-World Uses for XML 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Этот типичный файл внешнего 
+примитива содержит два пункта, которые вы можете включить в XML-элемент: 
+вложенный элемент и блок символьных данных. Его содержимое может быть корректно 
+вставлено в элемент INTRODUCTION (который иметь любой тип содержимого), как 
+показано в следующем примере:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;INTRODUCTION&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>Here’s what this 
+article covers:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">&amp;topics;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/INTRODUCTION&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Объявление 
+общего внешнего не разбираемого примитива<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Объявление для общего внешнего не 
+разбираемого примитива имеет следующую форму записи:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!ENTITY ИмяПримитива SYSTEM 
+СистемЛитерал NDATA ИмяНотации&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="COLOR: black; FONT-SIZE: 12pt">Здесь ИмяПримитива 
+есть имя примитива. Вы можете выбрать любое имя, следуя правилам, приведенным в 
+разделе «Объявление общего внутреннего разбираемого примитива» ранее в этой 
+лекции.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="COLOR: black; FONT-SIZE: 12pt">СистемЛитерал есть 
+системный литерал, который описывает местонахождение файла, содержащего данные 
+примитива. Он действует точно так же, как системный литерал для описания 
+местоположения общего внешнего разбираемого примитива.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="COLOR: black; FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN 
+style="COLOR: black; FONT-SIZE: 12pt"> Ключевое слово NDATA указывает, что файл 
+примитива содержит не разбираемые данные (они не обрабатываются синтаксическим 
+анализатором).<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="COLOR: black; FONT-SIZE: 12pt">ИмяНотации есть имя 
+нотации, объявленной в DTD. Нотация описывает формат данных, 
+содержащихся</SPAN><SPAN style="FONT-SIZE: 12pt"> в файле примитива, или 
+указывает на местонахождение программы, которая может обрабатывать эти данные. 
+Об объявлении нотации будет говориться в следующем 
+разделе.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Файл не разбираемого внешнего 
+примитива может содержать любой тип текста или не текстовые данные. Они должны, 
+конечно, соответствовать описанию формата, определяемого соответствующей 
+нотацией.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Например, DTD в следующем 
+XML-документе определяет файл Faun.gif (который содержит рисунок обложки книги) 
+как общий внешний не разбираемый примитив с именем faun. Имя нотации этого 
+примитива – GIF. Она указывает на местонахождение программы, которая отображает 
+графические файлы в формате GIF (ShowGif.exe). DTD также определяет пустой 
+элемент с именем COVERIMAGE и атрибут типа ENTITY для этого элемента с именем 
+Source:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!DOCTYPE BOOK<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT BOOK 
+(TITLE, AUTHOR, COVERIMAGE)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+TITLE (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+AUTHOR (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+COVERIMAGE EMPTY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ATTLIST 
+COVERIMAGE<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Source ENTITY 
+#REQUIRED&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!NOTATION GIF 
+SYSTEM "ShowGif.exe"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ENTITY faun 
+SYSTEM "Faun.gif" NDATA GIF&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>]<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&gt;<o:p>&nbsp;</o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;TITLE&gt;The 
+Marble Faun&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;Nathaniel Hawthorne&lt;/AUTHOR&lt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;COVERIMAGE 
+Source="faun" /&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;/BOOK&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В элементе Документ атрибуту 
+Source элемента COVERIMAGE присвоено имя внешнего примитива, который содержит 
+графические данные для отображения рисунка обложки. Поскольку Source имеет тип 
+ENTITY, вы можете присвоить ему имя общего внешнего не разбираемого примитива. 
+Фактически единственный способ использования этого типа примитива состоит в 
+присвоении его имени атрибуту с типом ENTITY или ENTITIES.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> В 
+отличие от файла внешнего разбираемого примитива, к файлу внешнего не 
+разбираемого примитива XML-процессор прямого доступа не имеет. Процессор просто 
+делает примитив и его нотацию доступными приложению, которое может выполнять 
+необходимые действия с этой информацией. (Например, оно может запустить 
+программу, ассоциированную с нотацией, и указать ей отобразить данные из файла 
+примитива.) В лекции 9 вы узнаете, как писать сценарии Web-страниц, которые 
+могут получать доступ к примитивам и нотациям.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Объявление 
+нотаций<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Нотация описывает определенный 
+формат данных. Это делается путем указания адреса описания формата, адреса 
+программы, которая может обрабатывать данные в этом формате, либо просто 
+описание формата. Вы можете использовать нотацию, чтобы описать формат общего 
+внешнего не разбираемого примитива, либо можете присвоить нотацию атрибуту, 
+который имеет нумерованный тип NOTATION<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Нотация имеет следующую форму 
+записи:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!NOTATION ИмяНотации SYSTEM 
+СистемЛитерал&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="COLOR: black; FONT-SIZE: 12pt">Здесь ИмяНотации 
+есть имя нотации. Вы можете выбрать любое имя, при условии, что оно начинается с 
+буквы или символа подчеркивания (_), после чего могут идти или не идти другие 
+буквы, цифры, точки (.), тире (–) или символы подчеркивания. Лучше выбирать 
+информативное имя, позволяющее идентифицировать формат. Например, если вы 
+определяете нотацию, описывающую точечный формат (bitmap), вам следует 
+использовать имя BMP.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="COLOR: black; FONT-SIZE: 12pt">СистемЛитерал есть 
+системный литерал, который может быть ограничен одинарными (') или двойными (") 
+кавычками и содержать любые символы, за исключением символа кавычек, 
+используемого в качестве ограничителя. Вы можете включить в системный литерал 
+любое описание формата, которое проинформирует приложение, как отображать или 
+обрабатывать XML-документ. (Помните, что XML-процессор сам не использует 
+информацию нотации; он просто передает ее приложению, в качестве которого может 
+выступать сценарий на Web-странице.) Например, вы можете включить в системный 
+литерал одно из следующих описаний.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="COLOR: black; FONT-SIZE: 12pt">URI программы, 
+которая может обрабатывать или отображать формат данных, как в следующих 
+примерах: <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN 
+style="COLOR: black; FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!NOTATION BMP SYSTEM "Pbrush.exe"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN 
+style="COLOR: black; FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!NOTATION GIF SYSTEM "HYPERLINK 'http://bogus.com/ShowGif.exe' 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN 
+style="COLOR: black; FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>http://bogus.com/ShowGif.exe"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="COLOR: black; FONT-SIZE: 12pt">URI документа в 
+сети, который описывает формат данных, например: <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!NOTATION STRANGEFORMAT SYSTEM 
+"http://bogus.com/StrangeFormat.htm"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Простое описание формата, 
+например: <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!ENTITY % ИмяПримитива 
+ЗначениеПримитива&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Дополнительная информация об URI и 
+примеры приведены в разделе «Использование только внешнего подмножества DTD» в 
+лекции 5.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Объявление 
+параметрических примитивов<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Форма объявления разметки 
+параметрического примитива аналогична форме объявления, используемой для общих 
+примитивов. В последующих разделах вы узнаете, как объявлять оба типа 
+параметрических примитивов.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Объявление 
+параметрического внутреннего разбираемого примитива<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Объявление для параметрического 
+внутреннего разбираемого примитива имеет следующую общую форму 
+записи:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!ENTITY % ИмяПримитива 
+ЗначениеПримитива&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="COLOR: black; FONT-SIZE: 12pt">Здесь ИмяПримитива 
+есть имя примитива. Вы можете выбрать любое имя, соблюдая следующие 
+правила:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l5 level1 lfo5" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; COLOR: black; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="COLOR: black; FONT-SIZE: 12pt">имя должно 
+начинаться с буквы или символа подчеркивания (_), вслед за которым могут идти 
+или не идти буквы, цифры, точки (,), тире (–) или символы 
+подчеркивания;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l5 level1 lfo5" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; COLOR: black; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="COLOR: black; FONT-SIZE: 12pt">примитив может 
+иметь такое же имя, что и общий примитив в документе. (Параметрические и общие 
+примитивы занимают различные пространства имен.) Имя примитива также может 
+совпадать с именем элемента или атрибута;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l5 level1 lfo5" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; COLOR: black; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="COLOR: black; FONT-SIZE: 12pt">помните, что 
+для всего текста разметки, в том числе и для имен примитивов, имеет значение 
+регистр, в котором набраны символы. Так, примитив под именем Spot будет 
+отличаться от примитива под именем spot.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="COLOR: black; FONT-SIZE: 12pt">Значение Примитива 
+есть значение примитива. Значение, присваиваемое параметрическому 
+примитиву</SPAN><SPAN style="FONT-SIZE: 12pt">, представляет собой группу 
+символов, заключенных в кавычки (литерал). Вы можете присвоить параметрическому 
+примитиву любое значение типа литерал, при условии соблюдения следующих 
+правил:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l8 level1 lfo6" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">строка должна быть ограничена 
+одинарными (') или двойными (") кавычками;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l8 level1 lfo6" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">строка не может содержать 
+символов кавычек, которые используются в качестве 
+ограничителей;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l8 level1 lfo6" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">строка не может содержать 
+символа процентов (%) и символа амперсанда (&amp;), если это не начальный символ 
+в ссылке на символ или общий примитив;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l8 level1 lfo6" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">вы можете поместить 
+параметрический примитив в DTD только как объявление разметки, но не внутри 
+объявления разметки. Следовательно, <SPAN style="COLOR: black">строка 
+ЗначениеПримитива должна содержать один или несколько типов объявлений</SPAN> 
+разметки, которые разрешено использовать в DTD. Эти типы объявлений разметки 
+описаны в разделе «Создание DTD» в лекции 5. В частности, параметрический 
+примитив может содержать объявления типа элемента, объявления списка атрибутов, 
+объявления общих примитивов, объявления нотаций, инструкции по обработке, или 
+комментарии. (Объявления параметрических примитивов и ссылки не 
+допускаются.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+Приведенные здесь правила использования значений примитивов, которые вы можете 
+без опасения применять в любых ситуациях, являются несколько упрощенными в 
+отличие от правил, содержащихся в спецификации XML. Спецификация, в определенных 
+обстоятельствах, разрешает вам включать в значение примитива дополнительные 
+составляющие, а также помещать ссылку на примитив внутри разметки и между 
+объявлениями разметки. Подробности приведены в разделе 4 спецификации XML, 
+которую вы можете найти по адресу 
+http://www.w3.org/TR/REC-xml.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Например, следующее DTD объявляет 
+параметрический внутренний не разбираемый примитив с именем author, который 
+содержит три объявления разметки: комментарий, объявление типа элемента и 
+объявление списка атрибутов. Содержимое примитива (т.е. замещающий его текст) 
+помещается в конец DTD посредством ссылки на параметрический примитив 
+(%author;);<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!DOCTYPE BOOK<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ENTITY % 
+author<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>"&lt;!-- </SPAN><SPAN style="FONT-SIZE: 12pt">информация</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">об</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">авторе</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US> 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;!ELEMENT AUTHOR (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;!ATTLIST AUTHOR<SPAN style="mso-spacerun: yes">&nbsp; 
+</SPAN>Nationality CDATA 'American'&gt;"<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT BOOK 
+(TITLE, AUTHOR)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+TITLE (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">%author;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>]<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Обратите внимание, что значение 
+атрибута по умолчанию, которое содержится в объявлении примитива ('American'), 
+ограничено одинарными кавычками, чтобы избежать использования такого же символа, 
+который применяется для ограничения всего значения примитива. Приведенное выше 
+DTD эквивалентно следующему:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!DOCTYPE 
+BOOK<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT BOOK (TITLE, 
+AUTHOR)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT TITLE 
+(#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;! -- информация об авторе 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!ELEMENT AUTHOR 
+(#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ATTLIST 
+AUTHOR<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Nationality CDATA 
+'American'&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">]<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&gt; <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Объявление 
+параметрического внешнего разбираемого примитива<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Объявление для параметрического 
+внешнего разбираемого примитива имеет следующую форму 
+записи:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!ENTITY % ИмяПримитива SYSTEM 
+СистемЛитерал&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="COLOR: black; FONT-SIZE: 12pt">Здесь ИмяПримитива 
+есть имя примитива. Вы можете выбрать любое имя, следуя правилам задания имен 
+для параметрических примитивов, приведенных в предыдущем 
+разделе.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="COLOR: black; FONT-SIZE: 12pt">СистемЛитерал есть 
+системный литерал, который описывает местонахождение файла, содержащего данные 
+примитива. Системный литерал может быть заключен в одинарные</SPAN><SPAN 
+style="FONT-SIZE: 12pt"> (') или двойные (") кавычки и содержать любые символы, 
+за исключением символа кавычек, который используется в качестве 
+ограничителя.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Системный литерал задает URI 
+файла, содержащего данные параметрического примитива. В настоящее время URI 
+практически аналогичен стандартному унифицированному указателю ресурса Internet 
+(URL). Вы можете использовать как полностью заданный URI, 
+например:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>ENTITY</SPAN><SPAN 
+style="FONT-SIZE: 12pt"> % </SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>declarations</SPAN><SPAN style="FONT-SIZE: 12pt" lang=EN-US> 
+</SPAN><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp;</SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>SYSTEM</SPAN><SPAN 
+style="FONT-SIZE: 12pt"> "</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>HYPERLINK</SPAN><SPAN style="FONT-SIZE: 12pt"> "</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>http</SPAN><SPAN 
+style="FONT-SIZE: 12pt">://</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>bogus</SPAN><SPAN 
+style="FONT-SIZE: 12pt">.</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>com</SPAN><SPAN 
+style="FONT-SIZE: 12pt">/</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>documents</SPAN><SPAN style="FONT-SIZE: 12pt">/</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>Declarations</SPAN><SPAN style="FONT-SIZE: 12pt">.</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>dtd</SPAN><SPAN 
+style="FONT-SIZE: 12pt">" <o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">http://bogus.com/documents/Declarations.dtd"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;</SPAN>вы можете использовать частичный URI, 
+задающий местонахождение относительно местонахождения XML-документа, содержащего 
+URI, например:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ENTITY % declarations SYSTEM 
+"Declarations.dtd"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Относительные URI в XML-документах 
+работают подобно относительным URL для HTML-страниц.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Файл параметрического внешнего 
+примитива должен содержать полные объявления разметки всех типов, допустимых в 
+DTD. В частности, он может содержать объявления типа элемента, объявления списка 
+атрибутов, объявления примитивов, объявления нотаций, инструкции по обработке, 
+или комментарии. (Эти типы объявлений разметки описаны в разделе «Создание DTD» 
+в лекции 5.) Вы также можете включать ссылки на параметрические примитивы и 
+разделы INCLUDE и IGNORE.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вы можете использовать 
+параметрические внешние разбираемые примитивы для хранения группы 
+взаимосвязанных объявлений. Допустим, вы занимаетесь продажей книг, CD-ROM, 
+плакатов и другой продукции. Вы можете поместить объявления для каждого вида 
+продукции в отдельный файл. Это позволит вам объединять эти группы объявлений 
+различными способами. Например, вы хотели бы создать XML-документ, который 
+описывает только имеющиеся у вас в наличии книги и CD-ROM. Для этого вы можете 
+поместить объявления для книг и CD-ROM в DTD документа с помощью параметрических 
+внешних разбираемых примитивов, как показано в следующем примере 
+XML-документа:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;?xml version="1.0"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!DOCTYPE INVENTORY<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ELEMENT 
+INVENTORY (BOOK<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>|<SPAN 
+style="mso-spacerun: yes">&nbsp; </SPAN>CD)*&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ENTITY % 
+book_decls SYSTEM "Book.dtd"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!ENTITY % 
+cd_decls SYSTEM "CD.dtd"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>%book_decls;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>%cd_decls;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>]<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&gt;<o:p>&nbsp;</o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;INVENTORY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BOOKTITLE&gt;The Marble Faun&lt;/BOOKTITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;Nathaniel Hawthorne&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;473&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;CD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;CDTITLE&gt;Concerti Grossi Opus 
+3&lt;/CDTITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;COMPOSER&gt;Handel&lt;/COMPOSER&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;LENGTH&gt;72 minutes&lt;/LENGTH&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;/CD&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; 
+</SPAN>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;BOOKTITLE&gt;Leaves of Grass&lt;/BOOKTITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;AUTHOR&gt;Walt Whitman&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&lt;PAGES&gt;462&lt;/PAGES&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US><SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt"><SPAN 
+style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>&lt;!-- дополнительные виды 
+продукции… --&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;/INVENTORY&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вот содержимое файла примитива 
+Book.dtd:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ELEMENT BOOK (BOOKTITLE, AUTHOR, 
+PAGES)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ELEMENT BOOKTITLE (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ELEMENT AUTHOR (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!ELEMENT PAGES (#PCDATA)&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">А вот содержимое файла примитива 
+CD.dtd:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ELEMENT CD (CDTITLE, COMPOSER, LENGTH)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ELEMENT CDTITLE (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ELEMENT COMPOSER (#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!ELEMENT LENGTH (#PCDATA)&gt; 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Заметим, что параметрический 
+внешний разбираемый примитив работает во многом аналогично внешнему подмножеству 
+DTD. Параметрические внешние примитивы, однако, обеспечивают большую гибкость – 
+они разрешают вам включать несколько файлов внешних объявлений, причем в любом 
+порядке. (Напомним, что внешнее подмножество DTD всегда обрабатывается после 
+того, как полностью будет обработано подмножество внутреннего 
+DTD.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Вставка 
+ссылок на примитив<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вставка содержимого (замещающий 
+текст) примитива в документ осуществляется с помощью ссылок на примитив. Вы уже 
+познакомились с несколькими примерами ссылок на примитив. Общий вид ссылки на 
+общий примитив следующий:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l6 level1 lfo7" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">&amp;ИмяПримитива;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l6 level1 lfo7" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">а на параметрический 
+примитив:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l6 level1 lfo7" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN 
+style="FONT-SIZE: 12pt">%ИмяПримитива;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="COLOR: black; FONT-SIZE: 12pt">где ИмяПримитива 
+есть</SPAN><SPAN style="FONT-SIZE: 12pt"> имя, присваиваемое примитиву в 
+объявлении. Исключением является общий внешний не разбираемый примитив, который 
+вы не можете вставить с использованием ссылки. Единственный способ использования 
+этого типа примитива заключается в присвоении его имени атрибуту, имеющему тип 
+ENTITY или ENTITIES.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Объявление примитива должно 
+предшествовать любой ссылке на этот примитив.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 14pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Для каждого типа примитива в 
+представленной ниже таблице приведена форма записи ссылки на примитив и перечень 
+возможных мест помещения ссылки на примитив. В таблице также приведены ссылки на 
+разделы в этой лекции, в которых вы можете найти примеры. О ссылках на символы 
+речь пойдет далее в этой лекции, но данный вид ссылок также включен в таблицу 
+для полноты картины.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: right; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 6pt" 
+class=MsoNormal align=right><SPAN style="FONT-SIZE: 12pt">Таблица 
+6.1<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 14pt 0cm 0pt" 
+class=MsoNormal><SPAN style="COLOR: black; FONT-SIZE: 12pt">
+<TABLE 
+style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; MARGIN: auto auto auto 12.5pt; BORDER-COLLAPSE: collapse; BORDER-TOP: medium none; BORDER-RIGHT: medium none; mso-border-alt: solid windowtext .5pt; mso-yfti-tbllook: 1184; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt; mso-border-insideh: .5pt solid windowtext; mso-border-insidev: .5pt solid windowtext; mso-table-layout-alt: fixed" 
+class=MsoNormalTable border=1 cellSpacing=0 cellPadding=0>
+  <TBODY>
+  <TR style="mso-yfti-irow: 0; mso-yfti-firstrow: yes">
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 92.15pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt" 
+    vAlign=top width=123>
+      <P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt" class=MsoNormal 
+      align=center><SPAN style="FONT-SIZE: 12pt">Тип 
+      приммитива<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 5cm; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" 
+    vAlign=top width=189>
+      <P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt" class=MsoNormal 
+      align=center><SPAN style="FONT-SIZE: 12pt">Форма записи ссылки на 
+      примитив, где ИмяПримитива есть имя примитива<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 184.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 1pt solid; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt" 
+    vAlign=top width=246>
+      <P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt" class=MsoNormal 
+      align=center><SPAN style="FONT-SIZE: 12pt">Место, в которое вы можете 
+      поместить ссылку на примитв (пример)<o:p></o:p></SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 1">
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 92.15pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=123>
+      <P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt" class=MsoNormal 
+      align=center><SPAN style="FONT-SIZE: 12pt">1<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 5cm; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=189>
+      <P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt" class=MsoNormal 
+      align=center><SPAN style="FONT-SIZE: 12pt">2<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 184.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=246>
+      <P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt" class=MsoNormal 
+      align=center><SPAN style="FONT-SIZE: 12pt">3<o:p></o:p></SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 2">
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 92.15pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=123>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">Общий ввнутренний 
+    разбираемый<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 5cm; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=189>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+      lang=EN-US>&amp;</SPAN><SPAN 
+      style="FONT-SIZE: 12pt">ИмяПримитива;<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 184.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=246>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">В содержимое элемента. В значение атрибута<BR>(как 
+      значение по умолчанию в объявлении атрибута, либо в начальном теге 
+      элемента) (см. «Ссылки на примитив пример 1»)<o:p></o:p></SPAN></P>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">В значение объяявление внутреннего примитива (см. 
+      «Ссылки на примитив Пример 2»)<o:p></o:p></SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 3">
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 92.15pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=123>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">Общий внешний разбираемый 
+<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 5cm; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=189>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">&amp;Имя Примитива;<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 184.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=246>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">В содержимое элеиента (см. «Объявление общего 
+      внешнего разбиранмого примитива»)<o:p></o:p></SPAN></P>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt"><o:p>&nbsp;</o:p></SPAN></P>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt"><o:p>&nbsp;</o:p></SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 4">
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 92.15pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=123>
+      <P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt" class=MsoNormal 
+      align=center><SPAN style="FONT-SIZE: 12pt">Тип 
+      приммитива<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 5cm; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=189>
+      <P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt" class=MsoNormal 
+      align=center><SPAN style="FONT-SIZE: 12pt">Форма записи ссылки на 
+      примитив, где ИмяПримитива есть имя примитива<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 184.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=246>
+      <P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt" class=MsoNormal 
+      align=center><SPAN style="FONT-SIZE: 12pt">Место, в которое вы можете 
+      поместить ссылку на примитв (пример)<o:p></o:p></SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 5">
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 92.15pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=123>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">Общий внешний не 
+    разбираемый<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 5cm; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=189>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">АтрПрим= ‘ИмяПримитива’ где АтрПрим есть атрибут 
+      типа </SPAN><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: DE-LU" 
+      lang=DE-LU>ENTIT</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>Y</SPAN><SPAN 
+      style="FONT-SIZE: 12pt"> или </SPAN><SPAN 
+      style="FONT-SIZE: 12pt; mso-ansi-language: DE-LU" 
+      lang=DE-LU>ENTITIES</SPAN><SPAN 
+      style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 184.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=246>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">В значение объявлении внутреннего примитива (см. 
+      «Ссылка на примитив<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Пример 
+      2») <o:p></o:p></SPAN></P>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">Вы не можете поместить сссылку на этот тип 
+      примитива, но можете присвоить имя примитива<SPAN 
+      style="mso-spacerun: yes">&nbsp; </SPAN>атрибуту, имеющему тип 
+      </SPAN><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+      lang=EN-US>ENTITY</SPAN><SPAN style="FONT-SIZE: 12pt"> или </SPAN><SPAN 
+      style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+      lang=EN-US>ENTITIES</SPAN><SPAN style="FONT-SIZE: 12pt">(см. «Объявление 
+      общего внешнего не разбираемого примитива»)<o:p></o:p></SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 6">
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 92.15pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=123>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">Параметрический внутренний 
+      разбираемый<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 5cm; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=189>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>#</SPAN><SPAN 
+      style="FONT-SIZE: 12pt">ИмяПримитива<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 184.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=246>
+      <P style="TEXT-ALIGN: justify; TEXT-INDENT: 1.7pt; MARGIN: 0cm 0cm 0pt" 
+      class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В </SPAN><SPAN 
+      style="FONT-SIZE: 12pt; mso-ansi-language: DE-LU" 
+      lang=DE-LU>DTD</SPAN><SPAN style="FONT-SIZE: 12pt"> в место помещения 
+      объявлений разметки (исключения приведены в разделе 4 спецификации 
+      </SPAN><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: DE-LU" 
+      lang=DE-LU>XML</SPAN><SPAN style="FONT-SIZE: 12pt">, доступ по адоесу 
+      </SPAN><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+      lang=EN-US>http</SPAN><SPAN style="FONT-SIZE: 12pt">://</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+      lang=EN-US>www</SPAN><SPAN style="FONT-SIZE: 12pt">.</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>w</SPAN><SPAN 
+      style="FONT-SIZE: 12pt">3.</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+      lang=EN-US>org</SPAN><SPAN style="FONT-SIZE: 12pt">/</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+      lang=EN-US>TR</SPAN><SPAN style="FONT-SIZE: 12pt">/</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+      lang=EN-US>REC</SPAN><SPAN style="FONT-SIZE: 12pt">-</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+      lang=EN-US>xml</SPAN><SPAN style="FONT-SIZE: 12pt">) (см. «Объявление 
+      параметричкского внешнего разбираемог примитива»)<o:p></o:p></SPAN></P>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt"><o:p>&nbsp;</o:p></SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 7; mso-yfti-lastrow: yes">
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: windowtext 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 92.15pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=123>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">Ссылка на символ<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 5cm; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=189>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">&amp;#9; или &amp;#</SPAN><SPAN 
+      style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+      lang=EN-US>xh</SPAN><SPAN style="FONT-SIZE: 12pt">; где 9-десятичный<SPAN 
+      style="mso-spacerun: yes">&nbsp; </SPAN>числовой код символа, а 
+      </SPAN><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: DE-LU" 
+      lang=DE-LU>h</SPAN><SPAN style="FONT-SIZE: 12pt">- шеснадцатеричный 
+      чмсловой код<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: windowtext 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 184.25pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: windowtext 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid windowtext .5pt; mso-border-left-alt: solid windowtext .5pt; mso-border-top-alt: solid windowtext .5pt" 
+    vAlign=top width=246>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">В содержании элемента (см. «Вставка ссылок на 
+      символы»)<o:p></o:p></SPAN></P>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">В значении атрибута (в качестве значения по 
+      умолчанию в объявление списка атрибутов, или в начальный тег элемента) 
+      (см. «Вставка ссылок на символы»)<o:p></o:p></SPAN></P>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">В значение в объявлении внутреннего примитива (см. 
+      «Вставка ссылок на 
+символы»)<o:p></o:p></SPAN></P></TD></TR></TBODY></TABLE></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 14pt 0cm 0pt" 
+class=MsoNormal><SPAN style="COLOR: black; FONT-SIZE: 12pt">Примеры ссылки на 
+примитив:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l4 level1 lfo9" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">в следующем XML-документе 
+объявлены два общих внутренних разбираемых примитива, am и en. Документ 
+использует ссылку на am для присвоения значения по умолчанию атрибуту 
+Nationality и ссылку на en для присвоения значения атрибуту Nationality элемента 
+AUTHOR. Преимущество использования примитива здесь заключается в том, что вы 
+можете изменить значение по всему документу простым редактированием определения 
+примитива (например, изменив значение en с «English» на 
+«British»).<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 6pt 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!DOCTYPE 
+INVENTORY<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>[<SPAN 
+style="mso-tab-count: 1">&nbsp; </SPAN><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!ENTITY am 
+"American"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!ENTITY en 
+"English"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!ELEMENT 
+INVENTORY (BOOK*)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!ELEMENT BOOK 
+(TITLE, AUTHOR)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!ELEMENT TITLE 
+(#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!ELEMENT AUTHOR 
+(#PCDATA)&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!ATTLIST 
+AUTHOR<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Nationality CDATA 
+"&amp;am;"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>]<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&gt;<o:p>&nbsp;</o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;INVENTORY&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;TITLE&gt;David 
+Copperfield&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;AUTHOR 
+Nationality="&amp;en;"&gt;Charles Dickens&lt;/AUTHOR&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;/BOOK&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!-- 
+</SPAN><SPAN style="FONT-SIZE: 12pt">другие элементы… 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 6pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;/INVENTORY&gt;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l4 level1 lfo9" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">следующее DTD определяет 
+общий внутренний разбираемый примитив (int_entity) и общий внешний разбираемый 
+примитив (ext_entity). Затем он определяет другой общий внутренний разбираемый 
+примитив, combo_entity, и помещает оба предыдущих примитива в значение примитива 
+combo_entity.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 6pt 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!DOCTYPE 
+INVENTORY<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>[<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!ENTITY 
+int_entity "internal entity value"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!ENTITY 
+ext_entity SYSTEM "Entity.xml"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>&lt;!ENTITY 
+combo_entity<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>"</SPAN><SPAN 
+style="FONT-SIZE: 12pt">значение</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US>, </SPAN><SPAN 
+style="FONT-SIZE: 12pt">состоящее</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US"> </SPAN><SPAN 
+style="FONT-SIZE: 12pt">из</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US> &amp;ext_entity; 
+</SPAN><SPAN style="FONT-SIZE: 12pt">плюс</SPAN><SPAN 
+style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" lang=EN-US> 
+&amp;int_entity;"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&lt;!-- другие объявления разметки… 
+--&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">]<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt 61.5pt" class=MsoNormal><SPAN 
+style="FONT-SIZE: 12pt">&gt;<o:p>&nbsp;</o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Вставка 
+ссылок на символы<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вы можете воспользоваться ссылкой 
+на символ, чтобы вставить символ, которого нет на вашей клавиатуре (например, 
+a), либо вставить символ, который не допускает его вставку в данном контексте 
+как литерал (например, символы &lt; или &amp; в составе символьных данных 
+элемента). Вам не нужно делать какие-либо определения перед использованием 
+ссылки на символ – вы можете просто поместить ее в нужном 
+месте.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Ссылка на символ имеет две 
+различные формы. Первая форма:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&amp;#9;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">где 9 – это одна или несколько 
+десятичных цифр (от 0 до 9), представляющих числовой код символа в наборе 
+символов ISO/IEC 10646.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вторая форма ссылки на 
+символ:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&amp;#xh;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">где h – это одна или несколько 
+шестнадцатеричных цифр (от 0 до F), также представляющих числовой код символа в 
+наборе ISO/IEC 10646.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Например, обе ссылки &amp;#65; и 
+&amp;#x41; означают вставку прописной буквы A. (Числовой код для A равен 
+десятичному числу 65 и шестнадцатеричному числу 41.)<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Международная таблица символов 
+ISO/IEC 10646 используется для числового представления символов практически 
+любых языков. (ISO – International Organization for Standardization, IEC – 
+International Organization Commission.) Коды первых 128 символов совпадают с 
+кодами хорошо известного набора ASCII, используемого в большинстве компьютеров. 
+На представленном ниже рисунке содержатся первые 256 символов в наборе ISO/IEC 
+10646. Для каждого элемента на рисунке 6.2 первое число (1:, 2:, 3:, и т.д.) 
+есть десятичный код символа, а после двоеточия следует символ – если он есть – в 
+том виде, в котором он отображается Microsoft Internet Explorer 5. 
+<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Например, из рисунка 6.2 вы можете 
+определить, что десятичный код символа для a равен 228.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm 0pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt"><IMG 
+style="WIDTH: 555px; HEIGHT: 458px" border=0 hspace=0 alt="" 
+src="user-images\6.2.jpg" width=497 
+height=442></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 6pt 0cm 14pt" class=MsoNormal 
+align=center><SPAN style="FONT-SIZE: 12pt">Рис. 6.2.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Чтобы вставить этот символ в ваш 
+документ, достаточно ввести ссылку:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&amp;#228;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><I style="mso-bidi-font-style: normal"><SPAN 
+style="FONT-SIZE: 12pt">Примечание.</SPAN></I><SPAN style="FONT-SIZE: 12pt"> 
+Список мест, в которые вы можете поместить ссылку на символ в вашем документе, 
+приведен в таблице в разделе «Вставка ссылок на примитивы» ранее в этой лекции. 
+Там же приведены и примеры.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Для следующего элемента символ 
+левой угловой скобки (&lt;) вставляется в символьные данные элемента с помощью 
+ссылки на символ &amp;#60; (60 есть десятичный код для &lt;). Напомним, что 
+непосредственная вставка символа &lt; в символьные данные не 
+допускается.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;TITLE&gt;&amp;#60;The Legend of Sleepy 
+Hollow&gt;&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Для следующего элемента ссылка на 
+символ &amp;#228; используется для вставки символа a (вы не можете ввести его с 
+клавиатуры) в значение атрибута:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;RESIDENT Address="Seilerst&amp;#228;tte 30, Wien"&gt;Mike 
+Young&lt;/RESIDENT&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В следующем объявлении общего 
+внутреннего разбираемого примитива в DTD ссылка на символ &amp;#37; используется 
+для вставки символа процентов (%) (37 есть десятичный код для %), который не 
+может быть непосредственно введен как литерал в значение внутреннего 
+примитива:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;!ENTITY heading1 "&amp;#37; 
+Complete"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Использование 
+предварительно определенных примитивов<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В XML-документе вы можете 
+использовать ссылку на заранее определенный примитив, чтобы вставить следующие 
+пять стандартных символов в места, куда вставка символов как литералов не 
+допускается (см. <SPAN style="COLOR: black">таблицу 
+6.2):</SPAN><o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: right; TEXT-INDENT: 25.5pt; MARGIN: 14pt 0cm 6pt" 
+class=MsoNormal align=right><SPAN style="COLOR: black; FONT-SIZE: 12pt">Таблица 
+6.2<o:p></o:p></SPAN></P>
+<P>
+<TABLE 
+style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; MARGIN: auto auto auto 12.5pt; BORDER-COLLAPSE: collapse; BORDER-TOP: medium none; BORDER-RIGHT: medium none; mso-border-alt: solid black .5pt; mso-yfti-tbllook: 1184; mso-padding-alt: 0cm 5.4pt 0cm 5.4pt; mso-border-insideh: .5pt solid black; mso-border-insidev: .5pt solid black" 
+class=MsoNormalTable border=1 cellSpacing=0 cellPadding=0>
+  <TBODY>
+  <TR style="mso-yfti-irow: 0; mso-yfti-firstrow: yes">
+    <TD 
+    style="BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: black 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 136.3pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: black 1pt solid; BORDER-RIGHT: black 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid black .5pt" 
+    vAlign=top width=182>
+      <P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt" class=MsoNormal 
+      align=center><SPAN style="FONT-SIZE: 12pt">Ссылка на предопределенный 
+      примитив<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 142.7pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: black 1pt solid; BORDER-RIGHT: black 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid black .5pt; mso-border-left-alt: solid black .5pt" 
+    vAlign=top width=190>
+      <P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt" class=MsoNormal 
+      align=center><SPAN style="FONT-SIZE: 12pt">Вставляемый 
+      символ<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 132.1pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: black 1pt solid; BORDER-RIGHT: black 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid black .5pt; mso-border-left-alt: solid black .5pt" 
+    vAlign=top width=176>
+      <P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt" class=MsoNormal 
+      align=center><SPAN style="FONT-SIZE: 12pt">Эквивалентная ссылка на 
+      символ<o:p></o:p></SPAN></P>
+      <P style="TEXT-ALIGN: center; MARGIN: 0cm 0cm 0pt" class=MsoNormal 
+      align=center><SPAN 
+  style="FONT-SIZE: 12pt"><o:p>&nbsp;</o:p></SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 1">
+    <TD 
+    style="BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: black 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 136.3pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: black 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid black .5pt; mso-border-top-alt: solid black .5pt" 
+    vAlign=top width=182>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">&amp;amp<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 142.7pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: black 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid black .5pt; mso-border-left-alt: solid black .5pt; mso-border-top-alt: solid black .5pt" 
+    vAlign=top width=190>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">&amp;<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 132.1pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: black 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid black .5pt; mso-border-left-alt: solid black .5pt; mso-border-top-alt: solid black .5pt" 
+    vAlign=top width=176>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">&amp;#38;<o:p></o:p></SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 2">
+    <TD 
+    style="BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: black 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 136.3pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: black 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid black .5pt; mso-border-top-alt: solid black .5pt" 
+    vAlign=top width=182>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">&amp;lt;<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 142.7pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: black 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid black .5pt; mso-border-left-alt: solid black .5pt; mso-border-top-alt: solid black .5pt" 
+    vAlign=top width=190>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">&lt;<o:p>&nbsp;</o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 132.1pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: black 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid black .5pt; mso-border-left-alt: solid black .5pt; mso-border-top-alt: solid black .5pt" 
+    vAlign=top width=176>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">&amp;#60;<o:p></o:p></SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 3">
+    <TD 
+    style="BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: black 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 136.3pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: black 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid black .5pt; mso-border-top-alt: solid black .5pt" 
+    vAlign=top width=182>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">&amp;gt;<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 142.7pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: black 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid black .5pt; mso-border-left-alt: solid black .5pt; mso-border-top-alt: solid black .5pt" 
+    vAlign=top width=190>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">&gt;<o:p>&nbsp;</o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 132.1pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: black 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid black .5pt; mso-border-left-alt: solid black .5pt; mso-border-top-alt: solid black .5pt" 
+    vAlign=top width=176>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">&amp;#62;<o:p></o:p></SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 4">
+    <TD 
+    style="BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: black 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 136.3pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: black 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid black .5pt; mso-border-top-alt: solid black .5pt" 
+    vAlign=top width=182>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">&amp;apos;<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 142.7pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: black 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid black .5pt; mso-border-left-alt: solid black .5pt; mso-border-top-alt: solid black .5pt" 
+    vAlign=top width=190>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">‘<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 132.1pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: black 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid black .5pt; mso-border-left-alt: solid black .5pt; mso-border-top-alt: solid black .5pt" 
+    vAlign=top width=176>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">&amp;#39;<o:p></o:p></SPAN></P></TD></TR>
+  <TR style="mso-yfti-irow: 5; mso-yfti-lastrow: yes">
+    <TD 
+    style="BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: black 1pt solid; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 136.3pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: black 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid black .5pt; mso-border-top-alt: solid black .5pt" 
+    vAlign=top width=182>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">&amp;quot;<SPAN style="mso-tab-count: 1"> 
+      </SPAN><o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 142.7pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: black 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid black .5pt; mso-border-left-alt: solid black .5pt; mso-border-top-alt: solid black .5pt" 
+    vAlign=top width=190>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">"<o:p></o:p></SPAN></P></TD>
+    <TD 
+    style="BORDER-BOTTOM: black 1pt solid; BORDER-LEFT: #f0f0f0; PADDING-BOTTOM: 0cm; BACKGROUND-COLOR: transparent; PADDING-LEFT: 5.4pt; WIDTH: 132.1pt; PADDING-RIGHT: 5.4pt; BORDER-TOP: #f0f0f0; BORDER-RIGHT: black 1pt solid; PADDING-TOP: 0cm; mso-border-alt: solid black .5pt; mso-border-left-alt: solid black .5pt; mso-border-top-alt: solid black .5pt" 
+    vAlign=top width=176>
+      <P style="TEXT-ALIGN: justify; MARGIN: 0cm 0cm 0pt" class=MsoNormal><SPAN 
+      style="FONT-SIZE: 12pt">&amp;#34;<o:p></o:p></SPAN></P></TD></TR></TBODY></TABLE></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 14pt 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вставка этих ссылок на 
+предопределенный примитив эквивалентна вставке соответствующей ссылки на символ. 
+Ссылки на предопределенные примитивы легче запомнить, а документ при этом легче 
+воспринимается.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Эти предопределенные примитивы 
+похожи на другие общие внутренние разбираемые примитивы, за исключением того, 
+что ссылки на них вы можете использовать без определения примитивов – и вы 
+можете вставлять их в те же места, что и примитивы данного типа, а 
+именно:<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l7 level1 lfo8" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">в содержимое 
+элемента;<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l7 level1 lfo8" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">в значение атрибута (как 
+значение по умолчанию в объявлении атрибута или в начальном теге 
+элемента);<o:p></o:p></SPAN></P>
+<P 
+style="TEXT-ALIGN: justify; TEXT-INDENT: -18pt; MARGIN: 0cm 0cm 0pt 61.5pt; mso-list: l7 level1 lfo8" 
+class=MsoNormal><SPAN 
+style="FONT-FAMILY: Symbol; FONT-SIZE: 12pt; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol"><SPAN 
+style="mso-list: Ignore">-<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN></SPAN><SPAN style="FONT-SIZE: 12pt">в значение в объявлении 
+внутреннего примитива.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В следующих трех примерах ссылки 
+на предопределенные примитивы используются для вставки символов, которые не 
+допускается вставлять как литералы.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В первом примере ссылка &amp;lt; 
+используется для вставки в содержимое элемента левой угловой скобки 
+(&lt;):<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;TITLE&gt;&amp;lt;The Legend of Sleepy 
+Hollow&gt;&lt;/TITLE&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Во втором примере ссылка &amp;amp; 
+используется для вставки амперсанда (&amp;) в значение 
+атрибута:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;PRODUCT Company="Ongaro &amp;amp; Sons"&gt;3/4" T 
+fitting&lt;/PRODUCT&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В третьем примере ссылка 
+используется для вставки двойных кавычек (") в значение примитива (их нельзя 
+вставить как литерал, поскольку такие же кавычки используются как ограничители 
+строки):<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt; mso-ansi-language: EN-US" 
+lang=EN-US>&lt;!ENTITY heading "Christopher &amp;quot;Kit&amp;quot; 
+Carson"&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Объявление 
+документа автономным (standalone)<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Вы можете включить объявление 
+автономности (standalone) документа в XML-объявление. Объявление standalone 
+сообщает процессору, требуются ли внешние объявления для обработки 
+документа.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Если XML-документ имеет внешние 
+объявления разметки (либо во внешнем подмножестве DTD, либо в параметрическом 
+внешнем разбираемом примитиве), но ни одно из этих объявлений не оказывает 
+влияния на содержимое документа, передаваемого XML-процессором приложению, вы 
+можете установить для standalone значение 'yes' или «yes», как в следующем 
+XML-объявлении:<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 6pt 0cm" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">&lt;?xml version="1.0" 
+standalone="yes"?&gt;<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">Установка предотвращает ненужную 
+обработку внешних файлов. Установка для standalone значения 'no' или «no», либо 
+пропуск объявления standalone сообщает процессору, что он должен обработать все 
+внешние объявления разметки, поскольку одно или несколько из них оказывают 
+влияние на содержимое документа.<o:p></o:p></SPAN></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN 
+style="FONT-SIZE: 12pt"><o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: center; MARGIN: 14pt 0cm" class=MsoNormal align=center><B 
+style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 12pt">Добавление 
+примитивов в документ<o:p></o:p></SPAN></B></P>
+<P style="TEXT-ALIGN: justify; TEXT-INDENT: 25.5pt; MARGIN: 0cm 0cm 0pt" 
+class=MsoNormal><SPAN style="FONT-SIZE: 12pt">В следующем упражнении вы получите 
+некоторый опыт работы с примитивами, добавив несколько общих примитивов в 
+документ Inventory Valid.xml, созданный вами в лекции 5.<o:p></o:p></SPAN></P>
+<P>&nbsp;</P>
+				</div>
+			</div>
+		</div>
+		<div id="sidebar">
+			<div id="about-box">
+				<h2>3 СЕМЕСТР</h2>
+				<p>Учимся,работаем)</p>
+			</div>
+			<ul>
+				<li>
+					<h2>Список лекций</h2>
+					<ul>
+						<li><a style="" href="page1.html">Лекция №1</a></li>
+<li><a style="" href="page2.html">Задания к лекции №1</a></li>
+<li><a style="" href="page3.html">Лекция №2</a></li>
+<li><a style="" href="page4.html">Задания к лекции №2</a></li>
+<li><a style="" href="page5.html">Лекция №3</a></li>
+<li><a style="" href="page6.html">Задания к лекции №3</a></li>
+<li><a style="" href="page7.html">Лекция №4</a></li>
+<li><a style="" href="page8.html">Лекция №5</a></li>
+<li><a style="" href="page9.html">Задания к лекции №5</a></li>
+<li><a style="" href="page12.html">Лекция №6</a></li>
+<li><a style="" href="page11.html">Задания к лекции №6</a></li>
+<li><a style="" href="page13.html">Лекция №7</a></li>
+<li><a style="" href="page14.html">Задания к лекции №7</a></li>
+<li><a style="" href="page15.html">Лекция №8</a></li>
+<li><a style="" href="page16.html">Задания к лекции №8</a></li>
+<li><a style="" href="page17.html">Лекция №9</a></li>
+<li><a style="" href="page18.html">Задания к лекции №9</a></li>
+<li><a style="" href="page19.html">Лекция №10</a></li>
+<li><a style="" href="page20.html">Задания к лекции №10</a></li>
+
+					</ul>
+				</li>
+			
+			</ul>
+		</div>
+		<!-- end sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+</div>
+<!-- end page -->
+<hr />
+<div id="footer">
+	<p>БГТУ| 2011</p>
+</div>
+</body>
+</html>

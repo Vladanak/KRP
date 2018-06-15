@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>7 laba</title>
+    <script>
+        function bf()
+        {
+            k = 0;
+            for (var i = 0; i < 6;i++){
+                if (document.forms['forma'].a[i].checked) {
+                    document.forms['lol'].spi.options[k] = new Option(document.forms['forma'].a[i].value, k, false, false);
+                    k++;
+            } 
+            else
+            {
+                continue;
+            }
+           }
+        }
+        function ty()
+        {
+            var E = ("<p align='center'>" + document.forms['forma'].tes.value + "</p>" + "<br>" + "Студент:" + document.forms['forma'].secondname.value + "<br>" + " Специальность:" +
+              document.forms['forma'].spisok.value + "<br>" + " Курс:" + document.forms['forma'].d.value
+              + "<br>" + document.forms['forma'].d.value + " курс должен сдавать следующие предметы:" + "<br>" + "<ul>" + "<li>" + document.forms['forma'].ca.value + "</li>" + "<br>" + "<li>" +
+              document.forms['forma'].ce.value + "</li>" + "<br>" + "<li>" + document.forms['forma'].cc.value + "</li>" + "<ul>");
+            document.write(E);
+        }
+    </script>
+</head>
+<body>
+    <form name="forma">
+        <fieldset>
+            <legend>Данные о студенте:</legend>
+           <textarea style="height:50px" name="tes">Факультет Информационных Технологий</textarea>
+            <br />
+             Имя:<br /><input type="text" name='firstname'/><br />
+             Фамилия:<br /><input type='text' name='secondname' /><br />
+             Отчество:<br /><input type='text' name='lastname' /><br />
+            <p>Укажите ваш пол:</p>
+            <input type='radio' name='s' value='Мужской' /> Мужской<br />
+            <input type='radio' name='s' value='Женский' /> Женский
+            <p>Укажите ваш курс:</p>
+            <input type='radio' name='d' value='1' /> 1 курс<br />
+            <input type='radio' name='d' value='2' /> 2 курс<br />
+            <input type='radio' name='d' value='3' /> 3 курс<br />
+            <input type='radio' name='d' value='4' /> 4 курс
+            <p>Выберите специальность:</p>
+            <select name="spisok" size="1">
+                <option value="ПОИТ">ПОИТ</option>
+                <option value="ИСИТ">ИСИТ</option>
+                <option value="ПОИБМС">ПОИБМС</option>
+                <option value="ДЭВИ">ДЭВИ</option>
+            </select>
+            <p>Выберите предметы:</p>
+            <input type='checkbox' name='a' value='ОИТ' id="ca" /> <span><b>ОИТ</b></span>
+            <input type='checkbox' name='a' value='ОАИП' id="cb" /> <span><b>ОАИП</b></span>
+            <input type='checkbox' name='a' value='МАТЕМАТИКА' id="cc"/> <span><b>МАТЕМАТИКА</b></span>
+            <input type='checkbox' name='a' value='ФИЗИКА' id="cd"/> <span><b>ФИЗИКА</b></span>
+            <input type='checkbox' name='a' value='ИСТОРИЯ'id="ce" /> <span><b>ИСТОРИЯ</b></span>
+            <input type='checkbox' name='a' value='БЕЛ.ЯЗ' id="cf"/> <span><b>БЕЛОРУССКИЙ ЯЗЫК</b></span>
+            <br />
+            <br />
+            <input type="button" value="Напечатать" onclick="ty()" />
+            <input type="reset" value="Сбросить" />
+        </fieldset>
+    </form>
+    <form name="lol">
+        <fieldset>
+            <legend>Списочек:</legend>
+            <select name="spi" size="1">
+            </select>
+            <input type="button" value="Заполн" onclick="bf()" />
+         </fieldset>
+</form>
+</body>
+</html>

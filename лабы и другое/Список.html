@@ -1,0 +1,97 @@
+﻿<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        .io {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .io:after{
+            content: "";
+             display: table;
+           clear: both;
+        }
+        .io li {
+             display: inline-block;
+             position: relative;
+        }
+        .io > li > a{
+  display: block;
+  padding: 12px 26px;
+  color: #767676;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  position: relative;
+  font-family: 'Times New Roman', sans-serif;
+        }
+            .io > li:after {
+                content: "";
+                position: absolute;
+                right: 0;
+                width: 1px;
+                height: 12px;
+                background: #d2d2d2;
+                top: 16px;
+                box-shadow: 4px -2px 0 white;
+                transform: rotate(30deg);
+            }
+            .io > li:last-child:after {
+  background: none;
+  box-shadow: none;
+}
+.io > li:hover > a{ /*>-комбинатор дочерних элементов(дочерние селекторы),+-комбинатор соседних элементов(соседние селекторы)*/
+  color: yellow;
+}
+.j {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  width: 210px;
+  background: #fafafa;
+  border: 1px solid #ededed;
+  left: 50%;
+  margin-left: -105px;
+  z-index: 10;
+  transform: scale(.8);
+  transition: .4s ease-in-out;
+}
+.j > li {
+  display: block;
+}
+li:hover > .j {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+.j li a {
+  padding: 10px 0;
+  margin: 0 10px;
+  border-bottom: 1px solid black;
+  font-size: 12px;
+  color: #484848;
+  display: block;
+  font-family: 'Times New Roman', serif;
+}
+.j li a:hover {
+  color: #c0a97a;
+}
+        </style>
+</head>
+<body>
+    <ul class="io">
+        <li>
+            <a href="#">Лабы</a>
+            <ul class="j">
+                <li><a href="Лаба4.3.html">1</a></li>
+                <li><a href="Лаба4.4.html">2</a></li>
+                <li><a href="Лаба4.5.html">3</a></li>
+                <li><a href="Лаба4.6.html">4</a></li>
+                <li><a href="Лаба 3.html">5</a></li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

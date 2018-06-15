@@ -1,0 +1,33 @@
+﻿<<html>
+<head>
+    <style type='text/css'>
+        @-webkit-keyframes anim {
+        0% {
+         margin-left:100px;
+         margin-top:100px;
+        }
+        50% {
+            margin-left:100px;
+         margin-top:500px;
+        }
+        100%{
+                  margin-left:100px;
+         margin-top:100px;
+        }
+        }
+        #boy {
+            border: 1px #000 solid;
+            border-radius: 100px;
+            background-color: yellow;
+            height: 90px;
+            width: 90px;
+            font-size: 9px;
+            animation: anim 4s 8;
+            animation-timing-function: ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="boy"> </div>
+</body>
+</html>

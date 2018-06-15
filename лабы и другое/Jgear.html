@@ -1,0 +1,106 @@
+﻿<html>
+<head>
+    <script type='text/javascript'>
+        alert('Вас приветствует учебный центр');
+            var x=confirm('Хотите стать Web-дизайнером');
+            if(x==true)
+            {
+            alert('Учите стили CSS и JavaScript!');
+            }
+            else
+            {
+            alert('Упускаете время!');
+            }
+        x = prompt('Введите Ваше имя:', 'Имя');
+        document.writeln('Добро пожаловать на наши курсы, ' + x);
+        var v = 4;
+        var b = 5;
+        var z = v + b;
+        document.writeln('Сумма = ' + z);
+        document.writeln('10' + '5');
+        var v = 45;
+        document.writeln(v + '2');
+        var b = 25;
+        document.writeln('111' + b);
+        document.writeln('Результатом сложения строки и числа всегда будет строка');
+        var x = 10;
+        var y = 15;
+        var t = (35 * y - 25 * x / 5 + 232);
+        var m = (((8 * y / x) + (5 * (x / y)) - 43) * 6);
+        var n=(z%m);
+        document.writeln('первое выраж:',t);
+        document.writeln('второе выраж:',m);
+        document.writeln('третье выраж:',n);
+        alert(n);
+        var x = 100;
+        if(x<20 || x>40 && x!==15 && x%5==0)
+            document.writeln('Правильное значение');
+        else
+            document.writeln('Не Правильное значение');
+        var x = 1;
+        var y = 2;
+        if (x-y<0 || x==0)
+            alert('Отриц или рав 0');
+        else
+            alert('Положит');
+        x = prompt('Введите первое число:', 'bckj' );
+        y = prompt('Введите второе число:', ' ');
+        if (x>y)
+            alert('Первое число больше второго');
+        else
+            if (x == y) {
+                alert('Они равны!');
+            }
+            else {
+                alert('Второе число больше первого');
+            }
+   x=confirm('Вы согласны на перемирие?');
+        if (x==true)
+            alert('Да будет мир!');
+        else
+            alert('Да будет война!!');
+        var s = +prompt('От 1 до 7 ', ' ');
+        switch (s) {
+            case 1: alert("Понедельник");
+                {
+                    break;
+                }
+            case 2: alert("Вторник");
+                {
+                    break;
+                }
+            case 3: alert("Среда");
+                {
+                    break;
+                }
+            case 4: alert("Четверг");
+                {
+                    break;
+                }
+            case 5: alert("Пятница");
+                {
+                    break;
+                }
+            case 6: alert("Суббота");
+                {
+                    break;
+                }
+            case 7: alert("Воскресенье");
+                {
+                    break;
+                }
+        }
+            try {
+                documant.writeln("Вторая строка");
+            }
+            catch (e) {
+                alert("Ошибка :" + e.message);
+            }
+            finally {
+                alert('vot');
+            }
+    </script>
+</head>
+<body>
+</body>
+</html>

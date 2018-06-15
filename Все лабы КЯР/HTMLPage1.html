@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        html {
+            width: 3000px;
+            height: 2000px;
+             }
+        #fly {
+            border-color:black;
+            color:black;
+            position: relative;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            margin-top: 200px;
+            margin-left: 14px;
+        }
+    </style>
+</head>
+<body>
+    <input type="radio" name="kurs" onclick="fun1()">y=x2<br />
+    <input type="radio" name="kurs" onclick="fun2()">y=x3<br />
+    <input type="radio" name="kurs" onclick="fun3()">y=sin(x)<br />
+    <input type="radio" name="kurs" onclick="fun4()"> y=cos(x)<br />
+    <img id="fly" src="22.png">
+    <script type="text/javascript">
+		function fun1(){
+			var x=-24;
+			for (var i = 0;i<25; i++) {
+			var y=Math.pow(x,2)/2;
+			$("#fly").animate({
+				left:  x,
+				top:   -y
+                },100);
+			x=x+2;
+         }}
+		function fun2(){
+				var x=-7;
+			for (var i = 0;i<16; i++) {
+			var y=Math.pow(x,3)/2;
+			$("#fly").animate({
+				left:  x,
+				top:   -y
+                },100);
+			x=x+1;
+         }}
+		function fun3(){
+			var x=0;
+			for (var i = 0;i<14; i++) {
+			var y=100*Math.sin(x);
+			$("#fly").animate({
+				left:  x,
+				top:   y
+                },200);
+			x=x+100;
+         }}
+         function fun4(){
+			var x=0;
+			for (var i = 0;i<14; i++) {
+			var y=100*Math.cos(x);
+			$("#fly").animate({
+				left:  x,
+				top:   y
+                },200);
+			x=x+100;
+         }}
+    </script>
+</body>
+</html>

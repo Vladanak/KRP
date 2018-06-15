@@ -1,0 +1,65 @@
+﻿<html>
+<head>
+    <title>8 laba</title>
+    <script src="jquery.js"></script>
+    <script src="jqueryui.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#ttt").mouseover(function () { $("#ttt").css("color", 'yellow') });
+            $("#ttt").mouseout(function () { $("#ttt").css("color", 'black') });
+        });
+        $(document).ready(function () {
+            $("#dd").click(function () { $("#dd").css("fontSize", '20px') });
+            $("#dd").mouseout(function () { $("#dd").css("fontSize", '16px') });
+        });
+        $(document).ready(function () {
+            $(function () {
+                $("#233").hide();
+                $("#23").click(function () {
+                    $(this).hide();
+                    $("#233").show();
+                });
+                $("#233").click(function () {
+                    $(this).hide();
+                    $("#23").show();
+                });
+            });
+        });
+        $(document).ready(function () {
+            $(function () {
+                $("#24").hide();
+                $("#25").click(function () {
+                    $(this).hide();
+                    $("#24").show();
+                });
+                $("#24").click(function () {
+                    $(this).hide();
+                    $("#25").show();
+                });
+            });
+        });
+        $(document).ready(function () {
+            $("#228").mouseover(function () { $("#228").slideUp(1000) });
+            $("#228").mouseout(function () { $("#228").slideDown(1000) });
+        });
+        $(document).ready(function () {
+            $("#300").dblclick(function () { $("#300").css({'border':'2px solid',"border-color":"red"}) });
+        });
+    </script>
+</head>
+<body>
+<br />
+<img src="i.jpg" id="23"/>
+    <img src="i2.jpg" id="233" />
+    <br />
+    <span id="ttt">fwefsdsdsdsds</span>
+    <br />
+    <span id="dd">grgregregergergeg</span>
+    <br />
+    <img src="i2.jpg" id="24" />
+    <span id="25">PRIVET</span>
+    <img src="4.jpg" id="228" />
+    <br />
+    <span id="300">RAMKA</span>
+</body>
+</html>

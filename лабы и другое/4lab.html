@@ -1,0 +1,186 @@
+﻿<html>
+<head>
+    <title>4 лаба</title>
+    <script>
+        function Gruppa(n, spec, kolich)
+        {
+            this.n = n;
+            this.spec = spec;
+            this.kolich = kolich;
+            this.add_stud = function add_stud(k)
+            {
+                this.kolich += k;
+                document.write('В группу ' + this.n + ' добавили' + k + ' студентов.<br\>');
+            }
+            this.sub_stud = function sub_stud(k)
+            {
+                this.kolich -= k;
+                document.write('Из группы ' + this.n + ' убрали' + k + ' студентов.<br\>');
+            }
+        }
+        function Dad()
+        {
+            gr1 = new Gruppa(1, 'vre', 25);
+            gr2 = new Gruppa(2, 'vewde', 25);
+            gr3 = new Gruppa(3, 'vwewwre', 25);
+            gr4 = new Gruppa(4, 'vreerwq    e', 25);
+            gr1.add_stud(11);
+            gr1.sub_stud(2);
+            gr2.add_stud(9);
+            gr2.sub_stud(3);
+            gr3.add_stud(10);
+            gr3.sub_stud(1);
+            gr4.add_stud(10);
+            gr4.sub_stud(6);
+            Gruppa.prototype.kurs = this.kurs;
+            gr1.kurs = 2;
+            gr2.kurs = 3;
+            gr3.kurs = 5;
+            gr4.kurs = 1;
+            document.write("Nomer" + gr1.n + "." + "Spec" + gr1.spec + "." + "Kol" + gr1.kolich + "." + "kurs" + gr1.kurs + ".");
+            document.write("<br>" + "Nomer" + gr2.n + "." + "Spec" + gr2.spec + "." + "Kol" + gr2.kolich + "." + "kurs" + gr2.kurs + ".");
+            document.write("<br>" + "Nomer" + gr3.n + "." + "Spec" + gr3.spec + "." + "Kol" + gr3.kolich + "." + "kurs" + gr3.kurs + ".");
+            document.write("<br>" + "Nomer" + gr4.n + "." + "Spec" + gr4.spec + "." + "Kol" + gr4.kolich + "." + "kurs" + gr4.kurs + ".");
+            document.write("<br>");
+            document.write("Есть ли в 1 группе spec?")
+            if ("spec" in gr1) {
+                document.write("Есть!");
+            }
+            else {
+                document.write("Нема!");
+            }
+            document.write("<br>");
+            document.write(gr1.n+"является типом:"+typeof gr1.n);
+            document.write("<br>");
+            document.write(gr1.spec+"является типом:"+typeof gr1.spec);
+            document.write("<br>");
+            document.write(gr1.kolich + "является типом:" + typeof gr1.kolich);
+            document.write("<br>");
+            document.write(gr1.kurs + "является типом:" + typeof gr1.kurs);
+        }
+        function Student(im, fam, fiz, mat, infor, nastroi)
+        {
+            this.im = im;
+            this.fam = fam;
+            this.fiz = fiz;
+            this.mat = mat;
+            this.infor = infor;
+            this.nastroi = nastroi;
+            this.vivod = function vivod() {
+                alert('Имя студента: ' + this.im+'.' +'Фамилия:' +this.fam);
+            }
+            this.minus = function minus(st) {
+                document.write("Кого убрать?(имя поля)");
+                delete (st);
+            }
+            this.plus = function plus(st,im,fam,fiz,mat,inform,nastroi){
+                document.write("Кого Добавить?(имя поля,имя студента,фамилия,оценки по физике,матре,информатике,настрой");
+                st = new Student(im, fam, fiz, mat, inform,nastroi);
+            }
+            this.sredn=function sredn()
+            {   
+                document.write("Средний балл равен:" + ((this.fiz + this.mat + this.infor)/3));
+            }
+        }
+        function Brother() {
+            st1 = new Student('Петров', 'Петрович', 9,8,7,"хороший");
+            st2 = new Student('Владислав', 'Морган', 5, 7, 9, "нормальный");
+            st3 = new Student('Иван', 'Зарканович', 1, 9, 5, "такой себе");
+            st4 = new Student('Владимир', 'Константинович', 9, 8, 7, "плохой");
+            st1.sredn();
+            st1.vivod();
+            document.write("<br>"+"Информация о всех студентах:");
+            document.write("<br>" + "Имя:" + st1.im + "." + "Фамилия:" + st1.fam + "." + "Оценка по физике:" + st1.fiz + "." + "Оценка по матре:" + st1.mat + "." + "Оценка по информатике:" + st1.infor + "."  + "Настрой:" + st1.nastroi);
+            document.write("<br>" + "Имя:" + st2.im + "." + "Фамилия:" + st2.fam + "." + "Оценка по физике:" + st2.fiz + "." + "Оценка по матре:" + st2.mat + "." + "Оценка по информатике:" + st2.infor + "." + "Настрой:" + st2.nastroi);
+            document.write("<br>" + "Имя:" + st3.im + "." + "Фамилия:" + st3.fam + "." + "Оценка по физике:" + st3.fiz + "." + "Оценка по матре:" + st3.mat + "." + "Оценка по информатике:" + st3.infor + "." + "Настрой:" + st3.nastroi);
+            document.write("<br>" + "Имя:" + st4.im + "." + "Фамилия:" + st4.fam + "." + "Оценка по физике:" + st4.fiz + "." + "Оценка по матре:" + st4.mat + "." + "Оценка по информатике:" + st4.infor + "." + "Настрой:" + st4.nastroi);
+            document.write("<br>");
+            document.write("Есть ли mat у первого студента?")
+            if ('mat' in st1) {
+                document.write("Есть!");
+            }
+            else
+                document.write("Нема!");
+            document.write("<br>");
+            document.write("Является ли st1  Object?")
+            if (st1 instanceof Object) {
+                document.write("Является!");
+            }
+            else
+                document.write("Не Является!");
+            document.write("<br>");
+            document.write(st1.im+"является типом:" + typeof st1.im);
+            document.write("<br>");
+            document.write(st1.fam+"является типом:" + typeof st1.fam);
+            document.write("<br>");
+            document.write(st1.fiz+"является типом:" + typeof st1.fiz);
+            document.write("<br>");
+            document.write(st1.mat+"является типом:" + typeof st1.mat);
+            document.write("<br>");
+            document.write(st1.nastroi+"является типом:" + typeof st1.nastroi);
+            document.write("<br>");
+            document.write(st1.infor+"является типом:" + typeof st1.infor);
+        }
+        function second() {
+            a = new Array();
+            a[0] = ("Concat()-объединяет два и более массива в один");
+            a[1] = ("Pop()-удаляет последний элемент массива и возвращает его значение");
+            a[2] = ("Push(значение|объект) – добавляет к массиву указанное значение в качестве последнего элемента и возвращает новую длину массива");
+            a[3] = ("Shift() – удаляет первый элемент массива и возвращает его значение");
+            a[4] = ("Sliсe(индекс1 [, индекс2]) – создает массив из элементов исходного массива с индексами указанного диапазона");
+            for (var i = 0; i < a.length; i++) {
+                document.write("<br>" + "Элемент 1 массива:" + a[i]);
+            }
+            delete a[3];
+            document.write("<br>");
+            for (i = 0; i < a.length; i++) {
+                document.write("<br>" + "Элемент 1 массива:" + a[i]);
+            }
+            document.write("<br>");
+            document.write("Есть ли 1 элемент в массиве а?");
+            if(1 in a)
+            {
+                document.write("Есть!");
+            }
+            else 
+                document.write("Нема!");
+            document.write("Является ли а массивом?");
+            document.write("<br>");
+            if (a instanceof Array) {
+                document.write("Является!");
+            }
+            else
+                document.write("Не Является!");
+            document.write("Является ли элемент массива а строкой?");
+            document.write("<br>");
+            if (a instanceof String) {
+                document.write("Является!");
+            }
+            else
+                document.write("Не Является!");
+            document.write("<br>");
+            document.write("Массив является типом:"+typeof a);
+        }
+        function Dream()
+        {
+            document.write("<br>");
+            document.write("Функция является типом:"+ typeof Dream);
+            document.write("<br>");
+            document.write("Число является типом:" + typeof 5);
+            document.write("<br>");
+            document.write("Текст является типом:"+ typeof "Dream");
+            document.write("<br>");
+            function be() {
+                return (5);
+            }
+            document.write(typeof be);
+        }
+    </script>
+</head>
+<body>
+    <input type='button' value='Группа' onclick='Dad()' />
+    <input type='button' value='Студент' onclick='Brother()' />
+    <input type='button' value='Третье' onclick='second()' />
+    <input type='button' value='Typeof' onclick='Dream()' />
+</body>
+</html>

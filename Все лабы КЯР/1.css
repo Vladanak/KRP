@@ -1,0 +1,32 @@
+﻿SPECIALIZATION
+{  display:block;
+text-align:center;
+margin:10px 20px 10px 20px;
+margin-top:12pt;
+border-style:double;
+border-color:#8C0088;
+font-size:15pt}
+UNIVER
+{  font-style:italic;
+text-align:center}
+BALL
+{  display:block;
+text-align:center;
+font-weight:bold;
+border-top:double;
+border-color:#8C0088}
+MEST
+{  display:block;
+text-align:center;
+border-top:double;
+border-color:#8C0088}
+GOROD
+{  display:block;
+text-align:center;
+border-top:double;
+border-color:#8C0088}
+REIT
+{  display:block;
+margin:50px 100px;
+border-style:solid}
+

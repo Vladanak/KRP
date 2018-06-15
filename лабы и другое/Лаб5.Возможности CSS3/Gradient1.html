@@ -1,0 +1,40 @@
+<html>
+<head>
+<style type='text/css'>
+#wrap1,#wrap2,#wrap3,#wrap4 {
+float:left;
+margin:5px;
+width:300px;
+height:150px;
+padding:10px;
+border:1px #000 solid;
+text-decoration:underline;
+}
+#wrap1 {
+background:linear-gradient(top,white,black);
+background:-webkit-linear-gradient(top,white,black); /* для Safari */
+}
+#wrap2 {
+background:linear-gradient(left,white,black);
+background:-webkit-linear-gradient(left,white,black); /* для Safari */
+}
+#wrap3 {
+background:linear-gradient(0deg,white,black);
+background:-webkit-linear-gradient(0deg,white,black); /* для Safari */
+}
+#wrap4 {
+background:linear-gradient(270deg,white,black);
+background:-webkit-linear-gradient(270deg,white,black); /* для Safari */
+}
+</style>
+</head>
+<body>
+<p>1. Примеры задания направлений градиентов с помощью ключевых слов: </p>
+<div id="wrap1">linear-gradient(top,white,black)</div>
+<div id="wrap2">linear-gradient(left,white,black)</div>
+<br style="clear:both;" />
+<p>2. Примеры задания направлений градиентов с помощью градусов: </p>
+<div id="wrap3">linear-gradient(0deg,white,black)</div>
+<div id="wrap4">linear-gradient(270deg,white,black)</div>
+</body>
+</html>

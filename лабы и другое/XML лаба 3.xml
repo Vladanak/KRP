@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/">
+    <html>
+      <body>
+        <h2> Количество мест и баллов ПОИТ в разных городах</h2>
+        <table border="1">
+          <tr bgcolor="#9acd32">
+            <th style="text-align:center">Университет</th>
+            <th style="text-align:center">Балл</th>
+            <th style="text-align:center">Мест</th>
+            <th style="text-align:center">Город</th>
+          </tr>
+          <xsl:for-each select="FACULTY/SPECIALIZATION">
+            <tr>
+              <td>
+                <xsl:value-of select="UNIVER"></xsl:value-of>
+              </td>
+              <td>
+                <xsl:value-of select="BALL"></xsl:value-of>
+              </td>
+              <td>
+                <xsl:value-of select="MEST"></xsl:value-of>
+              </td>
+              <td>
+                <xsl:value-of select="GOROD"></xsl:value-of>
+              </td>
+            </tr>
+          </xsl:for-each>
+        </table>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>

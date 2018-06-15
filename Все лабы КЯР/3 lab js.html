@@ -1,0 +1,120 @@
+﻿<html>
+<head>
+    <title>Массив</title>
+  <script>
+      function first()
+      { 
+          var max,min,t;
+          a = new Array();
+          a[0] = new Number( 6 *Math.pow(3.14,2)+3*Math.exp(8));
+          document.write(a[0].toFixed(2));
+          a[1] = new Number(2 * Math.cos(4) + Math.cos(12) + 8 * Math.exp(3));
+          document.write("<br>" + a[1].toFixed(2));
+          a[2] = new Number(3 * Math.sin(9) + Math.log(5) +  Math.sqrt(3));
+          document.write("<br>" + a[2].toFixed(2));
+          a[3] = new Number(2 * Math.tan(5) +6*(3.14)+Math.sqrt(12));
+          document.write("<br>" + a[3].toFixed(2));
+          for (var i = 0; i<4; i++) {
+              if (i == 0)
+              {
+                  max = a[i];
+                  t = i;
+              }
+              if(max<a[i])
+              {
+                  max = a[i];
+                  t = i;
+              }
+          }
+          document.write("<br>" + "Max:" + max.toFixed(2) + ".Его номер:" + t);
+          for (i = 0; i < 4 ; i++) {
+              if (i == 0) {
+                  min = a[i];
+                  t = i;
+              }
+              if (min > a[i]) {
+                  min = a[i];
+                  t = i;
+              }
+          }
+          document.write("<br>"+"Min:"+ min.toFixed(2)+".Его номер:" + t);
+      }
+      function second() {
+          a = new Array();
+          b = new Array();
+          a[0] = ("Concat()-объединяет два и более массива в один");
+          a[1] = ("Pop()-удаляет последний элемент массива и возвращает его значение");
+          a[2] = ("Push(значение|объект) – добавляет к массиву указанное значение в качестве последнего элемента и возвращает новую длину массива");
+          a[3] = ("Shift() – удаляет первый элемент массива и возвращает его значение");
+          a[4] = ("Sliсe(индекс1 [, индекс2]) – создает массив из элементов исходного массива с индексами указанного диапазона");
+          var n = ("Sort([функция_сортировки]) – сортирует (упорядочивает) элементы массива с помощью функции сравнения");
+          a.unshift(n);
+          b[0] = ("Pow(число1, число2) – возвращает число1 в степени число2");
+          b[1] = ("Floor(число) – округляет число вниз до ближайшего целого");
+          b[2] = ("Ceil(число) – округляет число вверх до ближайшего целого");
+          b[3] = ("Random () – возвращает случайное число между 0 и 1");
+          b[4] = ("Round(число) – округляет число до ближайшего целого");
+          var m = ("Log(число) – возвращает натуральный логарифм числа");
+          b.push(m);
+          var neo =a.concat(b);
+          for (var i = 0; i < a.length; i++)
+          {
+              document.write("<br>" + "Элемент 1 массива:" + a[i]);
+          }
+          document.write("<br>" + "Длина 1 массива:" + a.length);
+          for (var g = 0; g< b.length; g++) {
+              document.write("<br>" + "Элемент 2 массива:" + b[g]);
+          }
+          document.write("<br>" + "Длина 2 массива:" + b.length);
+          for (var z = 0; z <neo.length; z++) {
+              document.write("<br>" + "Элемент общего массива:" + neo[z]);
+          }
+          document.write("<br>" + "Длина общего массива:" + neo.length);
+      }
+      function third()
+      {
+          B = new String("Муравейко Владислав Сергеевич");
+          document.write("Строка:" + B);
+          document.write("<br>", "Длина равна " + B.length);
+          document.write("<br>", "Верхний регистр:" + B.toUpperCase());
+          document.write("<br>", "Нижний регистр:" + B.toLowerCase());
+          document.write("<br>", "Обьединение:" + (B.toUpperCase()).concat(B.toLowerCase()));
+          document.write("<br>", "Замена:" + B.replace('Муравейко Владислав Сергеевич','М.В.С.'));
+      }
+      function fourth() {
+          x = new Date();
+          document.write("<table border='1'>");
+          document.write("<tr align='center'>");
+          document.write("<td bgcolor='orange'>" + "Год" + " </td>");
+          document.write("<td bgcolor='green'>" + x.getFullYear() + " </td>");
+          document.write("</tr>");
+          document.write("<tr align='center'>");
+          document.write("<td bgcolor='orange'>" + "Месяц" + " </td>");
+          document.write("<td bgcolor='green'>" + (x.getMonth()+1)+ " </td>");
+          document.write("</tr>");
+          document.write("<tr align='center'>");
+          document.write("<td bgcolor='orange'>" + "День" + " </td>");
+          document.write("<td bgcolor='green'>" + x.getDate() + " </td>");
+          document.write("</tr>");
+          document.write("<tr align='center'>");
+          document.write("<td bgcolor='orange'>" + "Час" + " </td>");
+          document.write("<td bgcolor='green'>" + x.getHours() + " </td>");
+          document.write("</tr>");
+          document.write("<tr align='center'>");
+          document.write("<td bgcolor='orange'>" + "Минуты" + " </td>");
+          document.write("<td bgcolor='green'>" + x.getMinutes() + " </td>");
+          document.write("</tr>");
+          document.write("<tr align='center'>");
+          document.write("<td bgcolor='orange'>" + "Секунды" + " </td>");
+          document.write("<td bgcolor='green'>" + x.getSeconds() + " </td>");
+          document.write("</tr>");
+      }
+  </script>
+</head>
+<body>
+    <input type='button' value='Массив' onclick='first()' />
+    <input type='button' value='Работа с массивами' onclick='second()' />
+    <input type='button' value='Строка' onclick='third()' />
+    <input type='button' value='Дата' onclick='fourth()' />
+</body>
+</html>

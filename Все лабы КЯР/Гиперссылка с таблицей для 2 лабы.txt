@@ -1,0 +1,31 @@
+<html>
+ <head>
+  <title>Цены</title>
+<style type="text/css">
+body{
+background-color: #d2b48c;
+margin-left: 10%;
+margin-right: 10%;
+border: 3px dotted black;
+padding: 13px 13px 13px 13px;
+font-family: monospace;
+}
+</style>
+ </head>
+ <body>
+  <table border="1">
+   <caption ><b>Меню</b></caption>
+   <tr align=center>
+    <th>Горячее</th>
+    <th>Холодное</th>
+    <th>Десерт</th>
+    <th>Напитки</th>
+   </tr>
+   <tr><td>Щавель,<b>$1.</b></td><td>Харчо,<b>$1.</b></td><td>Пирожоное,<b>$0.5.</b></td><td>Сок яблочный,<b>$1 за литр.</b></td></tr>
+   <tr><td>Борщ,<b>$1.</b></td><td>Холодник,<b>$1.</b></td><td>Мороженое,<b>$0.99.</b></td><td>Кока-кола,<b>$1 за литр.</b></td></tr>
+   <tr><td>Картошка,<b>$1.5.</b></td><td>Холодец,<b>$1.5.</b></td><td>Торт,<b>$3.</b></td><td>Спрайт,<b>$1 за литр.</b></td></tr>
+   <tr><td>Мясо по-французски,<b>$2.</b></td><td>Канапэ,<b>$2.</b></td><td>Желе,<b>$0.5.</b></td><td>Водка,<b>$0.70 за рюмку.</b></td></tr>
+   <tr><td>Рыба,<b>$0.5.</b></td><td>Окрошка,<b>$1.</b></td><td>Конфеты,<b>$0.01 за 1.</b></td><td>Пиво,<b>$3 за кружку.</b></td></tr>
+  </table>
+ </body>
+</html>
